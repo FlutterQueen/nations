@@ -29,7 +29,6 @@ class _NationsController extends ChangeNotifier {
       Locale('en'),
     ],
   }) {
-    // TODO :: use palace logger
     log('[👑][Nations]fallbacklocale updated from $fallbackLocale to $locale ✔');
     _fallbackLocale = locale;
 
@@ -57,7 +56,7 @@ class _NationsController extends ChangeNotifier {
   List<Locale> get supportedLocales => _supportedLocales;
 
   void addNewSupportedLocales(List<Locale> locales) {
-    // TODO :: Log
+    log('new locales added $locales');
     _supportedLocales.addAll(locales);
   }
 

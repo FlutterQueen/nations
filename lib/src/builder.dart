@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../nations.dart';
@@ -29,7 +31,7 @@ class _NationsRootState extends State<NationsRoot> {
   void dispose() {
     /// Dispose the listner
     Nations.dispose();
-    // TODO :: log
+    log('Nations dispose');
     super.dispose();
   }
 
