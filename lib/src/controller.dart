@@ -1,13 +1,22 @@
-part of '../nations.dart';
+// ignore_for_file: non_constant_identifier_names
+
+import 'dart:developer' show log;
+import 'dart:ui' show window;
+
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter/material.dart';
+
+import '../nations.dart';
+import 'delegate.dart';
+import 'loaders.dart';
 
 // * # Global object to handle the loclizations actions
-// ignore: non_constant_identifier_names
 final Nations = _NationsController();
 
 class _NationsController extends ChangeNotifier {
   /// * falls back to arabic by defult
   Locale? _fallbackLocale;
-  // Locale? _initalLocale;
+  //  Locale? _initalLocale;
   Locale? _currentLocale;
 
   void config({
@@ -15,6 +24,7 @@ class _NationsController extends ChangeNotifier {
     // Locale? initalLocale = const Locale('ar'),
     NationsLoader loader = const NationsJsonLoader(),
     List<Locale> supportedLocales = const [
+      // * localization in arab
       Locale('ar'),
       Locale('en'),
     ],
@@ -60,7 +70,7 @@ class _NationsController extends ChangeNotifier {
   }
 
   final delegates = const <LocalizationsDelegate>[
-    _NationsLocalizationsDelegate(),
+    NationsLocalizationsDelegate(),
     GlobalCupertinoLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,

@@ -1,8 +1,10 @@
-part of '../nations.dart';
+import 'package:flutter/material.dart';
 
-class _NationsLocalizationsDelegate
+import '../nations.dart';
+
+class NationsLocalizationsDelegate
     extends LocalizationsDelegate<NTranslations> {
-  const _NationsLocalizationsDelegate();
+  const NationsLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) {
@@ -16,5 +18,5 @@ class _NationsLocalizationsDelegate
   }
 
   @override
-  bool shouldReload(_) => false;
+  bool shouldReload(old) => false;
 }

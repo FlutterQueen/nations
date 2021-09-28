@@ -1,4 +1,5 @@
-part of '../nations.dart';
+import 'package:flutter/material.dart';
+import 'package:nations/nations.dart';
 
 /// loads translation form assets or any source
 /// extend it to build you custom loader if none of the existing

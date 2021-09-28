@@ -1,6 +1,11 @@
-part of '../nations.dart';
+import 'dart:developer';
 
-// TODO :: add more
+import 'package:flutter/services.dart';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:nations/nations.dart';
+
 const _rtlLocales = <String>['ar'];
 
 bool isRtlLocale(Locale locale) {
@@ -22,4 +27,30 @@ Future<Map<String, dynamic>> loadPackageFileContent(Locale locale) async {
   );
   final jsonMap = json.decode(jString);
   return jsonMap;
+}
+
+Map<String, dynamic> get _values => Nations.translations.values;
+Map<String, dynamic> get _nationValues => Nations.translations.nationValues;
+
+String tr(String key) {
+  final fromValues = _transFromMap(key, _values);
+  if (fromValues != null) return fromValues;
+  log(
+    'key $key does not exist in the project '
+    'lang files with the locale ${Nations.locale} ,, '
+    'trying to get it from the nations ....',
+  );
+  final fromNation = _transFromMap(key, _nationValues);
+  if (fromNation != null) return fromNation;
+  log(
+    'key $key does not exist in nation files also the project '
+    'lang files with the locale ${Nations.locale} ,, '
+    'trying to get it from the nations ....',
+  );
+  log('cant get from the nation will return null then !');
+  return 'null';
+}
+
+String? _transFromMap(String key, Map<String, dynamic> values) {
+  return values[key];
 }

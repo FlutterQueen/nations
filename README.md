@@ -1,57 +1,50 @@
-# Package rules
+# Nations
 
-1 - do not load all the files only load the selected language
-2 - if no preferred language set current locale to device locale if the device locale is not supported use the `fallbackLocale`
-3 - after that every time the app opens use the save current locale
-4 - files structure
+## **Let the people speak 🌍**
 
-```yaml
-assets:
-  - lang:
-      - ar.json
-      - en.json
-```
+# important before start using this package ! ⚠
 
-5- support_country
+## Why another localization package ?
 
-with the same structure no change required
+Other packages is doing very will including reach feature to make life easier ,,
 
-```yaml
-assets:
-  - lang:
-      - ar.json
-      - ar_EG.json
-      - ar_SA.json
-      - en.json
-```
+But i want to take it to the next level 🔝 ! and you will get what i mean by the next level in a minuets
 
-6 - args => {
-"some_key":"hi name ,, welcome back"
-}
-'some_key'.trArgs(Map : 'name','ahmed')
+## Why need localization package at all ?
 
-7 - namedArgs
+to make the developer life easier instead on focusing on repeated features like Localizing in every single app , why not use package to provide such features and start to focus on the business logic it self to save time and effort
 
-8 - gender
+Also using a package in this matter insure the localization process is always working without spending time maintains this type of feature
 
-9 - plurals
+so you you get the point here package for localization = more time + less work = better life 😀
 
-10 - linked translations
+# Why not contribute to other packages 🤷‍♀️ ?
 
-11 - runner with lighthouse
+like i said many other packages out there are good enough for almost every use cases !
 
-    - [ ] generator
-    - shrinker
-    - analyzer
-    - tests
+- **`But`** the problem exist in the idea behind this package
+  the are designed and maintained for you the developer to store you localization files in your app
+  use the package and translate from you assets or load from any data source
 
-12 - logs => with flavors
+- **`How`** is this package different from them ?
+  this package same as them gives you the ability toy load dart source and use it to translate your data **`AND`** gives you a pre-made translation files in other languages included out of the box !
+  this approach would be accepted for the package owners or some developers and that's ok .
+- **`Why`** do such thing ?
+  - collection the localization assets in a single package and use it on the others will clean there code and make them smaller eventually the translation assets in one place with all the required features
+  - you might think this will make it not big difference , in the beginning yes , but in the `Future`i should be able to deliver packages localized out of the box - also customizable -
+    like `queen_validators` just use the rules and it will handle the rest which means better life again 😀
 
-```json
-{
-  "wellcome": "اهلا بك يا",
-  "last_login": "اخر تسجيل دخول منذ",
-  //   "wellcome_message": "اهلا بك يا :name اخر تسجيل دخول منذ"
-  "wellcome_message": "@wellcome :name @wellcome_message"
-}
-```
+# Conclusion
+
+if you like to build every thing form scratch or with the most minimal packages this package problem wont be good for you there is other focuses on the result you need you should use them
+
+but if you want the features out of the box customizable to save time and effort then this package is for you
+
+# Get Started
+
+this package still in developing process and testing so not stable yet !
+feel free to open issue if you have any questions or concerns
+
+# https://github.com/maxzod/nations
+
+# in the example you can run it on web browser in the used is translation one form the project and the other of the package it self

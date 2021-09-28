@@ -1,8 +1,10 @@
-part of '../nations.dart';
+import 'package:flutter/material.dart';
+
+import '../nations.dart';
 
 /// * Root widget to rebuild your app when locale changes
 class NationsRoot extends StatefulWidget {
-  /// * you app widget
+  /// * ###  your Root app widget
   final Widget child;
 
   const NationsRoot({
@@ -25,7 +27,7 @@ class _NationsRootState extends State<NationsRoot> {
 
   @override
   void dispose() {
-    /// dispose the listner
+    /// Dispose the listner
     Nations.dispose();
     // TODO :: log
     super.dispose();
@@ -34,7 +36,7 @@ class _NationsRootState extends State<NationsRoot> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      // * to makes the rebuilded when locale changes
+      // * to makes the app rebuilded when locale changes
       key: UniqueKey(),
 
       /// to set the direction automaticly
