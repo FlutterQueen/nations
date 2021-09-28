@@ -7,9 +7,9 @@ abstract class NationsLoader {
   const NationsLoader();
 
   ///* loads the data from you files
-  FutureOr<Map<String, dynamic>> load(Locale locale);
+  Future<Map<String, dynamic>> load(Locale locale);
 
-  FutureOr<NTranslations> loadWithNationValues(Locale locale) async {
+  Future<NTranslations> loadWithNationValues(Locale locale) async {
     // TODO :: load any failure translation ar_EG , ar
     return NTranslations(
       values: await load(locale),
@@ -22,7 +22,7 @@ abstract class NationsLoader {
 class NationsJsonLoader extends NationsLoader {
   const NationsJsonLoader();
   @override
-  FutureOr<Map<String, dynamic>> load(locale) => loadJsonFileContent(locale);
+  Future<Map<String, dynamic>> load(locale) => loadJsonFileContent(locale);
 
   @override
   String toString() => 'NationsJsonLoader';

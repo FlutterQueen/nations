@@ -1,6 +1,4 @@
-import 'dart:developer';
-
-import 'package:nations/nations.dart';
+part of '../nations.dart';
 
 /// holds translations and extracting the values
 class NTranslations {

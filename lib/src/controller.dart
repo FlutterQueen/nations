@@ -56,8 +56,6 @@ class _NationsController extends ChangeNotifier {
   NTranslations get translations => _translations;
   Future<NTranslations> load(Locale locale) async {
     _translations = await _loader.loadWithNationValues(locale);
-    print(_translations.nationValues);
-    print(_translations.values);
     return _translations;
   }
 
