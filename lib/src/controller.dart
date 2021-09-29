@@ -11,9 +11,9 @@ import 'delegate.dart';
 import 'loaders.dart';
 
 // * # Global object to handle the localizations actions
-final Nations = _NationsController();
+final Nations = NationsBase();
 
-class _NationsController extends ChangeNotifier {
+class NationsBase extends ChangeNotifier {
   /// * falls back to arabic by default
   Locale? _fallbackLocale;
   //  Locale? _initialLocale;
@@ -22,7 +22,7 @@ class _NationsController extends ChangeNotifier {
   void config({
     Locale fallbackLocale = const Locale('ar'),
     // Locale? initialLocale = const Locale('ar'),
-    NationsLoader loader = const NationsJsonLoader(),
+    NationsLoader? loader,
     List<Locale> supportedLocales = const [
       // * localization in arab
       Locale('ar'),
@@ -32,8 +32,10 @@ class _NationsController extends ChangeNotifier {
     log('[👑][Nations] fallbacklocale updated from $_fallbackLocale to $locale ✔');
     _fallbackLocale = fallbackLocale;
 
-    // log('[👑][Nations]loader updated from $_loader ??  to $loader ✔');
-    _loader = loader;
+    if (loader != null) {
+      log('[👑][Nations]loader updated from $_loader ??  to $loader ✔ ');
+      _loader = loader;
+    }
 
     //* config the supported locales
     addNewSupportedLocales(supportedLocales);
@@ -60,18 +62,20 @@ class _NationsController extends ChangeNotifier {
     _supportedLocales.addAll(locales);
   }
 
-  late NationsLoader _loader;
-  var _translations = NTranslations(values: {}, nationValues: {});
-  NTranslations get translations => _translations;
-  Future<NTranslations> load(Locale locale) async {
-    _translations = await _loader.loadWithNationValues(locale);
-    return _translations;
-  }
+  NationsLoader _loader = const NationsJsonLoader();
 
-  final delegates = const <LocalizationsDelegate>[
-    NationsLocalizationsDelegate(),
+  final delegates = <LocalizationsDelegate>[
+    const NationsLocalizationsDelegate(),
     GlobalCupertinoLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
   ];
+
+  late NTranslations _translations;
+  NTranslations get translations => _translations;
+
+  Future<NTranslations> load(Locale locale) async {
+    _translations = await _loader.loadWithNationValues(locale);
+    return _translations;
+  }
 }

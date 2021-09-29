@@ -11,10 +11,11 @@ class NationsLocalizationsDelegate
     return Nations.supportedLocales.contains(locale);
   }
 
+  /// called by flutter when locale is change
   @override
   Future<NTranslations> load(Locale locale) async {
-    final translations = Nations.load(locale);
-    return translations;
+    await Nations.load(locale);
+    return Nations.translations;
   }
 
   @override

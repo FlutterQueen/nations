@@ -1,5 +1,12 @@
 {
   "cSpell.enableFiletypes": ["markdown"],
   "cSpell.language": "en,en-US",
-  "cSpell.words": ["fallbacklocale", "التاريخ", "الدخول", "الوقت", "تسجيل"]
+  "cSpell.words": [
+    "basmala",
+    "fallbacklocale",
+    "التاريخ",
+    "الدخول",
+    "الوقت",
+    "تسجيل"
+  ]
 }

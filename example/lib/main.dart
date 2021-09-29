@@ -16,38 +16,61 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      // TODO :: (3) pass these parameters
+      locale: Nations.locale,
+      localizationsDelegates: Nations.delegates,
+      supportedLocales: Nations.supportedLocales,
+      localeResolutionCallback: (locale, supportedLocales) {
+        // Check if the current device locale is supported
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale?.languageCode &&
+              supportedLocale.countryCode == locale?.countryCode) {
+            return supportedLocale;
+          }
+        }
+        // If the locale of the device is not supported, use the first one
+        // from the list (English, in this case).
+        return supportedLocales.first;
+      },
+
+      /// end ot Nations params
+      home: MySc(),
+    );
+  }
+}
+
+class MySc extends StatelessWidget {
+  const MySc({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     void _updateLocale() {
-      // TODO ::(5) update the locale
+      // // TODO ::(5) update the locale
       Nations.locale = Locale(
         Nations.locale.languageCode == 'ar' ? 'en' : 'ar',
       );
     }
 
-    return MaterialApp(
-      title: 'Flutter Demo',
-      // TODO :: (3) pass these paramters
-      locale: Nations.locale,
-      localizationsDelegates: Nations.delegates,
-      supportedLocales: Nations.supportedLocales,
-
-      /// end ot Nations params
-      home: Scaffold(
-        appBar: AppBar(title: const Text('امم  Nations')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(Nations.locale.toString()),
-              // TODO ::(4) translate
-              Text('basmala'.tr),
-              Text('package_name'.tr),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(title: const Text('امم  Nations')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(Nations.locale.toString()),
+            // TODO ::(4) translate
+            Text(
+              'basmala'.tr,
+            ),
+            Text('package_name'.tr),
+          ],
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _updateLocale,
-          child: const Icon(Icons.translate),
-        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _updateLocale,
+        child: const Icon(Icons.translate),
       ),
     );
   }

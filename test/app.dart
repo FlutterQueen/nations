@@ -10,25 +10,37 @@ class NationsTestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NationsRoot(
-      child: MaterialApp(
-        locale: Nations.locale,
-        localizationsDelegates: Nations.delegates,
-        supportedLocales: Nations.supportedLocales,
-        home: const _FullScaffold(),
-      ),
+    // return MaterialApp(home: Text('F'));
+
+    return const NationsRoot(child: MyApp());
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      locale: Nations.locale,
+      localizationsDelegates: Nations.delegates,
+      supportedLocales: Nations.supportedLocales,
+      // builder: ,
+      home: const _MyWidget(),
     );
   }
 }
 
-class _FullScaffold extends StatelessWidget {
-  const _FullScaffold({Key? key}) : super(key: key);
+class _MyWidget extends StatelessWidget {
+  const _MyWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: <Widget>[
+          const Text('Foo'),
+          Text(Nations.isRTL ? 'RTL' : 'LTR'),
           Text('package_name'.tr),
           Text('date'.tr),
           Text('time'.tr),

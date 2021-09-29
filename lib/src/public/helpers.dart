@@ -6,7 +6,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
-const _rtlLocales = <String>['ar'];
+const _rtlLocales = <String>[
+  'ar',
+];
 
 bool isRtlLocale(Locale locale) {
   return _rtlLocales.contains(locale.languageCode);
@@ -34,6 +36,7 @@ Map<String, dynamic> get _nationValues => Nations.translations.nationValues;
 
 String tr(String key) {
   final fromValues = _transFromMap(key, _values);
+
   if (fromValues != null) return fromValues;
   log(
     'key $key does not exist in the project '
@@ -43,7 +46,7 @@ String tr(String key) {
   final fromNation = _transFromMap(key, _nationValues);
   if (fromNation != null) return fromNation;
   log(
-    'key $key does not exist in nation files also the project '
+    'key $key does not exist in nation files neither the project '
     'lang files with the locale ${Nations.locale} ,, '
     'trying to get it from the nations ....',
   );
