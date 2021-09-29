@@ -29,7 +29,7 @@ class _NationsRootState extends State<NationsRoot> {
 
   @override
   void dispose() {
-    /// Dispose the listner
+    /// Dispose the listener
     Nations.dispose();
     log('Nations dispose');
     super.dispose();
@@ -38,10 +38,10 @@ class _NationsRootState extends State<NationsRoot> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      // * to makes the app rebuilded when locale changes
+      // * to makes the app rebuilds when locale changes
       key: UniqueKey(),
 
-      /// to set the direction automaticly
+      /// to set the direction automatically
       textDirection: textDirectionByLocale(Nations.locale),
 
       child: widget.child,

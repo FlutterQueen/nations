@@ -1,4 +1,4 @@
-/// Let the pepole use there languages 💪
+/// Let the people use there languages 💪
 library nations;
 
 //* ? exports

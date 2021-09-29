@@ -10,18 +10,18 @@ import '../nations.dart';
 import 'delegate.dart';
 import 'loaders.dart';
 
-// * # Global object to handle the loclizations actions
+// * # Global object to handle the localizations actions
 final Nations = _NationsController();
 
 class _NationsController extends ChangeNotifier {
-  /// * falls back to arabic by defult
+  /// * falls back to arabic by default
   Locale? _fallbackLocale;
-  //  Locale? _initalLocale;
+  //  Locale? _initialLocale;
   Locale? _currentLocale;
 
   void config({
     Locale fallbackLocale = const Locale('ar'),
-    // Locale? initalLocale = const Locale('ar'),
+    // Locale? initialLocale = const Locale('ar'),
     NationsLoader loader = const NationsJsonLoader(),
     List<Locale> supportedLocales = const [
       // * localization in arab
@@ -32,7 +32,7 @@ class _NationsController extends ChangeNotifier {
     log('[👑][Nations] fallbacklocale updated from $_fallbackLocale to $locale ✔');
     _fallbackLocale = fallbackLocale;
 
-    // log('[👑][Nations]lodaer updated from $_loader ??  to $loader ✔');
+    // log('[👑][Nations]loader updated from $_loader ??  to $loader ✔');
     _loader = loader;
 
     //* config the supported locales

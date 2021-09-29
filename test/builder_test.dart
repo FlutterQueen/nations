@@ -16,9 +16,9 @@ void main() {
     );
   });
   testWidgets(
-    'it gets rebuilded after the locale changes',
+    'it rebuilds after the locale changes',
     (WidgetTester tester) async {
-      /// * pumb the app
+      /// * pump the app
       await tester.pumpWidget(const NationsTestApp());
 
       expect(Nations.locale, equals(const Locale('ar')));

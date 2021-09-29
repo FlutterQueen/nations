@@ -1,39 +1,23 @@
 ## **Nations 🌍**
 
-# Before using ! ⚠
-
-# Why another localization package ?
-
-Other packages is doing very will including reach feature to make life easier ,, but for single projects only , doing the same localization system in many packages at the same time is a different problem i will try to solve !
-
-# why make it like this ?
-
-- this will make packages takes control of the localization which will spare the developer of this responsibility
-- like when using a validation package for example the failure message should be automatically localized out of the box !
-- would this package prevent the developer to use custom translated messages ? No ,, it will only provide a default values in many languages out of the box !
-- would this increase the app size ? No , this will provide the necessary values only
-
-# Conclusion
-
-## There are 3 ways
-
-1 - if you just want to localize your app and handle every thing by your self you should go with the the flutter way from the documentation
-
-2 - need more features out of the box and you will be responsible for localizing your features and services ? use `easy_localization` or `getx` or any other package solving the same problem
-
-3 - need more localization problems fixed out of the box ? this package will do it
-
-# more
-
-# **`So if you you are good with the first or the second way stop reading you won't need this package`**
-
 # Features
 
-## every feature provided by any other standard localization package
+- translation without context 🚀
+- load translations from json , yaml , dart , even api or any data source 😎
+- pluralization 💪
+- gender 🚹🚺
+- auto RTL - LTR based on the current locale
+- nested translation 'validation.too_short' 🕸
+- reloading the app automatically 🔄
+- detecting a duplicate or a missing message 🔍🆕
+- code generation `TR.signIn` and you will get the translated message directly 🆕
+- easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
+- easy to override the messages 🔱
+- support all platforms ✔
+- support null-safety ✔
+- automatically save the last preferred language 🚀 - no shared prefs 🔥🔥 -
 
-## and more
-
-### nations assets
+# nations assets
 
 this package contains translated message to use out of the box , no need to add them any more
 example
@@ -47,16 +31,16 @@ also you did't add `login` message in your assets and translate it to the your s
 it will use the nation assets and gets you the correct translated message
 if the `MaterialApp` `locale` is arabic it will be `تسجيل الدخول` and if the locale is `English` it will be `Sign In` any so on out of the box
 
-### does this means i can't override the `login` keyword ?
+# does this means i can't override the `login` keyword ?
 
 no the package will use the default values only if you don't have one in you assets so you can override it any time
 
-### does this package have a big data sets ? - Will This Make The App very big ?
+# does this package have a big data sets ? - Will This Make The App very big ?
 
 no this package will contains the necessary and the common keywords sings use in Authentication , Validation , searching , Filtering , introductions , ...etc and will be added manually to choses carefully
 which means you gonna support more languages out of the box in the entire app
 
-### Still needs more ?
+# Still needs more ?
 
 - testing utilities
 - logs
@@ -64,57 +48,15 @@ which means you gonna support more languages out of the box in the entire app
 
 # Example with `queen_validators`
 
-this way the error message will be only in english
+![example](https://github.com/maxzod/nations/blob/master/images/example_with_queen_validators.png)
 
-```dart
-@override
-Widget build(BuildContext context) {
-return TextFormField(
-    validator: qValidator([
-      IsRequired(),
-      IsEmail(),
-      MinLength(8),
-      MaxLength(30),
-    ]),
-  );
-  }
-```
+# why make it like this ?
 
-if you want to override it you have to pass the message manually to the rules
+- this will make packages takes control of the localization which will spare the developer of this responsibility
+- like when using a validation package for example the failure message should be automatically localized out of the box !
+- would this package prevent the developer to use custom translated messages ? No ,, it will only provide a default values in many languages out of the box !
+- would this increase the app size ? No , this will provide the necessary values only
 
-example :
+# Usage
 
-```dart
-@override
-Widget build(BuildContext context) {
-return TextFormField(
-    validator: qValidator([
-      IsRequired('required'.tr),
-      IsEmail('is_not_valid_email_address'.tr),
-      MinLength(8,'min_length_is_8'.tr),
-      MaxLength(30,'max_length_is_30'.tr),
-    ]),
-  );
-  }
-```
-
-and so on for each form field
-
-so after we use nations it will look like this
-
-```dart
-@override
-Widget build(BuildContext context) {
-return TextFormField(
-    validator: qValidator([
-      IsRequired(),
-      IsEmail(),
-      MinLength(8),
-      MaxLength(30),
-    ]),
-  );
-  }
-```
-
-and support many languages out of the box even you don't have to add assets to your lang file 🔥
-still you can customize the message by overriding it in your lang folder if you need 🤷‍♀️
+we are still in beta stage star and wait for further releases
