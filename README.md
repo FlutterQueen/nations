@@ -61,3 +61,60 @@ which means you gonna support more languages out of the box in the entire app
 - testing utilities
 - logs
 - public api for package owners to localize there packages out of the box with nation package
+
+# Example with `queen_validators`
+
+this way the error message will be only in english
+
+```dart
+@override
+Widget build(BuildContext context) {
+return TextFormField(
+    validator: qValidator([
+      IsRequired(),
+      IsEmail(),
+      MinLength(8),
+      MaxLength(30),
+    ]),
+  );
+  }
+```
+
+if you want to override it you have to pass the message manually to the rules
+
+example :
+
+```dart
+@override
+Widget build(BuildContext context) {
+return TextFormField(
+    validator: qValidator([
+      IsRequired('required'.tr),
+      IsEmail('is_not_valid_email_address'.tr),
+      MinLength(8,'min_length_is_8'.tr),
+      MaxLength(30,'max_length_is_30'.tr),
+    ]),
+  );
+  }
+```
+
+and so on for each form field
+
+so after we use nations it will look like this
+
+```dart
+@override
+Widget build(BuildContext context) {
+return TextFormField(
+    validator: qValidator([
+      IsRequired(),
+      IsEmail(),
+      MinLength(8),
+      MaxLength(30),
+    ]),
+  );
+  }
+```
+
+and support many languages out of the box even you don't have to add assets to your lang file 🔥
+still you can customize the message by overriding it in your lang folder if you need 🤷‍♀️
