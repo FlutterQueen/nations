@@ -48,7 +48,7 @@ which means you gonna support more languages out of the box in the entire app
 
 # Example with `queen_validators`
 
-![example](https://github.com/maxzod/nations/blob/master/images/example_with_queen_validators.png)
+![example](https://github.com/maxzod/nations/blob/testing/images/example_with_queen_validators.png)
 
 # why make it like this ?
 
