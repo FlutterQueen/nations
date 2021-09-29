@@ -1,50 +1,63 @@
-# Nations
+## **Nations 🌍**
 
-## **Let the people speak 🌍**
+# Before using ! ⚠
 
-# important before start using this package ! ⚠
+# Why another localization package ?
 
-## Why another localization package ?
+Other packages is doing very will including reach feature to make life easier ,, but for single projects only , doing the same localization system in many packages at the same time is a different problem i will try to solve !
 
-Other packages is doing very will including reach feature to make life easier ,,
+# why make it like this ?
 
-But i want to take it to the next level 🔝 ! and you will get what i mean by the next level in a minuets
-
-## Why need localization package at all ?
-
-to make the developer life easier instead on focusing on repeated features like Localizing in every single app , why not use package to provide such features and start to focus on the business logic it self to save time and effort
-
-Also using a package in this matter insure the localization process is always working without spending time maintains this type of feature
-
-so you you get the point here package for localization = more time + less work = better life 😀
-
-# Why not contribute to other packages 🤷‍♀️ ?
-
-like i said many other packages out there are good enough for almost every use cases !
-
-- **`But`** the problem exist in the idea behind this package
-  the are designed and maintained for you the developer to store you localization files in your app
-  use the package and translate from you assets or load from any data source
-
-- **`How`** is this package different from them ?
-  this package same as them gives you the ability toy load dart source and use it to translate your data **`AND`** gives you a pre-made translation files in other languages included out of the box !
-  this approach would be accepted for the package owners or some developers and that's ok .
-- **`Why`** do such thing ?
-  - collection the localization assets in a single package and use it on the others will clean there code and make them smaller eventually the translation assets in one place with all the required features
-  - you might think this will make it not big difference , in the beginning yes , but in the `Future`i should be able to deliver packages localized out of the box - also customizable -
-    like `queen_validators` just use the rules and it will handle the rest which means better life again 😀
+- this will make packages takes control of the localization which will spare the developer of this responsibility
+- like when using a validation package for example the failure message should be automatically localized out of the box !
+- would this package prevent the developer to use custom translated messages ? No ,, it will only provide a default values in many languages out of the box !
+- would this increase the app size ? No , this will provide the necessary values only
 
 # Conclusion
 
-if you like to build every thing form scratch or with the most minimal packages this package problem wont be good for you there is other focuses on the result you need you should use them
+## There are 3 ways
 
-but if you want the features out of the box customizable to save time and effort then this package is for you
+1 - if you just want to localize your app and handle every thing by your self you should go with the the flutter way from the documentation
 
-# Get Started
+2 - need more features out of the box and you will be responsible for localizing your features and services ? use `easy_localization` or `getx` or any other package solving the same problem
 
-this package still in developing process and testing so not stable yet !
-feel free to open issue if you have any questions or concerns
+3 - need more localization problems fixed out of the box ? this package will do it
 
-# https://github.com/maxzod/nations
+# more
 
-# in the example you can run it on web browser in the used is translation one form the project and the other of the package it self
+# **`So if you you are good with the first or the second way stop reading you won't need this package`**
+
+# Features
+
+## every feature provided by any other standard localization package
+
+## and more
+
+### nations assets
+
+this package contains translated message to use out of the box , no need to add them any more
+example
+
+```dart
+final message = 'login'.tr
+print(message);
+```
+
+also you did't add `login` message in your assets and translate it to the your supported languages
+it will use the nation assets and gets you the correct translated message
+if the `MaterialApp` `locale` is arabic it will be `تسجيل الدخول` and if the locale is `English` it will be `Sign In` any so on out of the box
+
+### does this means i can't override the `login` keyword ?
+
+no the package will use the default values only if you don't have one in you assets so you can override it any time
+
+### does this package have a big data sets ? - Will This Make The App very big ?
+
+no this package will contains the necessary and the common keywords sings use in Authentication , Validation , searching , Filtering , introductions , ...etc and will be added manually to choses carefully
+which means you gonna support more languages out of the box in the entire app
+
+### Still needs more ?
+
+- testing utilities
+- logs
+- public api for package owners to localize there packages out of the box with nation package
