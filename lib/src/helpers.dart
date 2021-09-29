@@ -48,6 +48,7 @@ String tr(String key) {
     'trying to get it from the nations ....',
   );
   log('cant get from the nation will return null then !');
+
   return 'null';
 }
 

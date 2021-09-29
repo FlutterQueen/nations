@@ -29,8 +29,8 @@ class _NationsController extends ChangeNotifier {
       Locale('en'),
     ],
   }) {
-    log('[👑][Nations]fallbacklocale updated from $fallbackLocale to $locale ✔');
-    _fallbackLocale = locale;
+    log('[👑][Nations] fallbacklocale updated from $_fallbackLocale to $locale ✔');
+    _fallbackLocale = fallbackLocale;
 
     // log('[👑][Nations]lodaer updated from $_loader ??  to $loader ✔');
     _loader = loader;

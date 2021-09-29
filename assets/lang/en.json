@@ -1,3 +1,13 @@
 {
-   "package_name": "nations"
+   "package_name": "nations",
+   "date": "date",
+   "time": "time",
+   "enter": "enter",
+   "edit": "edit",
+   "show": "show",
+   "delete": "delete",
+   "error": "error",
+   "internt": "internet",
+   "no": "no",
+   "yes": "yes"
 }

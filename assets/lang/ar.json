@@ -1,3 +1,13 @@
 {
-   "package_name": "أمم"
+   "package_name": "أمم",
+   "date": "التاريخ",
+   "time": "الوقت",
+   "enter": "دخول",
+   "edit": "تعديل",
+   "show": "عرض",
+   "delete": "حذف",
+   "error": "خطا",
+   "internt": "انترنت",
+   "no": "لا",
+   "yes": "نعم"
 }
