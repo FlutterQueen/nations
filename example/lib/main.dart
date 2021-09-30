@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       },
 
       /// end ot Nations params
-      home: MySc(),
+      home: const MySc(),
     );
   }
 }

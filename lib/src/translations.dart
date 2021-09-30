@@ -1,4 +1,4 @@
-/// * ### Holds loaded translations
+/// * ### DTO to Holds loaded translations
 class NTranslations {
   final Map<String, dynamic> values;
   final Map<String, dynamic> nationValues;

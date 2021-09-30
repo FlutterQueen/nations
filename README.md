@@ -2,20 +2,24 @@
 
 # Features
 
-- translation without context 🚀
-- load translations from json , yaml , dart , even api or any data source 😎
-- pluralization 💪
-- gender 🚹🚺
-- auto RTL - LTR based on the current locale
-- nested translation 'validation.too_short' 🕸
-- reloading the app automatically 🔄
-- detecting a duplicate or a missing message 🔍🆕
-- code generation `TR.signIn` and you will get the translated message directly 🆕
-- easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
-- easy to override the messages 🔱
-- support all platforms ✔
-- support null-safety ✔
-- automatically save the last preferred language 🚀 - no shared prefs 🔥🔥 -
+- [x] translation without context 🚀
+- [ ]load translations from
+  - [x] json
+  - [ ] yaml
+  - [ ] dart
+  - [x] even api or any data source 😎
+- [ ] pluralization 💪
+- [ ] gender 🚹🚺
+- [x] auto RTL - LTR based on the current locale
+- [ ] nested translation 'validation.too_short' 🕸
+- [x] reloading the app automatically 🔄
+- [x] detecting a duplicate or a missing message 🔍🆕
+- [ ] code generation `TR.signIn` and you will get the translated message directly 🆕
+- [ ] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
+- [x] easy to override the messages 🔱
+- [x] support all platforms ✔
+- [x] support null-safety ✔
+- [ ] automatically save the last preferred language 🚀 - no shared prefs 🔥🔥 -
 
 # nations assets
 
@@ -60,3 +64,35 @@ which means you gonna support more languages out of the box in the entire app
 # Usage
 
 we are still in beta stage star and wait for further releases
+
+# Decorations
+
+## attributes
+
+which allows to customize the translated message
+
+Example in validation :
+Arabic => "الحد الاقصي للحروف 255"
+English => "max length is 255"
+
+255 is the max length and might changes some times is 255 or 55 or just 2 depend on the form
+how to achieve that in nations ?
+
+```json
+"max_length_is":"max length is :count"
+```
+
+and in your code
+
+```dart
+final msg = 'max_length_is'.args({"count":255});
+```
+
+for now the generations is not done yet after we finish them no
+more String keys and dynamic parameters every thing will be hard type and stricter to avoid future bugs
+
+# Helpers
+
+- [x] `capitalizeFirstChar(String)` to make the first word capital
+- [x] `capitalizeEachWord` to make every word capital in one line more entire paragraph
+- [ ] `numberToLocale(String,[Locale?])` localize numbers based on locale

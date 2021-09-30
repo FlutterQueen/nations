@@ -20,10 +20,9 @@ void main() {
     'find widget',
     (WidgetTester tester) async {
       await tester.pumpWidget(const NationsTestApp());
-      await tester.pump();
 
       /// *  Create the Finders.
-      final nullTextFinder = find.text('foo');
+      final nullTextFinder = find.widgetWithText(Text, 'Foo');
       expect(nullTextFinder, equals(findsOneWidget));
     },
   );
@@ -34,7 +33,6 @@ void main() {
       await tester.pumpWidget(const NationsTestApp());
 
       expect(Nations.locale, equals(const Locale('ar')));
-      print(Nations.translations.values);
       log(Nations.translations.toString());
 
       /// *  Create the Finders.

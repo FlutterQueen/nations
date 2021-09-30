@@ -2,8 +2,7 @@
 library nations;
 
 //* ? exports
-export 'src/public/helpers.dart';
-export 'src/translations.dart';
+export 'src/helpers.dart';
 export 'src/controller.dart';
 export 'src/builder.dart';
-export 'src/public/extensions.dart';
+export 'src/extensions.dart';

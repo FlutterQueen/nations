@@ -56,5 +56,53 @@ String tr(String key) {
 }
 
 String? _transFromMap(String key, Map<String, dynamic> values) {
-  return values[key];
+  if (key.contains('.')) {
+    // TODO :: inneer data
+    final value = values[key];
+  } else {
+    return values[key];
+  }
+}
+
+// translate and  replace argument with the givin args
+String args(String key, Map<String, dynamic> args) {
+  String str = tr(key);
+  for (final argKey in args.keys) {
+    final decorateArgKey = ':' + argKey;
+    if (str.contains(decorateArgKey)) {
+      str = str.replaceFirst(decorateArgKey, args[argKey]);
+    } else {
+      log('''
+      [nations] you are trying to replace arg $argKey but this arg does not exist
+      { "$key" : ${tr(key)}
+      ''');
+    }
+  }
+
+  return str;
+  // return removeDecoration(str);
+}
+
+String removeDecoration(String value) {
+  // TODO :: regular to replace any nation decoration
+  return value.replaceAll('from', 'replace');
+}
+
+String capitalizeFirstChar(String str) {
+  return '${str[0].toUpperCase()}${str.substring(1)}';
+  // return str.replaceRange(0, 1, str[0].toUpperCase());
+}
+
+String capitalizeEachWord(String str) {
+  return str
+      .split(" ")
+      .map((s) => s.isEmpty ? '' : capitalizeFirstChar(s))
+      .join(" ");
+}
+
+/// localize numbers base on locale
+/// if none provided it will use the app locale `Nations.locale`
+// TODO
+String numberToLocale(String str, [Locale? locale]) {
+  throw UnimplementedError();
 }

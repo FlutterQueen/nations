@@ -5,8 +5,8 @@ import 'dart:ui' show window;
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:nations/src/translations.dart';
 
-import '../nations.dart';
 import 'delegate.dart';
 import 'loaders.dart';
 

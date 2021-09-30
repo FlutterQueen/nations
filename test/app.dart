@@ -10,9 +10,11 @@ class NationsTestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(home: Text('F'));
+    return const MyApp();
 
-    return const NationsRoot(child: MyApp());
+    return const NationsRoot(
+      child: MyApp(),
+    );
   }
 }
 
