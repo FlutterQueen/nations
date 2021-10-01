@@ -3,23 +3,35 @@
 # Features
 
 - [x] translation without context 🚀
-- [ ]load translations from
+- Translation Loaders
   - [x] json
   - [ ] yaml
   - [ ] dart
-  - [x] even api or any data source 😎
-- [ ] pluralization 💪
-- [ ] gender 🚹🚺
-- [x] auto RTL - LTR based on the current locale
-- [ ] nested translation 'validation.too_short' 🕸
-- [x] reloading the app automatically 🔄
-- [x] detecting a duplicate or a missing message 🔍🆕
-- [ ] code generation `TR.signIn` and you will get the translated message directly 🆕
-- [ ] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
-- [x] easy to override the messages 🔱
-- [x] support all platforms ✔
-- [x] support null-safety ✔
+  - [x] even Api or any data source 😎
+- translation
+  - [ ] Pluralization 💪
+  - [ ] Gender 🚹🚺
+  - [ ] Arguments
+  - [ ] Nested translation 'validation.too_short' 🕸
+- App
+  - [x] auto RTL - LTR based on the current locale
+  - [x] reloading the app automatically 🔄
+- productivity - avoiding bugs
 - [ ] automatically save the last preferred language 🚀 - no shared prefs 🔥🔥 -
+- [ ] detecting a duplicate or a missing message 🔍🆕
+- [ ] code generation `TR.key` and you will get the translated message directly 🆕
+- [ ] VsCode extension
+- [ ] CLI - Lighthouse 💡
+- [ ] shrinking assets by removing useless spaces -> `lh tr:shrink`
+- public pai
+- [ ] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
+- customization
+  - [x] easy to override the messages 🔱
+  - [x] capitalize first character in the first word
+  - [x] capitalize first character in each word
+- other
+  - [x] support All Platforms ✔
+  - [x] support Null-Safety ✔
 
 # nations assets
 
