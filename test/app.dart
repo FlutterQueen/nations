@@ -10,8 +10,6 @@ class NationsTestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyApp();
-
     return const NationsRoot(
       child: MyApp(),
     );
@@ -23,6 +21,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // return const Text('Foo');
+
     return MaterialApp(
       locale: Nations.locale,
       localizationsDelegates: Nations.delegates,
@@ -41,8 +41,7 @@ class _MyWidget extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          const Text('Foo'),
-          Text(Nations.isRTL ? 'RTL' : 'LTR'),
+          Text(Directionality.of(context) == TextDirection.rtl ? 'RTL' : 'LTR'),
           Text('package_name'.tr),
           Text('date'.tr),
           Text('time'.tr),

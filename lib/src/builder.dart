@@ -22,11 +22,11 @@ class _NationsRootState extends State<NationsRoot> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    Nations.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   Nations.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) => Builder(
