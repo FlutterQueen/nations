@@ -10,35 +10,23 @@ import 'package:nations/src/translations.dart';
 import 'delegate.dart';
 import 'loaders.dart';
 
+part 'config.dart';
+
 // * # Global object to handle the localizations actions
 final Nations = NationsBase();
 
 class NationsBase extends ChangeNotifier {
   /// * falls back to arabic by default
-  Locale? _fallbackLocale;
+  NationsConfig config = const _NationsBaseConfig();
+
   //  Locale? _initialLocale;
   Locale? _currentLocale;
 
-  void config({
-    Locale fallbackLocale = const Locale('ar'),
-    // Locale? initialLocale = const Locale('ar'),
-    NationsLoader? loader,
-    List<Locale> supportedLocales = const [
-      // * localization in arab
-      Locale('ar'),
-      Locale('en'),
-    ],
-  }) {
-    log('[👑][Nations] fallbacklocale updated from $_fallbackLocale to $locale ✔');
-    _fallbackLocale = fallbackLocale;
-
-    if (loader != null) {
-      log('[👑][Nations]loader updated from $_loader ??  to $loader ✔ ');
-      _loader = loader;
-    }
-
-    //* config the supported locales
-    addNewSupportedLocales(supportedLocales);
+  void setConfig(
+    NationsConfig config,
+  ) {
+    log('config updated');
+    this.config = config;
   }
 
   /// * device locale
@@ -52,17 +40,13 @@ class NationsBase extends ChangeNotifier {
   }
 
   /// * get the current locale
-  Locale get locale => _currentLocale ?? _fallbackLocale ?? window.locale;
-
-  final _supportedLocales = <Locale>[];
-  List<Locale> get supportedLocales => _supportedLocales;
-
-  void addNewSupportedLocales(List<Locale> locales) {
-    log('new locales added $locales');
-    _supportedLocales.addAll(locales);
+  Locale get locale {
+    if (_currentLocale != null) return _currentLocale!;
+    if (config.supportedLocales.contains(deviceLocale)) return deviceLocale;
+    return config.fallbackLocale;
   }
 
-  NationsLoader _loader = const NationsJsonLoader();
+  List<Locale> get supportedLocales => config.supportedLocales;
 
   final delegates = <LocalizationsDelegate>[
     const NationsLocalizationsDelegate(),
@@ -75,7 +59,13 @@ class NationsBase extends ChangeNotifier {
   NTranslations get translations => _translations;
 
   Future<NTranslations> load(Locale locale) async {
-    _translations = await _loader.loadWithNationValues(locale);
+    _translations = await config.loader.loadWithNationValues(locale);
     return _translations;
+  }
+
+  Future<void> reset() async {
+    _currentLocale = null;
+    await load(locale);
+    notifyListeners();
   }
 }

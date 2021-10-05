@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
 void main() {
-  // TODO :: (1)
-  // call the config method
-  Nations.config();
   // TODO :: (2)
   // wrap your `MaterialApp` with NationsRoot
   runApp(const NationsRoot(child: MyApp()));

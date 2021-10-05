@@ -57,8 +57,8 @@ String tr(String key) {
 
 String? _transFromMap(String key, Map<String, dynamic> values) {
   if (key.contains('.')) {
-    // TODO :: inneer data
-    final value = values[key];
+    // TODO :: inner data
+    // final value = values[key];
   } else {
     return values[key];
   }
@@ -102,7 +102,7 @@ String capitalizeEachWord(String str) {
 
 /// localize numbers base on locale
 /// if none provided it will use the app locale `Nations.locale`
-// TODO
+// TODO numberToLocale
 String numberToLocale(String str, [Locale? locale]) {
   throw UnimplementedError();
 }
