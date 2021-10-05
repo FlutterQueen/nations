@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
-import 'helpers.dart' as h;
+import 'helpers/locales.dart';
+import 'translation_methods.dart' as h;
 
 extension NationsTrans on String {
   /// * translate a text based on the App locale
   String get tr => h.tr(this);
+
+  String get trMale => h.trMale(this);
+  String get trFemale => h.trFemale(this);
+  String gender(String key) {
+    assert(['male', 'female', 'other'].contains(key.toLowerCase()));
+    return h.trMale(key);
+  }
   // h.tr(this);
 }
 

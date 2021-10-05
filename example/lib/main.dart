@@ -62,6 +62,9 @@ class MySc extends StatelessWidget {
               'basmala'.tr,
             ),
             Text('package_name'.tr),
+            Text('gender'.trMale),
+            Text('gender'.trFemale),
+            Text('Un_Known_Key_With_Gender'.trMale)
           ],
         ),
       ),

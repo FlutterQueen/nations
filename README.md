@@ -10,7 +10,8 @@
   - [x] even Api or any data source 😎
 - translation
   - [ ] Pluralization 💪
-  - [ ] Gender 🚹🚺
+  - [x] Gender male,female other🚹🚺
+  - [ ] Gender default
   - [ ] Arguments
   - [ ] Nested translation 'validation.too_short' 🕸
 - App
