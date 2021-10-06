@@ -9,7 +9,7 @@
 - [ ] Translation Loaders
   - [x] json
   - [ ] yaml
-  - [ ] dart
+  - [x] dart
   - [x] even Api or any data source 😎
 - [ ] translation
   - [ ] Pluralization 💪
