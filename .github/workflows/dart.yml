@@ -1,5 +1,5 @@
 #The name of your workflow.
-name: testing
+name: test
 # Trigger the workflow on push or pull request
 on:
   push:
