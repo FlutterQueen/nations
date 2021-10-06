@@ -1,9 +1,10 @@
-## **Nations 🌍**
+## **`Nations 🌍`**
 
 [![test](https://github.com/maxzod/nations/actions/workflows/dart.yml/badge.svg)](https://github.com/maxzod/nations/actions/workflows/dart.yml)
 
 # Features
 
+- [ ] Arabic Docs
 - [x] translation without context 🚀
 - [x] custom configuration
   - [x] value not found builder
@@ -20,7 +21,7 @@
     - [x] Male
     - [x] Female
     - [x] other
-    - [x] Gender default ` set the gender once then it will be used every were else`
+    - [x] Gender default `set the gender once then it will be used every were else`
   - [ ] Attributes
   - [x] Nested translation 'validation.too_short' 🕸
 - [ ] App
@@ -28,22 +29,20 @@
   - [x] reloading the app automatically 🔄
   - [ ] automatically save the last preferred language in the shared preferences 🚀
 - [ ] productivity - avoiding bugs
-
   - [ ] VsCode extension
     - [ ] Go to source
     - [ ] See the Translated keyword
     - [ ] add keyword to translations
   - [ ] CLI - Lighthouse 💡
-    - [ ] `lh locale:generate` generate api for translation files
+    - [x] `lh make:locale` generate api for translation files
     - [ ] `lh locale:fix` show bugs in the localization (same schema , duplicates , missing , same as the nation assets) 🔍🆕
     - [ ] `lh locale:list` show supported locales list
     - [ ] `lh tr:shrink` shrinking assets by removing useless spaces before building
     - [ ] code generation `Tr.key` and you will get the translated message directly 🆕
-      - [ ] show gender API
+      - [x] show gender API
       - [ ] show attributes API
       - [ ] show plural API
-      - [ ] show nested API
-
+      - [x] show nested API
 - [x] public API
   - [x] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
 - [x] customization
@@ -53,7 +52,6 @@
 - [x] other
   - [x] support All Platforms ✔
   - [x] support Null-Safety ✔
-- [ ] Arabic Docs
 
 # Nations Assets
 

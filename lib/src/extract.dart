@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 import 'package:nations/nations.dart';
 import 'package:nations/src/validation/gender.dart';
@@ -47,12 +46,7 @@ class ExtractedData {
 }
 
 dynamic _transFromMap(String key, dynamic values) {
-  if (values is! Map) {
-    //   print('newx $key' + values.runtimeType.toString());
-    //   log('$key values is not a Map !');
-    // return 'values is not a map';
-    return values;
-  }
+  if (values is! Map) return values;
   if (key.contains('.')) {
     final keys = key.split('.');
     if (keys.length > 1) {
@@ -89,9 +83,3 @@ dynamic extract(String key) {
   );
   log('cant get from the nation will return null then !');
 }
-
-// String extractGender(String dynamic data, Gender gender) {
-//   if (data is! Map) {
-//     log('')
-//   }
-// }

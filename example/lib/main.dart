@@ -4,9 +4,7 @@ import 'package:nations/nations.dart';
 
 void main() {
   // TODO :: (2)
-  Nations.setConfig(NationsConfig(
-    notFoundBuilder: (_) => _,
-  ));
+  Nations.setConfig(NationsConfig(notFoundBuilder: (_) => _));
   // wrap your `MaterialApp` with NationsRoot
   runApp(const NationsRoot(child: MyApp()));
 }
@@ -47,7 +45,7 @@ class MySc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _updateLocale() {
-      // // TODO ::(5) update the locale
+      //  TODO ::(5) update the locale
       Nations.locale = Locale(
         Nations.locale.languageCode == 'ar' ? 'en' : 'ar',
       );

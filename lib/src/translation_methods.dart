@@ -27,13 +27,11 @@ String args(String key, Map<String, dynamic> args) {
 }
 
 String trMale(String key) {
-  // TODO :: male
-  return extract(key).toString();
+  return ExtractedData.from(key).toGender(Gender.male);
 }
 
 String trFemale(String key) {
-  // return extract(key)['female']).value;
-  return extract(key).toString();
+  return ExtractedData.from(key).toGender(Gender.female);
 }
 
 String gender(String key, [Gender? gender]) {
