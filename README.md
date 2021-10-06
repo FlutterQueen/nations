@@ -1,8 +1,11 @@
 ## **Nations 🌍**
 
+[![test](https://github.com/maxzod/nations/actions/workflows/dart.yml/badge.svg)](https://github.com/maxzod/nations/actions/workflows/dart.yml)
+
 # Features
 
 - [x] translation without context 🚀
+- [x] value not found builder
 - Translation Loaders
   - [x] json
   - [ ] yaml
@@ -10,8 +13,11 @@
   - [x] even Api or any data source 😎
 - translation
   - [ ] Pluralization 💪
-  - [x] Gender male,female other🚹🚺
-  - [ ] Gender default
+  - [x] Gender
+    - [x] Male
+    - [x] Female
+    - [x] other
+    - [x] Gender default ` set the gender once then it will be used every were else`
   - [ ] Arguments
   - [ ] Nested translation 'validation.too_short' 🕸
 - App

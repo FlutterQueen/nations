@@ -5,19 +5,14 @@ import 'dart:ui' show window;
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
-import 'package:nations/src/translations.dart';
+import 'package:nations/src/models/config.dart';
+import 'package:nations/src/models/translations.dart';
 
 import 'delegate.dart';
-import 'loaders.dart';
-
-part 'config.dart';
-
-// * # Global object to handle the localizations actions
-final Nations = NationsBase();
 
 class NationsBase extends ChangeNotifier {
   /// * falls back to arabic by default
-  NationsConfig config = const _NationsBaseConfig();
+  NationsConfig config = NationsConfig();
 
   //  Locale? _initialLocale;
   Locale? _currentLocale;

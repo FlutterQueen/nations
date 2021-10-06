@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
-import 'package:nations/src/translations.dart';
+import 'package:nations/src/models/translations.dart';
 
-import 'helpers/files.dart';
+import '../helpers/files.dart';
 
 /// * loads translation form assets or any source
 /// * extend it to build you custom loader if none of the existing
@@ -20,14 +20,4 @@ abstract class NationsLoader {
       nationValues: await loadPackageFileContent(locale),
     );
   }
-}
-
-/// * to load lang files from 'assets/lang/'
-class NationsJsonLoader extends NationsLoader {
-  const NationsJsonLoader();
-  @override
-  Future<Map<String, dynamic>> load(locale) => loadJsonFileContent(locale);
-
-  @override
-  String toString() => 'NationsJsonLoader';
 }

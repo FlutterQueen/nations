@@ -4,6 +4,9 @@ import 'package:nations/nations.dart';
 
 void main() {
   // TODO :: (2)
+  Nations.setConfig(NationsConfig(
+    notFoundBuilder: (_) => _,
+  ));
   // wrap your `MaterialApp` with NationsRoot
   runApp(const NationsRoot(child: MyApp()));
 }
@@ -64,6 +67,7 @@ class MySc extends StatelessWidget {
             Text('package_name'.tr),
             Text('gender'.trMale),
             Text('gender'.trFemale),
+            Text('gender'.gender),
             Text('Un_Known_Key_With_Gender'.trMale)
           ],
         ),

@@ -1,9 +1,5 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
-import 'package:nations/src/loaders.dart';
 
 class NationsTestConfig extends NationsConfig {
   NationsTestConfig() : super(loader: TestFilesLoader());
@@ -57,13 +53,5 @@ class _MyWidget extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class TestFilesLoader extends NationsLoader {
-  @override
-  Future<Map<String, dynamic>> load(Locale locale) async {
-    final file = File('assets/lang/$locale.json');
-    return jsonDecode(file.readAsStringSync());
   }
 }

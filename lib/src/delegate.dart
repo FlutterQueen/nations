@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nations/src/translations.dart';
+import 'package:nations/src/models/translations.dart';
 
 import '../nations.dart';
 
