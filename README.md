@@ -5,13 +5,16 @@
 # Features
 
 - [x] translation without context 🚀
-- [x] value not found builder
-- [ ] Translation Loaders
+- [x] custom configuration
+  - [x] value not found builder
+  - [x] fallback locale
+  - [x] supported locales
+- [ ] Translation files Loaders
   - [x] json
   - [ ] yaml
   - [x] dart
   - [x] even Api or any data source 😎
-- [ ] translation
+- [ ] Translation
   - [ ] Pluralization 💪
   - [x] Gender
     - [x] Male
@@ -23,12 +26,9 @@
 - [ ] App
   - [x] auto RTL - LTR based on the current locale
   - [x] reloading the app automatically 🔄
-- [ ] productivity - avoiding bugs
   - [ ] automatically save the last preferred language in the shared preferences 🚀
-  - [ ] code generation `Tr.key` and you will get the translated message directly 🆕
-    - [ ] show gender API
-    - [ ] show attributes API
-    - [ ] show plural API
+- [ ] productivity - avoiding bugs
+
   - [ ] VsCode extension
     - [ ] Go to source
     - [ ] See the Translated keyword
@@ -38,6 +38,12 @@
     - [ ] `lh locale:fix` show bugs in the localization (same schema , duplicates , missing , same as the nation assets) 🔍🆕
     - [ ] `lh locale:list` show supported locales list
     - [ ] `lh tr:shrink` shrinking assets by removing useless spaces before building
+    - [ ] code generation `Tr.key` and you will get the translated message directly 🆕
+      - [ ] show gender API
+      - [ ] show attributes API
+      - [ ] show plural API
+      - [ ] show nested API
+
 - [x] public API
   - [x] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
 - [x] customization
