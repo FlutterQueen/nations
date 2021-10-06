@@ -6,12 +6,12 @@
 
 - [x] translation without context 🚀
 - [x] value not found builder
-- Translation Loaders
+- [ ] Translation Loaders
   - [x] json
   - [ ] yaml
   - [ ] dart
   - [x] even Api or any data source 😎
-- translation
+- [ ] translation
   - [ ] Pluralization 💪
   - [x] Gender
     - [x] Male
@@ -20,23 +20,23 @@
     - [x] Gender default ` set the gender once then it will be used every were else`
   - [ ] Arguments
   - [ ] Nested translation 'validation.too_short' 🕸
-- App
+- [ ] App
   - [x] auto RTL - LTR based on the current locale
   - [x] reloading the app automatically 🔄
-- productivity - avoiding bugs
-- [ ] automatically save the last preferred language 🚀 - no shared prefs 🔥🔥 -
-- [ ] detecting a duplicate or a missing message 🔍🆕
-- [ ] code generation `TR.key` and you will get the translated message directly 🆕
-- [ ] VsCode extension
-- [ ] CLI - Lighthouse 💡
-- [ ] shrinking assets by removing useless spaces -> `lh tr:shrink`
-- public pai
-- [ ] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
-- customization
+- [ ] productivity - avoiding bugs
+  - [ ] automatically save the last preferred language 🚀 - no shared prefs 🔥🔥 -
+  - [ ] detecting a duplicate or a missing message 🔍🆕
+  - [ ] code generation `TR.key` and you will get the translated message directly 🆕
+  - [ ] VsCode extension
+  - [ ] CLI - Lighthouse 💡
+  - [ ] shrinking assets by removing useless spaces -> `lh tr:shrink`
+- [ ] public API
+  - [ ] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
+- [ ] customization
   - [x] easy to override the messages 🔱
   - [x] capitalize first character in the first word
   - [x] capitalize first character in each word
-- other
+- [ ] other
   - [x] support All Platforms ✔
   - [x] support Null-Safety ✔
 
