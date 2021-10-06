@@ -13,5 +13,14 @@
    "gender": {
       "male": "Male",
       "female": "Female"
+   },
+   "validation": {
+      "email": "validation  inner email",
+      "password": "validation  inner password",
+      "age": {
+         "to_young": "too young 👶",
+         "old_enough": "old enough ✔",
+         "very_old": "very old 💪"
+      }
    }
 }

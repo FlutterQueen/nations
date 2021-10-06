@@ -68,7 +68,11 @@ class MySc extends StatelessWidget {
             Text('gender'.trMale),
             Text('gender'.trFemale),
             Text('gender'.gender),
-            Text('Un_Known_Key_With_Gender'.trMale)
+            Text('Un_Known_Key_With_Gender'.trMale),
+            Text('validation.email'.tr),
+            Text('validation.age.to_young'.tr),
+            Text('validation.age.old_enough'.tr),
+            Text('validation.age.very_old'.tr),
           ],
         ),
       ),

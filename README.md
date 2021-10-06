@@ -19,7 +19,7 @@
     - [x] other
     - [x] Gender default ` set the gender once then it will be used every were else`
   - [ ] Arguments
-  - [ ] Nested translation 'validation.too_short' 🕸
+  - [x] Nested translation 'validation.too_short' 🕸
 - [ ] App
   - [x] auto RTL - LTR based on the current locale
   - [x] reloading the app automatically 🔄

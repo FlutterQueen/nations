@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 import 'package:nations/nations.dart';
 import 'package:nations/src/validation/gender.dart';
@@ -45,10 +46,26 @@ class ExtractedData {
   }
 }
 
-dynamic _transFromMap(String key, Map<String, dynamic> values) {
+dynamic _transFromMap(String key, dynamic values) {
+  if (values is! Map) {
+    //   print('newx $key' + values.runtimeType.toString());
+    //   log('$key values is not a Map !');
+    // return 'values is not a map';
+    return values;
+  }
   if (key.contains('.')) {
-    // TODO :: inner data
-    // final value = values[key];
+    final keys = key.split('.');
+    if (keys.length > 1) {
+      final firstArg = keys.first;
+      // still want to go deeper
+      log('firstArg : $firstArg');
+      final newKey = key.replaceFirst('$firstArg.', '');
+      log('newKey : $newKey');
+
+      return _transFromMap(newKey, values[firstArg]);
+    } else {
+      return values[keys.first];
+    }
   } else {
     return values[key];
   }
