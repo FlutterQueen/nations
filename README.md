@@ -18,29 +18,38 @@
     - [x] Female
     - [x] other
     - [x] Gender default ` set the gender once then it will be used every were else`
-  - [ ] Arguments
+  - [ ] Attributes
   - [x] Nested translation 'validation.too_short' 🕸
 - [ ] App
   - [x] auto RTL - LTR based on the current locale
   - [x] reloading the app automatically 🔄
 - [ ] productivity - avoiding bugs
-  - [ ] automatically save the last preferred language 🚀 - no shared prefs 🔥🔥 -
-  - [ ] detecting a duplicate or a missing message 🔍🆕
-  - [ ] code generation `TR.key` and you will get the translated message directly 🆕
+  - [ ] automatically save the last preferred language in the shared preferences 🚀
+  - [ ] code generation `Tr.key` and you will get the translated message directly 🆕
+    - [ ] show gender API
+    - [ ] show attributes API
+    - [ ] show plural API
   - [ ] VsCode extension
+    - [ ] Go to source
+    - [ ] See the Translated keyword
+    - [ ] add keyword to translations
   - [ ] CLI - Lighthouse 💡
-  - [ ] shrinking assets by removing useless spaces -> `lh tr:shrink`
-- [ ] public API
-  - [ ] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
-- [ ] customization
+    - [ ] `lh locale:generate` generate api for translation files
+    - [ ] `lh locale:fix` show bugs in the localization (same schema , duplicates , missing , same as the nation assets) 🔍🆕
+    - [ ] `lh locale:list` show supported locales list
+    - [ ] `lh tr:shrink` shrinking assets by removing useless spaces before building
+- [x] public API
+  - [x] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
+- [x] customization
   - [x] easy to override the messages 🔱
   - [x] capitalize first character in the first word
   - [x] capitalize first character in each word
-- [ ] other
+- [x] other
   - [x] support All Platforms ✔
   - [x] support Null-Safety ✔
+- [ ] Arabic Docs
 
-# nations assets
+# Nations Assets
 
 this package contains translated message to use out of the box , no need to add them any more
 example
