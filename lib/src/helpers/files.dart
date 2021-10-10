@@ -3,16 +3,22 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-Future<Map<String, dynamic>> loadPackageFileContent(Locale locale) async {
-  final jString = await rootBundle.loadString(
-    'packages/nations/assets/lang/$locale.json',
-  );
-  final jsonMap = json.decode(jString);
-  return jsonMap;
+/// *  load translation files from the `nations` package base on the locale
+Future<Map<String, dynamic>> loadPackageTranslation(Locale locale) async {
+  return loadJsonFileContent('packages/nations/assets/lang/$locale.json');
 }
 
-Future<Map<String, dynamic>> loadJsonFileContent(Locale locale) async {
-  final jString = await rootBundle.loadString('lang/$locale.json');
-  final jsonMap = json.decode(jString);
-  return jsonMap;
+/// *  load the locale from json files
+// TODO :: load any failure translation ar_EG , ar
+Future<Map<String, dynamic>> loadLocaleTranslation(Locale locale) async {
+  return loadJsonFileContent('lang/$locale.json');
+}
+
+/// *  load the locale from json files
+Future<Map<String, dynamic>> loadJsonFileContent(String path) async {
+  // *  parse it to string
+  return json.decode(
+    /// *  load content
+    await rootBundle.loadString(path),
+  );
 }

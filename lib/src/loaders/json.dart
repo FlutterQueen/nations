@@ -7,7 +7,7 @@ import 'base.dart';
 class NationsJsonLoader extends NationsLoader {
   const NationsJsonLoader();
   @override
-  Future<Map<String, dynamic>> load(locale) => loadJsonFileContent(locale);
+  Future<Map<String, dynamic>> load(locale) => loadLocaleTranslation(locale);
 
   @override
   String toString() => 'NationsJsonLoader';

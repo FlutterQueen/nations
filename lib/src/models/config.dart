@@ -16,14 +16,20 @@ class NationsConfig {
     String Function(String key)? notFoundBuilder,
   }) : _notFoundBuilder = notFoundBuilder;
 
+  /// which locale to use in case of failure
   final Locale fallbackLocale;
+
+  /// list of the supported locales
   final List<Locale> supportedLocales;
 
+  /// the loader
   final NationsLoader loader;
 
+  /// not found builder
   final String Function(String key)? _notFoundBuilder;
   String Function(String key) get notFoundBuilder =>
       _notFoundBuilder ?? (String key) => 'null';
 
+  /// the default gender
   final Gender defaultGender;
 }

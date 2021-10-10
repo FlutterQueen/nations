@@ -9,9 +9,12 @@ const _rtlLocales = <String>[
   'ur', // Urdu
 ];
 
+/// return true if the locale text direction is from right to left
 bool isRtlLocale(Locale locale) {
+  // TODO :: make it in queen_vlidators
   return _rtlLocales.contains(locale.languageCode);
 }
 
+// * return `TextDirection` based on the provided locale
 TextDirection textDirectionByLocale(Locale locale) =>
     isRtlLocale(locale) ? TextDirection.rtl : TextDirection.ltr;

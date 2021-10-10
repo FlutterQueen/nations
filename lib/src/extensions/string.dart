@@ -7,9 +7,12 @@ extension NationsTrans on String {
   /// * translate a text based on the App locale
   String get tr => h.tr(this);
 
+  /// * translate a text **AND** use the `male` gender
   String get trMale => h.gender(this, Gender.male);
-  String get trFemale => h.gender(this, Gender.female);
-  String get gender => h.gender(this);
 
-  // h.tr(this);
+  /// * translate a text **AND** use the `female` gender
+  String get trFemale => h.gender(this, Gender.female);
+
+  /// * translate a text **AND** use the default gender
+  String get gender => h.gender(this);
 }

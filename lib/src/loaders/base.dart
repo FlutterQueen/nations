@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nations/nations.dart';
 import 'package:nations/src/models/translations.dart';
 
 import '../helpers/files.dart';
@@ -14,10 +13,9 @@ abstract class NationsLoader {
   Future<Map<String, dynamic>> load(Locale locale);
 
   Future<NTranslations> loadWithNationValues(Locale locale) async {
-    // TODO :: load any failure translation ar_EG , ar
     return NTranslations(
       values: await load(locale),
-      nationValues: await loadPackageFileContent(locale),
+      nationValues: await loadPackageTranslation(locale),
     );
   }
 }
