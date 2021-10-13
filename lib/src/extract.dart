@@ -81,5 +81,6 @@ dynamic extract(String key) {
     'lang files with the locale ${Nations.locale} ,, '
     'trying to get it from the nations ....',
   );
+
   log('cant get from the nation will return null then !');
 }

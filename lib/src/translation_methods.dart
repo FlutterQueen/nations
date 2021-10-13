@@ -26,6 +26,7 @@ String args(String key, Map<String, dynamic> args) {
   // return removeDecoration(str);
 }
 
+///
 String trMale(String key) {
   return ExtractedData.from(key).toGender(Gender.male);
 }

@@ -1,10 +1,18 @@
+import 'package:example/keys.dart';
 import 'package:flutter/material.dart';
 
 import 'package:nations/nations.dart';
 
 void main() {
   // TODO :: (2)
-  Nations.setConfig(NationsConfig(notFoundBuilder: (_) => _));
+  Nations.setConfig(
+    NationsConfig(
+      notFoundBuilder: (key) {
+        // log('');
+        return 'null';
+      },
+    ),
+  );
   // wrap your `MaterialApp` with NationsRoot
   runApp(const NationsRoot(child: MyApp()));
 }
@@ -71,6 +79,11 @@ class MySc extends StatelessWidget {
             Text('validation.age.to_young'.tr),
             Text('validation.age.old_enough'.tr),
             Text('validation.age.very_old'.tr),
+            Text('person'.trMale),
+            Text('person'.trFemale),
+            Text('person'.gender),
+            Text(Tr.person.male),
+            Text(Tr.validation.age.toYoung)
           ],
         ),
       ),

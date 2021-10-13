@@ -1,26 +1,31 @@
 {
-   "package_name": "أمم",
-   "date": "التاريخ",
-   "time": "الوقت",
-   "enter": "دخول",
-   "edit": "تعديل",
-   "show": "عرض",
-   "delete": "حذف",
-   "error": "خطا",
-   "internet": "انترنت",
-   "no": "لا",
-   "yes": "نعم",
-   "gender": {
-      "male": "ذكر",
-      "female": "انثي"
-   },
-   "validation": {
-      "email": "فاليديشن ومن داخله البريد",
-      "password": "فاليديشن ومن داخله كلمه المرور",
-      "age": {
-         "to_young": "صغير جدا",
-         "old_enough": "كبير بما فيه الكفاية",
-         "very_old": "كبير جدا"
-      }
-   }
+    "package_name": "أمم",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "enter": "دخول",
+    "edit": "تعديل",
+    "show": "عرض",
+    "delete": "حذف",
+    "error": "خطا",
+    "internet": "انترنت",
+    "no": "لا",
+    "yes": "نعم",
+    "gender": {
+        "male": "ذكر",
+        "female": "انثي"
+    },
+    "person": {
+        "male": "سيدي",
+        "female": "انسه"
+    },
+    "validation": {
+        "email": "فاليديشن ومن داخله البريد",
+        "password": "فاليديشن ومن داخله كلمه المرور",
+        "min_length": "min length is :attributes",
+        "age": {
+            "to_young": "صغير جدا",
+            "old_enough": "كبير بما فيه الكفاية",
+            "very_old": "كبير جدا"
+        }
+    }
 }

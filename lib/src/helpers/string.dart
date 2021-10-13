@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
-
-/// return the string without any decoration
-/// Example :  TODO ::
-/// // TODO :: regular to replace any nation decoration
-String removeDecoration(String value) {
-  throw UnimplementedError();
-}
+import 'package:nations/nations.dart';
 
 /// localize numbers base on locale
 /// if none provided it will use the app locale `Nations.locale`
-/// Example
-// TODO numberToLocale
+/// Make sure you know the difference between arabic and hindi numbers
 String numberToLocale(String str, [Locale? locale]) {
-  throw UnimplementedError();
+  if (str.isEmpty) return str;
+  switch (locale?.languageCode) {
+    case null:
+      return numberToLocale(str, Nations.config.fallbackLocale);
+    case 'ar':
+      return convertToArabicNumbers(str);
+    case 'hi':
+      return convertToHindiNumbers(str);
+  }
+  return str;
 }
 
+String convertToArabicNumbers(String str) => str;
+
+String convertToHindiNumbers(String str) => str;
+
+/// takes `foo` return `Foo`
+/// takes `foo bar` return `Foo bar`
 String capitalizeFirstChar(String str) {
   return '${str[0].toUpperCase()}${str.substring(1)}';
-  // return str.replaceRange(0, 1, str[0].toUpperCase());
 }
 
+/// takes `foo` return `Foo`
+/// takes `foo bar` return `Foo Bar`
+/// takes `foo bar zee` return `Foo Bar Zee`
 String capitalizeFirstCharForEachWord(String str) {
   return str
       .split(" ")

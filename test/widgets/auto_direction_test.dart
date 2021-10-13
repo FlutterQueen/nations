@@ -23,6 +23,7 @@ void main() {
       final rtlTextFinder = find.text('RTL');
       expect(Nations.isRTL, isTrue);
       expect(Nations.isLTR, isFalse);
+      expect(Nations.direction, equals(TextDirection.rtl));
       expect(rtlTextFinder, equals(findsOneWidget));
 
       Nations.locale = const Locale('en');
@@ -30,6 +31,7 @@ void main() {
       final ltrTextFinder = find.text('LTR');
       expect(Nations.isRTL, isFalse);
       expect(Nations.isLTR, isTrue);
+      expect(Nations.direction, equals(TextDirection.ltr));
       expect(ltrTextFinder, equals(findsOneWidget));
     },
   );
