@@ -2,23 +2,47 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nations/nations.dart';
 
 /// *  load translation files from the `nations` package base on the locale
+/// * if the locale doesn't exist in your assets it will try to get the file named with the language code
+/// * if also is empty it will loads the fallback locale
 Future<Map<String, dynamic>> loadPackageTranslation(Locale locale) async {
-  return loadJsonFileContent('packages/nations/assets/lang/$locale.json');
+  final original = await loadJsonFileContent(
+    'packages/nations/assets/lang/$locale.json',
+  );
+  if (original.isNotEmpty) return original;
+  final langBase = await loadJsonFileContent(
+    'packages/nations/assets/lang/${locale.languageCode}.json',
+  );
+  if (langBase.isNotEmpty) return langBase;
+  return loadJsonFileContent(
+    'packages/nations/assets/lang/${Nations.config.fallbackLocale}.json',
+  );
 }
 
 /// *  load the locale from json files
-// TODO :: load any failure translation ar_EG , ar
+/// * if the locale doesn't exist in your assets it will try to get the file named with the language code
+/// * if also is empty it will loads the fallback locale
 Future<Map<String, dynamic>> loadLocaleTranslation(Locale locale) async {
-  return loadJsonFileContent('lang/$locale.json');
+  final original = await loadJsonFileContent(' lang/$locale.json');
+  if (original.isNotEmpty) return original;
+  final langBase = await loadJsonFileContent(
+    'lang/${locale.languageCode}.json',
+  );
+  if (langBase.isNotEmpty) return langBase;
+  return loadJsonFileContent('lang/${Nations.config.fallbackLocale}.json');
 }
 
 /// *  load the locale from json files
 Future<Map<String, dynamic>> loadJsonFileContent(String path) async {
-  // *  parse it to string
-  return json.decode(
-    /// *  load content
-    await rootBundle.loadString(path),
-  );
+  try {
+    // *  parse it to string
+    return json.decode(
+      /// *  load content
+      await rootBundle.loadString(path),
+    );
+  } on FlutterError {
+    return {};
+  }
 }

@@ -7,6 +7,7 @@ Future<void> main() async {
   // TODO :: (2)
   await Nations.boot(
     NationsConfig(
+      supportedLocales: [Locale('af')],
       notFoundBuilder: (key) {
         // log('');
         return 'null';
@@ -83,7 +84,8 @@ class MySc extends StatelessWidget {
             Text('person'.trFemale),
             Text('person'.gender),
             Text(Tr.person.male),
-            Text(Tr.validation.age.toYoung)
+            Text(Tr.validation.age.toYoung),
+            Text('attributedMessage'.attr({'atr1': "foo", 'atr2': 'bar'}))
           ],
         ),
       ),

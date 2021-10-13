@@ -35,13 +35,20 @@ class ExtractedData {
           return data['male'];
         case Gender.female:
           return data['female'];
-        case Gender.other:
-          return data['other'] ?? toGender(Nations.config.defaultGender);
       }
     } else {
       log('$key is not valid gender translation');
       return Nations.config.notFoundBuilder(key);
     }
+  }
+
+  String attributes(Map<String, dynamic> attributes) {
+    String msg = data.toString();
+    for (final atr in attributes.keys) {
+      msg = msg.replaceFirst(':$atr', attributes[atr]);
+    }
+    print('atr msg = $msg');
+    return msg;
   }
 }
 

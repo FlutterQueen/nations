@@ -2,32 +2,9 @@
 
 [![test](https://github.com/maxzod/nations/actions/workflows/dart.yml/badge.svg)](https://github.com/maxzod/nations/actions/workflows/dart.yml)
 
-# Features
+# Step Three
 
 - [ ] Arabic Docs
-- [x] translation without context 🚀
-- [x] custom configuration
-  - [x] value not found builder
-  - [x] fallback locale
-  - [x] supported locales
-- [ ] Translation files Loaders
-  - [x] json
-  - [ ] yaml
-  - [x] dart
-  - [x] even Api or any data source 😎
-- [ ] Translation
-  - [ ] Pluralization 💪
-  - [x] Gender
-    - [x] Male
-    - [x] Female
-    - [x] other
-    - [x] Gender default `set the gender once then it will be used every were else`
-  - [ ] Attributes
-  - [x] Nested translation 'validation.too_short' 🕸
-- [ ] App
-  - [x] auto RTL - LTR based on the current locale
-  - [x] reloading the app automatically 🔄
-  - [x] automatically save the last preferred language in the shared preferences 🚀
 - [ ] productivity - avoiding bugs
   - [ ] VsCode extension
     - [ ] Go to source
@@ -43,6 +20,35 @@
       - [ ] show attributes API
       - [ ] show plural API
       - [x] show nested API
+
+# Step Two
+
+- [ ] make sure tests cover every thing
+
+# Step One (in progress)
+
+- [x] translation without context 🚀
+- [x] custom configuration
+  - [x] value not found builder
+  - [x] fallback locale
+  - [x] supported locales
+  - [x] fall back to base before loading the fallback
+- [x] Translation files Loaders
+  - [x] json
+  - [x] dart
+  - [x] even Api or any data source 😎
+- [ ] Translation
+  - [ ] Pluralization 💪
+  - [ ] Attributes
+  - [x] Nested translation 'validation.too_short' 🕸
+  - [x] Gender
+    - [x] Male
+    - [x] Female
+    - [x] Gender default `set the gender once then it will be used every were else`
+- [x] App
+  - [x] auto RTL - LTR based on the current locale
+  - [x] reloading the app automatically 🔄
+  - [x] automatically save the last preferred language in the shared preferences 🚀
 - [x] public API
   - [x] easily integrated with other packages to save more time and provided locaization out of the box base on your app configuration 🔥
 - [x] customization

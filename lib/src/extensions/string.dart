@@ -15,4 +15,8 @@ extension NationsTrans on String {
 
   /// * translate a text **AND** use the default gender
   String get gender => h.gender(this);
+
+  String attr(Map<String, dynamic> attributes) {
+    return h.trAttr(this, attributes);
+  }
 }

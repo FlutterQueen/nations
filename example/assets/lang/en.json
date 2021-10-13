@@ -1,3 +1,4 @@
 {
-   "basmala": "in the name of allah"
+    "basmala": "in the name of allah",
+    "attributedMessage": "first attribute is :atr1 \n and the second is :atr2"
 }
