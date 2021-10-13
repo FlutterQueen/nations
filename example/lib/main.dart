@@ -85,7 +85,7 @@ class MySc extends StatelessWidget {
             Text('person'.gender),
             Text(Tr.person.male),
             Text(Tr.validation.age.toYoung),
-            Text('attributedMessage'.attr({'atr1': "foo", 'atr2': 'bar'}))
+            Text('attributedMessage'.args({'atr1': "foo", 'atr2': 'bar'}))
           ],
         ),
       ),

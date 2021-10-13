@@ -42,7 +42,7 @@ class ExtractedData {
     }
   }
 
-  String attributes(Map<String, dynamic> attributes) {
+  String args(Map<String, dynamic> attributes) {
     String msg = data.toString();
     for (final atr in attributes.keys) {
       msg = msg.replaceFirst(':$atr', attributes[atr]);

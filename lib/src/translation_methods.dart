@@ -35,8 +35,8 @@ String trFemale(String key) {
   return ExtractedData.from(key).toGender(Gender.female);
 }
 
-String trAttr(String key, Map<String, dynamic> attributes) {
-  return ExtractedData.from(key).attributes(attributes);
+String trWithArgs(String key, Map<String, dynamic> attributes) {
+  return ExtractedData.from(key).args(attributes);
 }
 
 String gender(String key, [Gender? gender]) {
