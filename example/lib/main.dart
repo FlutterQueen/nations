@@ -85,7 +85,16 @@ class MySc extends StatelessWidget {
             Text('person'.gender),
             Text(Tr.person.male),
             Text(Tr.validation.age.toYoung),
-            Text('attributedMessage'.args({'atr1': "foo", 'atr2': 'bar'}))
+            Text('attributedMessage'.args({'atr1': "foo", 'atr2': 'bar'})),
+
+            Text('apples'.plural(0)),
+            Text('apples'.plural(1)),
+            Text('apples'.plural(3)),
+            Text('apples'.plural(4)),
+            Text('apples'.plural(5)),
+            Text('apples'.plural(60)),
+            Text('apples'.plural(65)),
+            Text('apples'.plural(70)),
           ],
         ),
       ),

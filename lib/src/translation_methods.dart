@@ -39,6 +39,10 @@ String trWithArgs(String key, Map<String, dynamic> attributes) {
   return ExtractedData.from(key).args(attributes);
 }
 
+String trPlural(String key, int count, [Map<String, dynamic>? attributes]) {
+  return ExtractedData.from(key).plural(count, attributes);
+}
+
 String gender(String key, [Gender? gender]) {
   final data = ExtractedData.from(key);
   return data.toGender(gender);

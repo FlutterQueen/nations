@@ -19,4 +19,8 @@ extension NationsTrans on String {
   String args(Map<String, dynamic> attributes) {
     return h.trWithArgs(this, attributes);
   }
+
+  String plural(int count, [Map<String, dynamic>? attributes]) {
+    return h.trPlural(this, count, attributes);
+  }
 }

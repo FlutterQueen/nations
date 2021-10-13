@@ -16,7 +16,7 @@ class ExtractedData {
   });
   factory ExtractedData.from(String key) => ExtractedData(
         key: key,
-        data: extract(key),
+        data: _extract(key),
       );
 
   @override
@@ -42,13 +42,21 @@ class ExtractedData {
     }
   }
 
-  String args(Map<String, dynamic> attributes) {
-    String msg = data.toString();
-    for (final atr in attributes.keys) {
-      msg = msg.replaceFirst(':$atr', attributes[atr]);
+  String args(Map<String, dynamic> attributes) =>
+      replaceArgsOf(data, attributes);
+  String plural(int count, [Map<String, dynamic>? attributes]) {
+    if (data is! Map<String, dynamic>) {
+      return Nations.config.notFoundBuilder(key);
     }
-    print('atr msg = $msg');
-    return msg;
+    final pluralKey = resolveCount(
+          count,
+          (data as Map<String, dynamic>).keys.toList(),
+        ) ??
+        Nations.config.notFoundBuilder(key);
+    return replaceArgsOf(data[pluralKey], {
+      'count': count.toString(),
+      if (attributes != null) ...attributes,
+    });
   }
 }
 
@@ -72,7 +80,7 @@ dynamic _transFromMap(String key, dynamic values) {
   }
 }
 
-dynamic extract(String key) {
+dynamic _extract(String key) {
   final fromValues = _transFromMap(key, _values);
 
   if (fromValues != null) return fromValues;
@@ -90,4 +98,30 @@ dynamic extract(String key) {
   );
 
   log('cant get from the nation will return null then !');
+}
+
+String? resolveCount(int count, List<String> keys) {
+  for (final pluralKey in keys) {
+    /// single number
+    if (count.toString() == pluralKey) {
+      /// *  '0' or '1'
+      return pluralKey;
+    } else if (pluralKey.contains(',')) {
+      /// * '0,1,2,3,4'
+      // set of numbers
+      for (final innerNum in pluralKey.split(',')) {
+        if (innerNum.toString() == count.toString()) return pluralKey;
+      }
+    } else if (pluralKey.contains('-')) {
+      /// * 50 - 80
+      /// * 50 - *  50 or more
+      // its a range
+      final from = num.parse(pluralKey.split('-').first);
+      final _lastAsStr = pluralKey.split('-').last;
+      final to = _lastAsStr == '*' ? double.infinity : num.parse(_lastAsStr);
+      if (count >= from && count <= to) {
+        return pluralKey;
+      }
+    }
+  }
 }

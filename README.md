@@ -38,8 +38,12 @@
   - [x] dart
   - [x] even Api or any data source 😎
 - [ ] Translation
-  - [ ] Pluralization 💪
-  - [ ] Attributes
+  - [x] Pluralization 💪
+    - [x] single count
+    - [x] range
+    - [x] to infinity
+    - [x] more the one number
+  - [x] Attributes
   - [x] Nested translation 'validation.too_short' 🕸
   - [x] Gender
     - [x] Male

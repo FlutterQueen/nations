@@ -38,3 +38,11 @@ String capitalizeFirstCharForEachWord(String str) {
       .map((s) => s.isEmpty ? '' : capitalizeFirstChar(s))
       .join(" ");
 }
+
+String replaceArgsOf(String data, Map<String, dynamic> args) {
+  String msg = data.toString();
+  for (final arg in args.keys) {
+    msg = msg.replaceFirst(':$arg', args[arg]);
+  }
+  return msg;
+}
