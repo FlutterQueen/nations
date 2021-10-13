@@ -25,7 +25,7 @@
 
 - [ ] make sure tests cover every thing
 
-# Step One (in progress)
+# Step One (done) ✔
 
 - [x] translation without context 🚀
 - [x] custom configuration
@@ -37,7 +37,7 @@
   - [x] json
   - [x] dart
   - [x] even Api or any data source 😎
-- [ ] Translation
+- [x] Translation
   - [x] Pluralization 💪
     - [x] single count
     - [x] range
