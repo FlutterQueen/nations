@@ -17,8 +17,10 @@ String numberToLocale(String str, [Locale? locale]) {
   return str;
 }
 
+/// arabic numbers are `0123456789`
 String convertToArabicNumbers(String str) => str;
 
+/// arabic numbers are `٠١٢٣٤٥٦٧٨٩`
 String convertToHindiNumbers(String str) => str;
 
 /// takes `foo` return `Foo`

@@ -27,7 +27,7 @@ class ExtractedData {
   }
 
   String toGender(Gender? gender) {
-    if (isValidGenderMap(key, data)) {
+    if (isValidGenderMap(data)) {
       switch (gender) {
         case null:
           return toGender(Nations.config.defaultGender);

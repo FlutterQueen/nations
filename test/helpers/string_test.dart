@@ -64,12 +64,4 @@ void main() {
       expect(source.length, equals('٠١٢٣٤٥٦٧٨٩'));
     });
   });
-
-  // test(
-  //     'it pass remove decoration if the value is not empty AND there is no decoration',
-  //     () {
-  //   const source = 'Long Live The Queen';
-  //   final result = removeDecoration(source);
-  //   expect(result.length, equals(source.length));
-  // });
 }
