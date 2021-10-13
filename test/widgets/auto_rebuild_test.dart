@@ -5,9 +5,9 @@ import 'package:nations/nations.dart';
 import '../app.dart';
 
 void main() {
-  setUp(() {
+  setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    Nations.setConfig(NationsTestConfig());
+    await Nations.boot(NationsTestConfig());
   });
 
   testWidgets(
@@ -28,7 +28,7 @@ void main() {
       expect(dateArFinder, findsOneWidget);
       expect(timeArFinder, findsOneWidget);
 
-      Nations.locale = const Locale('en');
+      await Nations.updateLocale(const Locale('en'));
 
       await tester.pumpAndSettle();
       expect(Nations.locale, equals(const Locale('en')));

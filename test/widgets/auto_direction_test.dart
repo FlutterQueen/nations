@@ -5,9 +5,9 @@ import 'package:nations/nations.dart';
 import '../app.dart';
 
 void main() {
-  setUp(() {
+  setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    Nations.setConfig(NationsTestConfig());
+    await Nations.boot(NationsTestConfig());
   });
 
   testWidgets(
@@ -26,7 +26,7 @@ void main() {
       expect(Nations.direction, equals(TextDirection.rtl));
       expect(rtlTextFinder, equals(findsOneWidget));
 
-      Nations.locale = const Locale('en');
+      await Nations.updateLocale(const Locale('en'));
       await tester.pumpAndSettle();
       final ltrTextFinder = find.text('LTR');
       expect(Nations.isRTL, isFalse);

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:nations/nations.dart';
 
-void main() {
+Future<void> main() async {
   // TODO :: (2)
-  Nations.setConfig(
+  await Nations.boot(
     NationsConfig(
       notFoundBuilder: (key) {
         // log('');
@@ -54,9 +54,9 @@ class MySc extends StatelessWidget {
   Widget build(BuildContext context) {
     void _updateLocale() {
       //  TODO ::(5) update the locale
-      Nations.locale = Locale(
+      Nations.updateLocale(Locale(
         Nations.locale.languageCode == 'ar' ? 'en' : 'ar',
-      );
+      ));
     }
 
     return Scaffold(

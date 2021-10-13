@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:nations/src/models/config.dart';
 import 'package:nations/src/models/translations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'delegate.dart';
 
@@ -16,22 +17,26 @@ class NationsBase extends ChangeNotifier {
 
   //  Locale? _initialLocale;
   Locale? _currentLocale;
-
-  void setConfig(
+  late SharedPreferences _prefs;
+  Future<void> boot(
     NationsConfig config,
-  ) {
+  ) async {
     log('config updated');
     this.config = config;
+    WidgetsFlutterBinding.ensureInitialized();
+    _prefs = await SharedPreferences.getInstance();
+    final _savedLocale = _prefs.getString('nations_lang');
+    if (_savedLocale != null) _currentLocale = Locale(_savedLocale);
   }
 
   /// * device locale
   Locale get deviceLocale => window.locale;
 
-  set locale(Locale locale) {
+  Future<void> updateLocale(Locale locale) async {
     log('new locale is $locale');
     _currentLocale = locale;
     notifyListeners();
-    // TODO :: save to locale storage
+    await _prefs.setString('nations_lang', locale.toString());
   }
 
   /// * get the current locale
