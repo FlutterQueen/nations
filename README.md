@@ -27,7 +27,7 @@
 - [ ] App
   - [x] auto RTL - LTR based on the current locale
   - [x] reloading the app automatically 🔄
-  - [ ] automatically save the last preferred language in the shared preferences 🚀
+  - [x] automatically save the last preferred language in the shared preferences 🚀
 - [ ] productivity - avoiding bugs
   - [ ] VsCode extension
     - [ ] Go to source
