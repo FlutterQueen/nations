@@ -3,6 +3,7 @@ import 'package:nations/src/enums.dart';
 
 import '../loaders/base.dart';
 import '../loaders/json.dart';
+import '../typedef.dart';
 
 class NationsConfig {
   NationsConfig({
@@ -13,7 +14,7 @@ class NationsConfig {
     ],
     this.loader = const NationsJsonLoader(),
     this.defaultGender = Gender.male,
-    String Function(String key)? notFoundBuilder,
+    NotFoundBuilder? notFoundBuilder,
   }) : _notFoundBuilder = notFoundBuilder;
 
   /// which locale to use in case of failure
@@ -27,7 +28,8 @@ class NationsConfig {
 
   /// not found builder
   final String Function(String key)? _notFoundBuilder;
-  String Function(String key) get notFoundBuilder =>
+
+  NotFoundBuilder get notFoundBuilder =>
       _notFoundBuilder ?? (String key) => 'null';
 
   /// the default gender

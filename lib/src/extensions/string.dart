@@ -1,4 +1,5 @@
 import 'package:nations/nations.dart';
+import 'package:nations/src/typedef.dart';
 
 import '../enums.dart';
 import '../translation_methods.dart' as h;
@@ -16,11 +17,7 @@ extension NationsTrans on String {
   /// * translate a text **AND** use the default gender
   String get gender => h.gender(this);
 
-  String args(Map<String, dynamic> attributes) {
-    return h.trWithArgs(this, attributes);
-  }
+  String args(Args args) => h.trWithArgs(this, args);
 
-  String plural(int count, [Map<String, dynamic>? attributes]) {
-    return h.trPlural(this, count, attributes);
-  }
+  String plural(int count, [Args? args]) => h.trPlural(this, count, args);
 }

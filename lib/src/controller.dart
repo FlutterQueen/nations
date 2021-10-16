@@ -1,17 +1,20 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:developer' show log;
-import 'dart:ui' show window;
 
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:nations/src/models/config.dart';
 import 'package:nations/src/models/translations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'delegate.dart';
+import 'extensions/nations_base.dart';
+
+// * # Global object to handle the localizations actions
+final Nations = NationsBase._();
 
 class NationsBase extends ChangeNotifier {
+  NationsBase._();
+
   /// * falls back to arabic by default
   NationsConfig config = NationsConfig();
 
@@ -29,9 +32,6 @@ class NationsBase extends ChangeNotifier {
     if (_savedLocale != null) _currentLocale = Locale(_savedLocale);
   }
 
-  /// * device locale
-  Locale get deviceLocale => window.locale;
-
   Future<void> updateLocale(Locale locale) async {
     log('new locale is $locale');
     _currentLocale = locale;
@@ -42,18 +42,13 @@ class NationsBase extends ChangeNotifier {
   /// * get the current locale
   Locale get locale {
     if (_currentLocale != null) return _currentLocale!;
-    if (config.supportedLocales.contains(deviceLocale)) return deviceLocale;
+    if (config.supportedLocales.contains(Nations.deviceLocale)) {
+      return Nations.deviceLocale;
+    }
     return config.fallbackLocale;
   }
 
   List<Locale> get supportedLocales => config.supportedLocales;
-
-  final delegates = <LocalizationsDelegate>[
-    const NationsLocalizationsDelegate(),
-    GlobalCupertinoLocalizations.delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
 
   late NTranslations _translations;
   NTranslations get translations => _translations;

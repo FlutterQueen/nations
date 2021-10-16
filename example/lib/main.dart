@@ -7,7 +7,9 @@ Future<void> main() async {
   // TODO :: (2)
   await Nations.boot(
     NationsConfig(
-      supportedLocales: [Locale('af')],
+      supportedLocales: const <Locale>[
+        Locale('af'),
+      ],
       notFoundBuilder: (key) {
         // log('');
         return 'null';

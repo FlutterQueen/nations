@@ -5,6 +5,7 @@
 # Step Three
 
 - [ ] Arabic Docs
+- [ ] logs base on the flavor
 - [ ] productivity - avoiding bugs
   - [ ] VsCode extension
     - [ ] Go to source

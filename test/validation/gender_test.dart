@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/src/validation/gender.dart';
+import 'package:nations/src/validation.dart';
 
 void main() {
   test('detect if the value is valid gender', () {

@@ -1,8 +1,6 @@
 /// Let the people use there languages 💪
 library nations;
 
-import 'package:nations/src/controller.dart';
-
 /// * extensions
 export 'src/extensions/nations_base.dart';
 export 'src/extensions/string.dart';
@@ -29,6 +27,5 @@ export 'src/models/config.dart';
 /// * enums
 export 'src/enums.dart';
 
-// * # Global object to handle the localizations actions
-// ignore: non_constant_identifier_names
-final Nations = NationsBase();
+/// * controller
+export 'src/controller.dart';

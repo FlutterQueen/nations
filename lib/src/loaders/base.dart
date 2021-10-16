@@ -13,9 +13,19 @@ abstract class NationsLoader {
   Future<Map<String, dynamic>> load(Locale locale);
 
   Future<NTranslations> loadWithNationValues(Locale locale) async {
-    return NTranslations(
-      values: await load(locale),
-      nationValues: await loadPackageTranslation(locale),
-    );
+    final values = await load(locale);
+    final nationValues =
+        await loadPackageTranslation(Locale(locale.languageCode));
+    if (values.isNotEmpty) {
+      return NTranslations(
+        values: values,
+        nationValues: nationValues,
+      );
+    } else {
+      return NTranslations(
+        values: await load(Locale(locale.languageCode)),
+        nationValues: nationValues,
+      );
+    }
   }
 }
