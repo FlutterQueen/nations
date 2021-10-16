@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nations/src/models/translations.dart';
 
+import '../../nations.dart';
 import '../helpers/files.dart';
 
 /// * loads translation form assets or any source
@@ -10,22 +10,29 @@ abstract class NationsLoader {
   const NationsLoader();
 
   ///* loads the data from you files
-  Future<Map<String, dynamic>> load(Locale locale);
+  Future<Map<String, dynamic>?> load(Locale locale);
 
-  Future<NTranslations> loadWithNationValues(Locale locale) async {
-    final values = await load(locale);
-    final nationValues =
-        await loadPackageTranslation(Locale(locale.languageCode));
-    if (values.isNotEmpty) {
-      return NTranslations(
-        values: values,
-        nationValues: nationValues,
-      );
-    } else {
-      return NTranslations(
-        values: await load(Locale(locale.languageCode)),
-        nationValues: nationValues,
-      );
-    }
+  /// * loads your assets with nation assets
+  Future<Map<String, dynamic>> loadWithNationValues(Locale locale) async {
+    /// loads the application assets
+    final values = (await load(locale)) ??
+        (await load(Locale(locale.languageCode))) ??
+        (await load(Nations.config.fallbackLocale)) ??
+        (await load(Locale(Nations.config.fallbackLocale.languageCode))) ??
+        {};
+
+    /// loads the application assets
+    final nationValues = (await loadPackageTranslation(locale)) ??
+        (await loadPackageTranslation(Locale(locale.languageCode))) ??
+        (await loadPackageTranslation(Nations.config.fallbackLocale)) ??
+        (await loadPackageTranslation(
+            Locale(Nations.config.fallbackLocale.languageCode))) ??
+        {};
+
+    /// * merging the assets to save memory
+    return {
+      ...nationValues,
+      ...values,
+    };
   }
 }

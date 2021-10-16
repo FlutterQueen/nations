@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nations/src/models/translations.dart';
 
 import '../nations.dart';
 
 class NationsLocalizationsDelegate
-    extends LocalizationsDelegate<NTranslations> {
+    extends LocalizationsDelegate<Map<String, dynamic>> {
   const NationsLocalizationsDelegate();
 
   @override
@@ -14,7 +13,7 @@ class NationsLocalizationsDelegate
 
   /// called by flutter when locale is change
   @override
-  Future<NTranslations> load(Locale locale) async {
+  Future<Map<String, dynamic>> load(Locale locale) async {
     await Nations.load(locale);
     return Nations.translations;
   }

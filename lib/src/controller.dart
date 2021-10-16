@@ -4,7 +4,6 @@ import 'dart:developer' show log;
 
 import 'package:flutter/material.dart';
 import 'package:nations/src/models/config.dart';
-import 'package:nations/src/models/translations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'extensions/nations_base.dart';
@@ -50,10 +49,10 @@ class NationsBase extends ChangeNotifier {
 
   List<Locale> get supportedLocales => config.supportedLocales;
 
-  late NTranslations _translations;
-  NTranslations get translations => _translations;
+  late Map<String, dynamic> _translations;
+  Map<String, dynamic> get translations => _translations;
 
-  Future<NTranslations> load(Locale locale) async {
+  Future<Map<String, dynamic>> load(Locale locale) async {
     _translations = await config.loader.loadWithNationValues(locale);
     return _translations;
   }

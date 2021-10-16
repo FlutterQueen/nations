@@ -5,9 +5,6 @@ import '../typedef.dart';
 import '../validation.dart';
 part 'helpers.dart';
 
-Map<String, dynamic> get _values => Nations.translations.values;
-Map<String, dynamic> get _nationValues => Nations.translations.nationValues;
-
 class ExtractedData {
   final String key;
   final dynamic data;
@@ -17,23 +14,9 @@ class ExtractedData {
     required this.data,
   });
   factory ExtractedData.from(String key) {
-    final fromValues = _transFromMap(key, _values);
-
+    final fromValues = _transFromMap(key, Nations.translations);
     if (fromValues != null) return ExtractedData(key: key, data: fromValues);
-    log(
-      'key $key does not exist in the project '
-      'lang files with the locale ${Nations.locale} ,, '
-      'trying to get it from the nations ....',
-    );
-    final fromNation = _transFromMap(key, _nationValues);
-    if (fromNation != null) return ExtractedData(key: key, data: fromNation);
-    log(
-      'key $key does not exist in nation files neither the project '
-      'lang files with the locale ${Nations.locale} ,, '
-      'trying to get it from the nations ....',
-    );
-    log('cant get from the nation will return null then !');
-
+    log('cant get from the your Assets or nation will return null then !');
     return ExtractedData(key: key, data: null);
   }
   @override

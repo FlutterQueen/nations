@@ -4,6 +4,7 @@ import 'package:nations/src/typedef.dart';
 import '../enums.dart';
 import '../translation_methods.dart' as h;
 
+// TODO :: add example comment for each one
 extension NationsTrans on String {
   /// * translate a text based on the App locale
   String get tr => h.tr(this);
@@ -17,7 +18,10 @@ extension NationsTrans on String {
   /// * translate a text **AND** use the default gender
   String get gender => h.gender(this);
 
+  /// * translate a text and replace the args with provided data
+
   String args(Args args) => h.trWithArgs(this, args);
 
+  ///  * translate a text and set the right word base on the provided count
   String plural(int count, [Args? args]) => h.trPlural(this, count, args);
 }

@@ -24,7 +24,7 @@ extension NationsBaseExt on NationsBase {
   /// * device locale
   Locale get deviceLocale => window.locale;
 
-  /// *
+  /// * use it to make the `App` loads the data when the language changes
   List<LocalizationsDelegate> get delegates => <LocalizationsDelegate>[
         const NationsLocalizationsDelegate(),
         GlobalCupertinoLocalizations.delegate,
@@ -33,5 +33,6 @@ extension NationsBaseExt on NationsBase {
       ];
 
   NotFoundBuilder get notFoundBuilder => config.notFoundBuilder;
+  // * return the `default` `Gender` based on the `Config`
   Gender get defaultGender => config.defaultGender;
 }

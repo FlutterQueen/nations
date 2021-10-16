@@ -7,15 +7,7 @@ import 'package:nations/nations.dart';
 /// *  load translation files from the `nations` package base on the locale
 /// * if the locale doesn't exist in your assets it will try to get the file named with the language code
 /// * if also is empty it will loads the fallback locale
-Future<Map<String, dynamic>> loadPackageTranslation(Locale locale) async {
-  final original = await loadJsonFileContent(
-    'packages/nations/assets/lang/$locale.json',
-  );
-  if (original.isNotEmpty) return original;
-  final langBase = await loadJsonFileContent(
-    'packages/nations/assets/lang/${locale.languageCode}.json',
-  );
-  if (langBase.isNotEmpty) return langBase;
+Future<Map<String, dynamic>?> loadPackageTranslation(Locale locale) async {
   return loadJsonFileContent(
     'packages/nations/assets/lang/${Nations.config.fallbackLocale}.json',
   );
@@ -24,18 +16,12 @@ Future<Map<String, dynamic>> loadPackageTranslation(Locale locale) async {
 /// *  load the locale from json files
 /// * if the locale doesn't exist in your assets it will try to get the file named with the language code
 /// * if also is empty it will loads the fallback locale
-Future<Map<String, dynamic>> loadLocaleTranslation(Locale locale) async {
-  final original = await loadJsonFileContent(' lang/$locale.json');
-  if (original.isNotEmpty) return original;
-  final langBase = await loadJsonFileContent(
-    'lang/${locale.languageCode}.json',
-  );
-  if (langBase.isNotEmpty) return langBase;
+Future<Map<String, dynamic>?> loadLocaleTranslation(Locale locale) async {
   return loadJsonFileContent('lang/${Nations.config.fallbackLocale}.json');
 }
 
 /// *  load the locale from json files
-Future<Map<String, dynamic>> loadJsonFileContent(String path) async {
+Future<Map<String, dynamic>?> loadJsonFileContent(String path) async {
   try {
     // *  parse it to string
     return json.decode(
@@ -43,6 +29,6 @@ Future<Map<String, dynamic>> loadJsonFileContent(String path) async {
       await rootBundle.loadString(path),
     );
   } on FlutterError {
-    return {};
+    return null;
   }
 }
