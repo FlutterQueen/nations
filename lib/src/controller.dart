@@ -32,18 +32,25 @@ class NationsBase extends ChangeNotifier {
   }
 
   Future<void> updateLocale(Locale locale) async {
-    log('new locale is $locale');
-    _currentLocale = locale;
-    notifyListeners();
-    await _prefs.setString('nations_lang', locale.toString());
+    try {
+      log('new locale is $locale');
+      _currentLocale = locale;
+      notifyListeners();
+      await _prefs.setString('nations_lang', locale.toString());
+      log('sucess');
+    } catch (e, st) {
+      print(e);
+      print(st);
+    }
   }
 
   /// * get the current locale
   Locale get locale {
-    if (_currentLocale != null) return _currentLocale!;
-    if (config.supportedLocales.contains(Nations.deviceLocale)) {
-      return Nations.deviceLocale;
-    }
+    log('locale: get $_currentLocale');
+    return _currentLocale ?? config.fallbackLocale;
+    // if (config.supportedLocales.contains(Nations.deviceLocale)) {
+    //   return Nations.deviceLocale;
+    // }
     return config.fallbackLocale;
   }
 
@@ -53,6 +60,7 @@ class NationsBase extends ChangeNotifier {
   Map<String, dynamic> get translations => _translations;
 
   Future<Map<String, dynamic>> load(Locale locale) async {
+    log('will load locale $locale');
     _translations = await config.loader.loadWithNationValues(locale);
     return _translations;
   }

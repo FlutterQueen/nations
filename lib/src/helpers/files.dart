@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +10,7 @@ import 'package:nations/nations.dart';
 /// * if also is empty it will loads the fallback locale
 Future<Map<String, dynamic>?> loadPackageTranslation(Locale locale) async {
   return loadJsonFileContent(
-    'packages/nations/assets/lang/${Nations.config.fallbackLocale}.json',
+    'packages/nations/assets/lang/$locale.json',
   );
 }
 

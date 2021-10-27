@@ -8,7 +8,8 @@ Future<void> main() async {
   await Nations.boot(
     NationsConfig(
       supportedLocales: const <Locale>[
-        Locale('af'),
+        Locale('ar'),
+        Locale('en'),
       ],
       notFoundBuilder: (key) {
         // log('');

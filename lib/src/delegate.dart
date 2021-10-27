@@ -8,6 +8,8 @@ class NationsLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) {
+    print('locale $locale is supported ' +
+        Nations.supportedLocales.contains(locale).toString());
     return Nations.supportedLocales.contains(locale);
   }
 
