@@ -4,6 +4,7 @@ library nations;
 /// * extensions
 export 'src/extensions/nations_base.dart';
 export 'src/extensions/string.dart';
+export 'src/extensions/locale.dart';
 
 /// * helpers
 export 'src/helpers/string.dart';

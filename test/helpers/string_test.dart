@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/nations.dart';
-
 void main() {
   // test('it capitalize first word with single word', () {
   //   const str = "abcd";

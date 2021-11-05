@@ -7,18 +7,11 @@ class NationsLocalizationsDelegate
   const NationsLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) {
-    print('locale $locale is supported ' +
-        Nations.supportedLocales.contains(locale).toString());
-    return Nations.supportedLocales.contains(locale);
-  }
+  bool isSupported(Locale locale) => Nations.supportedLocales.contains(locale);
 
   /// called by flutter when locale is change
   @override
-  Future<Map<String, dynamic>> load(Locale locale) async {
-    await Nations.load(locale);
-    return Nations.translations;
-  }
+  Future<Map<String, dynamic>> load(Locale locale) => Nations.load(locale);
 
   @override
   bool shouldReload(old) => false;

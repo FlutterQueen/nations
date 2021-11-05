@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../app.dart';
 
 void main() {
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
+    await (await SharedPreferences.getInstance()).clear();
     await Nations.boot(NationsTestConfig());
   });
 

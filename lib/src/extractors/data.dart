@@ -23,7 +23,7 @@ class ExtractedData {
   String toString() {
     if (isValidStringValue(data)) return data;
     log('extraction is not done correctly you have to use the right extractor function');
-    return Nations.notFoundBuilder(key);
+    return Nations.config.notFoundBuilder(key);
   }
 
   String toGender(Gender? gender) {
@@ -38,7 +38,7 @@ class ExtractedData {
       }
     } else {
       log('$key is not valid gender translation');
-      return Nations.notFoundBuilder(key);
+      return Nations.config.notFoundBuilder(key);
     }
   }
 
@@ -50,12 +50,12 @@ class ExtractedData {
             count,
             (data as Args).keys.toList(),
           ) ??
-          Nations.notFoundBuilder(key);
+          Nations.config.notFoundBuilder(key);
       return replaceArgsOf(
         data[pluralKey],
         {'count': count.toString(), if (args != null) ...args},
       );
     }
-    return Nations.notFoundBuilder(key);
+    return Nations.config.notFoundBuilder(key);
   }
 }

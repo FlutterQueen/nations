@@ -4,7 +4,6 @@ import 'package:nations/src/typedef.dart';
 import '../enums.dart';
 import '../translation_methods.dart' as h;
 
-// TODO :: add example comment for each one
 extension NationsTrans on String {
   /// * translate a text based on the App locale
   String get tr => h.tr(this);
