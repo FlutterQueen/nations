@@ -10,18 +10,14 @@
     "internet": "انترنت",
     "no": "لا",
     "yes": "نعم",
+    "confirm": "تاكيد",
     "gender": {
         "male": "ذكر",
         "female": "انثي"
     },
-    "person": {
-        "male": "سيدي",
-        "female": "انسه"
-    },
     "validation": {
-        "email": "فاليديشن ومن داخله البريد",
-        "password": "فاليديشن ومن داخله كلمه المرور",
-        "min_length": "min length is :attributes",
+        "required": "هذا الحقل مطلوب",
+        "email": "البريد الالكتروني غير صحيح",
         "age": {
             "to_young": "صغير جدا",
             "old_enough": "كبير بما فيه الكفاية",

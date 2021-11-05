@@ -1,26 +1,28 @@
 {
-   "package_name": "nations",
-   "date": "date",
-   "time": "time",
-   "enter": "enter",
-   "edit": "edit",
-   "show": "show",
-   "delete": "delete",
-   "error": "error",
-   "internet": "internet",
-   "no": "no",
-   "yes": "yes",
-   "gender": {
-      "male": "Male",
-      "female": "Female"
-   },
-   "validation": {
-      "email": "validation  inner email",
-      "password": "validation  inner password",
-      "age": {
-         "to_young": "too young 👶",
-         "old_enough": "old enough ✔",
-         "very_old": "very old 💪"
-      }
-   }
+    "package_name": "nations",
+    "date": "date",
+    "time": "time",
+    "enter": "enter",
+    "edit": "edit",
+    "show": "show",
+    "delete": "delete",
+    "error": "error",
+    "internet": "internet",
+    "no": "no",
+    "yes": "yes",
+    "confirm": "confirm",
+    "gender": {
+        "male": "Male",
+        "female": "Female"
+    },
+    "validation": {
+        "required": "this input is required",
+        "email": "wrong email address",
+        "password": "validation  inner password",
+        "age": {
+            "to_young": "too young 👶",
+            "old_enough": "old enough ✔",
+            "very_old": "very old 💪"
+        }
+    }
 }
