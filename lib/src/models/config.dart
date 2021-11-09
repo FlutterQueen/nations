@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nations/src/enums.dart';
-
-import '../loaders/base.dart';
-import '../loaders/json.dart';
-import '../typedef.dart';
+import 'package:nations/nations.dart';
 
 class NationsConfig {
   NationsConfig({

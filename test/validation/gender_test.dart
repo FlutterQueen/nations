@@ -2,17 +2,40 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/src/validation.dart';
 
 void main() {
-  test('detect if the value is valid gender', () {
-    final withString = isValidGenderMap('iam a string 😀');
-    expect(withString, isFalse);
-    final withEmptyMap = isValidGenderMap({});
-    expect(withEmptyMap, isFalse);
-    final withMapWithOnlyMale = isValidGenderMap({'male': 'male gender'});
-    expect(withMapWithOnlyMale, isFalse);
-    final withMaleAndFemale = isValidGenderMap({
-      'male': 'male gender',
-      'female': 'female gender',
-    });
-    expect(withMaleAndFemale, isTrue);
+  test(
+    'it returns true if value is not a Map',
+    () {
+      // string
+      expect(isValidGenderMap('iam a string 😀'), isFalse);
+      // int
+      expect(isValidGenderMap(1), isFalse);
+      // lists
+      expect(isValidGenderMap([]), isFalse);
+      // sets
+      expect(isValidGenderMap({1, 2, 3}), isFalse);
+      // double
+      expect(isValidGenderMap(1.1), isFalse);
+    },
+  );
+  test(
+    'it returns false if the map is empty',
+    () => expect(isValidGenderMap({}), isFalse),
+  );
+  test('it return false if missing one gender either male of female', () {
+    // female
+    expect(isValidGenderMap({'male': 'foo'}), isFalse);
+    // male
+    expect(isValidGenderMap({'female': 'foo'}), isFalse);
   });
+
+  test(
+    'it return true if the map contains male and female',
+    () {
+      final withMaleAndFemale = isValidGenderMap({
+        'male': 'male gender',
+        'female': 'female gender',
+      });
+      expect(withMaleAndFemale, isTrue);
+    },
+  );
 }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../nations.dart';
@@ -10,7 +12,7 @@ abstract class NationsLoader {
   const NationsLoader();
 
   ///* loads the data from you files
-  Future<Map<String, dynamic>?> load(Locale locale);
+  FutureOr<Map<String, dynamic>?> load(Locale locale);
 
   /// * loads your assets with nation assets
   Future<Map<String, dynamic>> loadWithNationValues(Locale locale) async {

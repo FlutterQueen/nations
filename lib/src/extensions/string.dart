@@ -1,26 +1,25 @@
 import 'package:nations/nations.dart';
-import 'package:nations/src/typedef.dart';
 
-import '../enums.dart';
-import '../translation_methods.dart' as h;
+import '../extractors.dart';
 
 extension NationsTrans on String {
   /// * translate a text based on the App locale
-  String get tr => h.tr(this);
+  String get tr => ExtractedData.from(this).toString();
 
   /// * translate a text **AND** use the `male` gender
-  String get trMale => h.gender(this, Gender.male);
+  String get trMale => ExtractedData.from(this).toGender(Gender.male);
 
   /// * translate a text **AND** use the `female` gender
-  String get trFemale => h.gender(this, Gender.female);
+  String get trFemale => ExtractedData.from(this).toGender(Gender.female);
 
   /// * translate a text **AND** use the default gender
-  String get gender => h.gender(this);
+  String get gender => ExtractedData.from(this).toGender();
 
   /// * translate a text and replace the args with provided data
 
-  String args(Args args) => h.trWithArgs(this, args);
+  String args(Args args) => ExtractedData.from(this).args(args);
 
   ///  * translate a text and set the right word base on the provided count
-  String plural(int count, [Args? args]) => h.trPlural(this, count, args);
+  String plural(int count, [Args? args]) =>
+      ExtractedData.from(this).plural(count, args);
 }

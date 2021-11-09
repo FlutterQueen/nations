@@ -92,9 +92,11 @@ class MySc extends StatelessWidget {
 
             Text('apples'.plural(0)),
             Text('apples'.plural(1)),
+            Text('apples'.plural(2)),
             Text('apples'.plural(3)),
             Text('apples'.plural(4)),
             Text('apples'.plural(5)),
+            Text('apples'.plural(10)),
             Text('apples'.plural(60)),
             Text('apples'.plural(65)),
             Text('apples'.plural(70)),

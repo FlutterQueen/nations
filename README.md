@@ -47,7 +47,7 @@ example
 
 ```dart
 final message = 'login'.tr
-print(message);
+log(message);
 ```
 
 also you did't add `login` message in your assets and translate it to the your supported languages
@@ -71,8 +71,6 @@ you can use the `.tr` extension or `tr()` function directly
 
 ```dart
 'key'.tr
-// or
-tr('key')
 ```
 
 ## Gender
@@ -82,8 +80,6 @@ tr('key')
 ```dart
 // male
 'key'.trMale
-// or
-trMale('key')
 ```
 
 ### Female
@@ -91,8 +87,6 @@ trMale('key')
 ```dart
 // male
 'key'.trFemale
-// or
-trFemale('key')
 ```
 
 ### use the default gender
@@ -100,23 +94,18 @@ trFemale('key')
 ```dart
   /// * translate a text **AND** use the default gender
   'key'.gender
-  gender('key')
 ```
 
 ## translation attributes
 
 ```dart
   'key'.args(args)
-  trWithArgs('key',args)
-
 ```
 
 ## plural
 
 ```dart
   'key'.plural(count,args)
-  trPlural('key',count,args)
-
 ```
 
 # Package Integration Example with `queen_validators`

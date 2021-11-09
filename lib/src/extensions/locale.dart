@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:nations/nations.dart';
+
+const _rtlLocales = <String>[
+  'ar', // Arabic
+  'fa', // Farsi
+  'he', // Hebrew
+  'ps', // Pashto
+  'ur', // Urdu
+];
 
 extension NLocaleExt on Locale {
   /// return `true` if this language is written from `Right-to-Left`
-  bool get isRTL => isRtlLocale(this);
+  bool get isRTL => _rtlLocales.contains(languageCode);
 
   /// return `true` if this language is written from `Left-to-Right`
-  bool get isLTR => !isRtlLocale(this);
+  bool get isLTR => !_rtlLocales.contains(languageCode);
 
   /// return the TextDirection base on the language
-  TextDirection get direction => textDirectionByLocale(this);
+  TextDirection get direction => _rtlLocales.contains(languageCode)
+      ? TextDirection.rtl
+      : TextDirection.ltr;
 }

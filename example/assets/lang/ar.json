@@ -1,10 +1,4 @@
 {
     "basmala": "بسم الله الرحمن الرحيم",
-    "attributedMessage": "المتفير الاول هو :atr1 \n و المتغير الثاني هو:atr2",
-    "apples": {
-        "0": "there are none",
-        "1": "there are one",
-        "3,4": "there are :count",
-        "60-70": "there are too much :count"
-    }
+    "attributedMessage": "المتفير الاول هو :atr1 \n و المتغير الثاني هو:atr2"
 }
