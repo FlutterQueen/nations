@@ -17,9 +17,9 @@ extension NationsTrans on String {
 
   /// * translate a text and replace the args with provided data
 
-  String args(Args args) => ExtractedData.from(this).args(args);
+  String args(Map<String, dynamic> args) => ExtractedData.from(this).args(args);
 
   ///  * translate a text and set the right word base on the provided count
-  String plural(int count, [Args? args]) =>
+  String plural(int count, [Map<String, dynamic>? args]) =>
       ExtractedData.from(this).plural(count, args);
 }

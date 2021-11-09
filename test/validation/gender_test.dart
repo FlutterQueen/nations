@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/src/validation.dart';
+import 'package:nations/src/helpers/validation.dart';
 
 void main() {
   test(

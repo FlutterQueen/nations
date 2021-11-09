@@ -1,6 +1,6 @@
 import 'package:nations/nations.dart';
 import 'helpers/extractors.dart';
-import 'validation.dart';
+import 'helpers/validation.dart';
 
 class ExtractedData {
   // * extracted data key
@@ -46,13 +46,13 @@ class ExtractedData {
     }
   }
 
-  String args(Args args) => replaceArgsOf(data, args);
+  String args(Map<String, dynamic> args) => replaceArgsOf(data, args);
 
-  String plural(int count, [Args? args]) {
+  String plural(int count, [Map<String, dynamic>? args]) {
     if (isValidArgs(data)) {
       final pluralKey = resolveCount(
             count,
-            (data as Args).keys.toList(),
+            (data as Map<String, dynamic>).keys.toList(),
           ) ??
           Nations.config.notFoundBuilder(key);
       return replaceArgsOf(
