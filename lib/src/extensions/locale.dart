@@ -10,13 +10,14 @@ const _rtlLocales = <String>[
 
 extension NLocaleExt on Locale {
   /// return `true` if this language is written from `Right-to-Left`
-  bool get isRTL => _rtlLocales.contains(languageCode);
+  bool get isRTL => _rtlLocales.contains(languageCode.toLowerCase());
 
   /// return `true` if this language is written from `Left-to-Right`
-  bool get isLTR => !_rtlLocales.contains(languageCode);
+  bool get isLTR => !_rtlLocales.contains(languageCode.toLowerCase());
 
   /// return the TextDirection base on the language
-  TextDirection get direction => _rtlLocales.contains(languageCode)
-      ? TextDirection.rtl
-      : TextDirection.ltr;
+  TextDirection get direction =>
+      _rtlLocales.contains(languageCode.toLowerCase())
+          ? TextDirection.rtl
+          : TextDirection.ltr;
 }

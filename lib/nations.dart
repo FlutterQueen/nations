@@ -21,8 +21,7 @@ export 'src/models/config.dart';
 /// * widgets
 export 'src/widgets/builder.dart';
 
-/// * utils
-export 'src/utils.dart';
-
 /// * controller
 export 'src/controller.dart';
+
+enum Gender { male, female }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
+typedef NotFoundBuilder = String Function(String key);
+
 class NationsConfig {
   NationsConfig({
     this.fallbackLocale = const Locale('ar'),

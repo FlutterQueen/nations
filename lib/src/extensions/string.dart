@@ -16,7 +16,6 @@ extension NationsTrans on String {
   String get gender => ExtractedData.from(this).toGender();
 
   /// * translate a text and replace the args with provided data
-
   String args(Map<String, dynamic> args) => ExtractedData.from(this).args(args);
 
   ///  * translate a text and set the right word base on the provided count

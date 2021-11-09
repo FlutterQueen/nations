@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
 
-import '../app.dart';
+import '../../widgets/app.dart';
 
 void main() {
   setUp(() async {

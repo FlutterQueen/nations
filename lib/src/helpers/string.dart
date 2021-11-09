@@ -18,10 +18,36 @@ String numberToLocale(String str, [Locale? locale]) {
 }
 
 /// arabic numbers are `0123456789`
-String convertToArabicNumbers(String str) => str;
+/// convert numbers to arabic format
+/// `0123456789` becomes `٠١٢٣٤٥٦٧٨٩`
+String convertToArabicNumbers(String str) {
+  return str
+      .replaceAll('٠', '0')
+      .replaceAll('١', '1')
+      .replaceAll('٢', '2')
+      .replaceAll('٣', '3')
+      .replaceAll('٤', '4')
+      .replaceAll('٥', '5')
+      .replaceAll('٦', '6')
+      .replaceAll('٧', '7')
+      .replaceAll('٨', '8')
+      .replaceAll('٩', '9');
+}
 
 /// arabic numbers are `٠١٢٣٤٥٦٧٨٩`
-String convertToHindiNumbers(String str) => str;
+String convertToHindiNumbers(String str) {
+  return str
+      .replaceAll('0', '٠')
+      .replaceAll('1', '١')
+      .replaceAll('2', '٢')
+      .replaceAll('3', '٣')
+      .replaceAll('4', '٤')
+      .replaceAll('5', '٥')
+      .replaceAll('6', '٦')
+      .replaceAll('7', '٧')
+      .replaceAll('8', '٨')
+      .replaceAll('9', '٩');
+}
 
 /// takes `foo` return `Foo`
 /// takes `foo bar` return `Foo bar`
@@ -39,10 +65,12 @@ String capitalizeFirstCharForEachWord(String str) {
       .join(" ");
 }
 
+/// * replace args of map
+/// * in your assets the arg must starts with `:` to be identified as variable to replace it
 String replaceArgsOf(String data, Map<String, dynamic> args) {
-  String msg = data.toString();
+  String msg = data;
   for (final arg in args.keys) {
-    msg = msg.replaceFirst(':$arg', args[arg]);
+    msg = msg.replaceFirst(':$arg', args[arg].toString());
   }
   return msg;
 }

@@ -12,6 +12,13 @@ void main() {
   ];
 
   group('isRtl Locale extension', () {
+    test('use languageCode lowerCase', () {
+      expect(const Locale('AR').isRTL, isTrue);
+    });
+    test('uses only the languageCode', () {
+      expect(const Locale('ar', 'EG').isRTL, isTrue);
+      expect(const Locale('en', 'US').isRTL, isFalse);
+    });
     test('it should return true if the the locale is RTL', () {
       for (final locale in _rtlLocales) {
         expect(locale.isRTL, isTrue);
@@ -24,6 +31,9 @@ void main() {
     });
   });
   group('isLtr Locale extension', () {
+    test('use languageCode lowerCase', () {
+      expect(const Locale('EN').isLTR, isTrue);
+    });
     test('it should return false if the the locale is RTL', () {
       for (final locale in _rtlLocales) {
         expect(locale.isLTR, isFalse);
@@ -37,6 +47,9 @@ void main() {
   });
 
   group('direction Locale extension', () {
+    test('use languageCode lowerCase', () {
+      expect(const Locale('AR').direction, TextDirection.rtl);
+    });
     test('it should return `TextDirection.rtl` if the the locale is RTL', () {
       for (final locale in _rtlLocales) {
         expect(locale.direction, TextDirection.rtl);
