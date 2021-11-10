@@ -32,9 +32,8 @@ abstract class NationsLoader {
         {};
 
     /// * merging the assets to save memory
-    return {
-      ...nationValues,
-      ...values,
-    };
+    return {}
+      ..addAll(nationValues)
+      ..addAll(values);
   }
 }

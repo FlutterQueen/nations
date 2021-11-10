@@ -27,8 +27,7 @@ class NationsConfig {
   /// not found builder
   final String Function(String key)? _notFoundBuilder;
 
-  NotFoundBuilder get notFoundBuilder =>
-      _notFoundBuilder ?? (String key) => 'null';
+  NotFoundBuilder get notFoundBuilder => _notFoundBuilder ?? (_) => 'null';
 
   /// the default gender
   final Gender defaultGender;

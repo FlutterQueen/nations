@@ -55,6 +55,7 @@ class ExtractedData {
             (data as Map<String, dynamic>).keys.toList(),
           ) ??
           Nations.config.notFoundBuilder(key);
+      if (data[pluralKey] == null) return Nations.config.notFoundBuilder(key);
       return replaceArgsOf(
         data[pluralKey],
         {'count': count.toString(), if (args != null) ...args},

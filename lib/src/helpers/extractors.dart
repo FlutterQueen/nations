@@ -43,6 +43,8 @@ Object? transFromMap(String key, Map<String, dynamic> values) {
     if (keys.length > 1) {
       final firstKey = keys.first;
       final newKey = key.replaceFirst(firstKey + '.', '');
+      if (values[firstKey] == null) return null;
+
       return transFromMap(newKey, values[firstKey]);
     }
     return values[keys.first];
