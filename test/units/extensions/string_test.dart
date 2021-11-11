@@ -8,17 +8,35 @@ void main() {
     await Nations.boot(NationsTestConfig());
     await Nations.load(Nations.locale);
   });
+
+  group('not found tests', () {
+    test('it return the not found def value if is null', () {
+      expect('fooBarZee'.tr, equals('null'));
+    });
+    test('it return the not found def value if the plural value does not exist',
+        () {
+      expect('fooBarZee'.plural(50), equals('null'));
+    });
+    test(
+        'it return the not found def value if is the parent exist and the child is not',
+        () {
+      expect('gender.bar'.tr, equals('null'));
+    });
+  });
   test('it translate simple key', () {
     expect('package_name'.tr, equals('أمم'));
   });
-  test('it translate to male Gender', () {
-    expect('gender'.trMale, equals('ذكر'));
-  });
-  test('it translate to female Gender', () {
-    expect('gender'.trFemale, equals('انثي'));
-  });
-  test('it translate to the default Gender', () {
-    expect('gender'.gender, equals('ذكر'));
+
+  group('gender extension', () {
+    test('it translate to male Gender', () {
+      expect('gender'.trMale, equals('ذكر'));
+    });
+    test('it translate to female Gender', () {
+      expect('gender'.trFemale, equals('انثي'));
+    });
+    test('it translate to the default Gender', () {
+      expect('gender'.gender, equals('ذكر'));
+    });
   });
   test('it translate and replace Args', () {
     expect('args_key'.args({'name': "ملك"}), equals("اهلا بك يا ملك"));
