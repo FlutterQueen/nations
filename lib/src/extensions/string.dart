@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
-import '../extractors.dart';
+import 'package:nations/src/helpers/string.dart' as numbers;
+
+import '../extract/base.dart';
 
 extension NationsTrans on String {
   /// * translate a text based on the App locale
@@ -22,4 +25,7 @@ extension NationsTrans on String {
   ///  * translate a text and set the right word base on the provided count
   String plural(int count, [Map<String, dynamic>? args]) =>
       ExtractedData.parse(this).plural(count, args);
+
+  String numberToLocale([Locale? locale]) =>
+      numbers.numberToLocale(this, locale);
 }

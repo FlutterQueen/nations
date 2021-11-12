@@ -3,7 +3,7 @@
 /// * returns the right count boundary
 /// * if none exist return the default key
 /// * if there is no default return null
-String? resolveCount(int count, List<String> keys) {
+String? resolveCount(int count, Iterable<String> keys) {
   for (final pluralKey in keys) {
     /// single number
     if (count.toString() == pluralKey) {

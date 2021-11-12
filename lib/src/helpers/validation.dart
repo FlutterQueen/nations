@@ -4,6 +4,3 @@ bool isValidGenderMap(Map value) {
       (value).keys.contains('male') &&
       (value).keys.contains('female');
 }
-
-bool isValidArgs(Object value) =>
-    value is Map<String, dynamic> && value.isNotEmpty;

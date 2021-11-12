@@ -147,12 +147,11 @@ more String keys and dynamic parameters every thing will be hard type and strict
 
 - [x] `capitalizeFirstChar(String)` to make the first word capital
 - [x] `capitalizeEachWord` to make every word capital in one line more entire paragraph
-- [ ] `numberToLocale(String,[Locale?])` localize numbers based on locale
+- [x] `numberToLocale(String,[Locale?])` localize numbers based on locale
 
 # Whats next ?
 
 - [ ] make sure tests cover every thing
-- [ ] Arabic Docs
 - [ ] logs base on the flavor
 - [ ] productivity - avoiding bugs
   - [ ] VsCode extension
