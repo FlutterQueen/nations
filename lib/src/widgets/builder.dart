@@ -23,8 +23,8 @@ class _NationsRootState extends State<NationsRoot> {
   }
 
   @override
-  Widget build(BuildContext context) => Builder(
-        key: UniqueKey(),
-        builder: (_) => widget.child,
+  Widget build(BuildContext context) => SizedBox(
+        key: Key(Nations.locale.toString()),
+        child: widget.child,
       );
 }

@@ -1,4 +1,3 @@
-import 'package:example/keys.dart';
 import 'package:flutter/material.dart';
 
 import 'package:nations/nations.dart';
@@ -32,19 +31,18 @@ class MyApp extends StatelessWidget {
       locale: Nations.locale,
       localizationsDelegates: Nations.delegates,
       supportedLocales: Nations.supportedLocales,
-      localeResolutionCallback: (locale, supportedLocales) {
-        // Check if the current device locale is supported
-        for (var supportedLocale in supportedLocales) {
-          if (supportedLocale.languageCode == locale?.languageCode &&
-              supportedLocale.countryCode == locale?.countryCode) {
-            return supportedLocale;
-          }
-        }
-        // If the locale of the device is not supported, use the first one
-        // from the list (English, in this case).
-        return supportedLocales.first;
-      },
-
+      // localeResolutionCallback: (locale, supportedLocales) {
+      //   // Check if the current device locale is supported
+      //   for (var supportedLocale in supportedLocales) {
+      //     if (supportedLocale.languageCode == locale?.languageCode &&
+      //         supportedLocale.countryCode == locale?.countryCode) {
+      //       return supportedLocale;
+      //     }
+      //   }
+      //   // If the locale of the device is not supported, use the first one
+      //   // from the list (English, in this case).
+      //   return supportedLocales.first;
+      // },
       /// end ot Nations params
       home: const MySc(),
     );
@@ -86,8 +84,8 @@ class MySc extends StatelessWidget {
             Text('person'.trMale),
             Text('person'.trFemale),
             Text('person'.gender),
-            Text(Tr.person.male),
-            Text(Tr.validation.age.toYoung),
+            Text('person.male'.tr),
+            Text('validation.age.to_young'.tr),
             Text('attributedMessage'.args({'atr1': "foo", 'atr2': 'bar'})),
 
             Text('apples'.plural(0)),

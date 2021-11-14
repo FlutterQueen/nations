@@ -32,10 +32,13 @@ class NationsBase extends ChangeNotifier {
     _currentLocale = _savedLocale == null
         ? this.config.fallbackLocale
         : Locale(_savedLocale);
+
+    await load(_currentLocale!);
   }
 
   Future<void> updateLocale(Locale locale) async {
     _currentLocale = locale;
+    await load(locale);
     notifyListeners();
     await _prefs.setString('nations_lang', locale.toString());
   }
@@ -58,8 +61,9 @@ class NationsBase extends ChangeNotifier {
     ''');
   }
 
-  Future<Map<String, dynamic>> load(Locale locale) async {
+  @protected
+  @visibleForTesting
+  Future<void> load(Locale locale) async {
     _translations = await config.loader.loadWithNationValues(locale);
-    return translations;
   }
 }

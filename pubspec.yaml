@@ -1,6 +1,6 @@
 name: nations
 description: queen support for localization in flutter
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/maxzod/nations
 
 environment:
