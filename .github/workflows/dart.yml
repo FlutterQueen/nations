@@ -3,7 +3,7 @@ name: test
 # Trigger the workflow on push or pull request
 on:
   push:
-    branches: 
+    branches:
       - master
       - testing
   pull_request:
@@ -33,3 +33,5 @@ jobs:
       # Upload coverage reports to Codecov
       # https://github.com/marketplace/actions/codecov
       - uses: codecov/codecov-action@v1.0.7
+      - name: Very Good Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0

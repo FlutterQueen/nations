@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../nations.dart';
+import 'package:nations/nations.dart';
 
 /// this loader is meant for test purposes only
 /// since we cant load assets with the rootBundle from the tests

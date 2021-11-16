@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
+import '../test.dart';
+
 class NationsTestConfig extends NationsConfig {
   NationsTestConfig() : super(loader: TestFilesLoader());
 }

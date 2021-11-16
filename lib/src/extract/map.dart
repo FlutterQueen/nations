@@ -14,8 +14,9 @@ class MapData extends ExtractedData<Map<String, dynamic>> {
         case Gender.female:
           return data['female'];
       }
+    } else {
+      return notFound;
     }
-    return notFound;
   }
 
   @override
