@@ -17,11 +17,7 @@ abstract class NationsLoader {
   /// * loads your assets with nation assets
   Future<Map<String, dynamic>> loadWithNationValues(Locale locale) async {
     /// loads the application assets
-    final values = (await load(locale)) ??
-        (await load(Locale(locale.languageCode))) ??
-        (await load(Nations.config.fallbackLocale)) ??
-        (await load(Locale(Nations.config.fallbackLocale.languageCode))) ??
-        {};
+    final values = (await load(locale)) ?? {};
 
     /// loads the application assets
     final nationValues = (await loadPackageTranslation(locale)) ??

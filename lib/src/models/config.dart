@@ -10,7 +10,7 @@ class NationsConfig {
       Locale('ar'),
       Locale('en'),
     ],
-    this.loader = const NationsJsonLoader(),
+    this.loader = const NationsAssetsLoader(),
     this.defaultGender = Gender.male,
     NotFoundBuilder? notFoundBuilder,
   }) : _notFoundBuilder = notFoundBuilder;
