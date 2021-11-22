@@ -8,4 +8,10 @@ class StringData extends ExtractedData<String> {
 
   @override
   String toString() => data;
+
+  @override
+  String plural(int count, [Map<String, dynamic>? args]) => notFound;
+
+  @override
+  String toGender([Gender? gender]) => notFound;
 }

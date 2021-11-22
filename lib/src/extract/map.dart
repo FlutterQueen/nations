@@ -14,28 +14,30 @@ class MapData extends ExtractedData<Map<String, dynamic>> {
         case Gender.female:
           return data['female'];
       }
-    } else {
-      return notFound;
     }
+    return notFound;
   }
 
   @override
   String plural(int count, [Map<String, dynamic>? args]) {
     if (data.isNotEmpty) {
-      final pluralKey = resolveCount(
-            count,
-            data.keys,
-          ) ??
-          notFound;
-      if (data[pluralKey] == null) return notFound;
-      return replaceArgsOf(
-        data[pluralKey],
-        {
-          'count': count.toString(),
-          if (args != null) ...args,
-        },
-      );
+      final pluralKey = resolveCount(count, data.keys);
+      if (pluralKey != null && data[pluralKey] != null) {
+        return replaceArgsOf(
+          data[pluralKey],
+          {
+            'count': count.toString(),
+            if (args != null) ...args,
+          },
+        );
+      }
     }
     return notFound;
   }
+
+  @override
+  String args(Map<String, dynamic> args) => notFound;
+
+  @override
+  String toString() => notFound;
 }

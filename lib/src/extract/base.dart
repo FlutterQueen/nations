@@ -5,7 +5,7 @@ part 'string.dart';
 part 'map.dart';
 part 'not_found.dart';
 
-class ExtractedData<T> {
+abstract class ExtractedData<T> {
   // * extracted data key
   /// in case of `'foo'.tr` the key is `'foo'`
   final String key;
@@ -35,11 +35,11 @@ class ExtractedData<T> {
   }
 
   @override
-  String toString() => notFound;
+  String toString();
 
-  String plural(int count, [Map<String, dynamic>? args]) => notFound;
+  String plural(int count, [Map<String, dynamic>? args]);
 
-  String toGender([Gender? gender]) => notFound;
+  String toGender([Gender? gender]);
 
-  String args(Map<String, dynamic> args) => notFound;
+  String args(Map<String, dynamic> args);
 }

@@ -36,18 +36,18 @@ String? resolveCount(int count, Iterable<String> keys) {
 /// if the key is not nested return the value
 /// if the key is not nested return go deep in the value
 /// if the key value is not found return null
-Object? transFromMap(String key, Map<String, dynamic> values) {
+Object? transFromMap(String key, Map<String, Object?> values) {
   /// if the key is nested
   if (key.contains('.')) {
     final keys = key.split('.');
-    if (keys.length > 1) {
+    if (keys.isNotEmpty) {
       final firstKey = keys.first;
       final newKey = key.replaceFirst(firstKey + '.', '');
-      if (values[firstKey] == null) return null;
-
-      return transFromMap(newKey, values[firstKey]);
+      if (values[firstKey] != null &&
+          values[firstKey] is Map<String, Object?>) {
+        return transFromMap(newKey, values[firstKey] as Map<String, Object?>);
+      }
     }
-    return values[keys.first];
   } else {
     /// the key is not nested
     return values[key];

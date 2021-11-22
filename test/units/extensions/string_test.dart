@@ -6,6 +6,7 @@ import '../../widgets/app.dart';
 
 void main() {
   setUp(() async {
+    TestWidgetsFlutterBinding.ensureInitialized();
     await Nations.boot(NationsTestConfig());
     await Nations.load(Nations.locale);
   });

@@ -50,16 +50,7 @@ class NationsBase extends ChangeNotifier {
 
   Map<String, dynamic>? _translations;
 
-  Map<String, dynamic> get translations {
-    if (_translations != null) {
-      return _translations!;
-    }
-
-    throw Exception('''
-    translations not loaded
-    make sure you added the delegates to your app
-    ''');
-  }
+  Map<String, dynamic> get translations => _translations ?? {};
 
   @protected
   @visibleForTesting

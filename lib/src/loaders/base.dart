@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../nations.dart';
-import '../helpers/files.dart';
+ import '../helpers/files.dart';
 
 /// * loads translation form assets or any source
 /// * extend it to build you custom loader if none of the existing
@@ -20,12 +19,7 @@ abstract class NationsLoader {
     final values = (await load(locale)) ?? {};
 
     /// loads the application assets
-    final nationValues = (await loadPackageTranslation(locale)) ??
-        (await loadPackageTranslation(Locale(locale.languageCode))) ??
-        (await loadPackageTranslation(Nations.config.fallbackLocale)) ??
-        (await loadPackageTranslation(
-            Locale(Nations.config.fallbackLocale.languageCode))) ??
-        {};
+    final nationValues = (await loadPackageTranslation(locale)) ?? {};
 
     /// * merging the assets to save memory
     return {}

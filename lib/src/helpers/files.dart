@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,8 +27,7 @@ Future<Map<String, dynamic>?> loadJsonFileContent(String path) async {
       /// *  load content
       await rootBundle.loadString(path),
     );
-  } catch (e) {
-    log(e.toString());
+  } catch (_) {
     return null;
   }
 }
