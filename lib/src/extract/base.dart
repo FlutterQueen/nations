@@ -24,11 +24,10 @@ abstract class ExtractedData<T> {
   static ExtractedData parse(String key) {
     /// * the data from
     final value = transFromMap(key, Nations.translations);
-    if (value == null) {
-      return NotFoundData(key);
-    } else if (value is String) {
+
+    if (value is String) {
       return StringData(key, value);
-    } else if (value is Map<String, dynamic>) {
+    } else if (value is Map<String, Object?>) {
       return MapData(key, value);
     }
     return NotFoundData(key);

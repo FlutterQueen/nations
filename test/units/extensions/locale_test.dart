@@ -12,19 +12,19 @@ void main() {
   ];
 
   group('isRtl Locale extension', () {
-    test('use languageCode lowerCase', () {
+    test('it convert languageCode lowerCase', () {
       expect(const Locale('AR').isRTL, isTrue);
     });
-    test('uses only the languageCode', () {
+    test('it uses only the languageCode', () {
       expect(const Locale('ar', 'EG').isRTL, isTrue);
       expect(const Locale('en', 'US').isRTL, isFalse);
     });
-    test('it should return true if the the locale is RTL', () {
+    test('it return True if the the locale is RTL', () {
       for (final locale in _rtlLocales) {
         expect(locale.isRTL, isTrue);
       }
     });
-    test('it should return false if the locale is not RTL', () {
+    test('it should Return false if the locale is not RTL', () {
       for (final locale in _rtlLocales) {
         expect(locale.isLTR, isFalse);
       }

@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
 
-import '../../widgets/app.dart';
-
 void main() {
-  setUp(() async {
+  setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    await Nations.boot(NationsTestConfig());
-    await Nations.load(Nations.locale);
+    await Nations.boot();
   });
 
   group('not found tests', () {
@@ -44,7 +41,7 @@ void main() {
     expect('args_key'.args({'name': "ملك"}), equals("اهلا بك يا ملك"));
   });
   test('it convert the the number to locale based number', () {
-    expect('٠١٢٣٤٥٦٧٨٩'.numberToLocale(const Locale('ar')), '0123456789');
+    expect('٠١٢٣٤٥٦٧٨٩'.toLocale(const Locale('ar')), '0123456789');
   });
 
   group('pluralization', () {

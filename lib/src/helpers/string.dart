@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nations/nations.dart';
 
 /// localize numbers base on locale
 /// if none provided it will use the app locale `Nations.locale`
 /// Make sure you know the difference between arabic and hindi numbers
-String numberToLocale(String str, [Locale? locale]) {
+String numberToLocale(String str, Locale locale) {
   if (str.isEmpty) return str;
-  switch (locale?.languageCode) {
-    case null:
-      return numberToLocale(str, Nations.config.fallbackLocale);
+  switch (locale.languageCode) {
     case 'ar':
       return convertToArabicNumbers(str);
     case 'hi':

@@ -1,18 +1,17 @@
 part of 'base.dart';
 
-class MapData extends ExtractedData<Map<String, dynamic>> {
-  MapData(String key, Map<String, dynamic> value)
+class MapData extends ExtractedData<Map<String, Object?>> {
+  MapData(String key, Map<String, Object?> value)
       : super(key: key, data: value);
   @override
   String toGender([Gender? gender]) {
     if (isValidGenderMap(data)) {
-      switch (gender) {
-        case null:
-          return toGender(Nations.config.defaultGender);
-        case Gender.male:
-          return data['male'];
-        case Gender.female:
-          return data['female'];
+      if (gender == null) {
+        return toGender(Nations.config.defaultGender);
+      } else if (gender == Gender.male && data['male'] is String) {
+        return data['male'] as String;
+      } else if (gender == Gender.female && data['female'] is String) {
+        return data['female'] as String;
       }
     }
     return notFound;
@@ -24,7 +23,7 @@ class MapData extends ExtractedData<Map<String, dynamic>> {
       final pluralKey = resolveCount(count, data.keys);
       if (pluralKey != null && data[pluralKey] != null) {
         return replaceArgsOf(
-          data[pluralKey],
+          data[pluralKey].toString(),
           {
             'count': count.toString(),
             if (args != null) ...args,

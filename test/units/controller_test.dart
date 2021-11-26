@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../lib.dart';
+
 void main() {
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -13,5 +15,66 @@ void main() {
     await Nations.boot();
     final current = Nations.locale;
     expect(current, const Locale('ar'));
+  });
+
+  group('load method', () {
+    test('it always load the nations assets', () async {
+      await Nations.load(const Locale('en'));
+      expect(Nations.translations.containsKey('package_name'), isTrue);
+    });
+    test('it loads all the loaders and add them by loader name', () async {
+      await Nations.boot(NationsConfig(loaders: [
+        NationsTestLoader('test_1'),
+        NationsTestLoader('test_2'),
+        NationsTestLoader('test_3'),
+        NationsTestLoader('test_4'),
+        NationsTestLoader('test_5'),
+      ]));
+
+      expect('test_1.test_k'.tr, 'test_v');
+      expect('test_2.test_k'.tr, 'test_v');
+      expect('test_3.test_k'.tr, 'test_v');
+      expect('test_4.test_k'.tr, 'test_v');
+      expect('test_5.test_k'.tr, 'test_v');
+    });
+    test('it can override any value on any loader', () async {
+      await Nations.boot(
+        NationsConfig(
+          loaders: [
+            NationsTestLoader('test_package', {'foo_key': 'test_1'}),
+          ],
+          baseLoader: NationsTestLoader(
+            'this name does not matter',
+            {
+              'test_package': {'foo_key': 'overridden_data'}
+            },
+          ),
+        ),
+      );
+
+      expect('test_package.foo_key'.tr, 'overridden_data');
+    });
+    test('it will note deletes data when it override any value on any loader',
+        () async {
+      await Nations.boot(
+        NationsConfig(
+          loaders: [
+            NationsTestLoader('test_package', {
+              'foo_key': 'test_1',
+              'bar_key': 'bar_value',
+            }),
+          ],
+          baseLoader: NationsTestLoader(
+            'this name does not matter',
+            {
+              'test_package': {'foo_key': 'overridden_data'}
+            },
+          ),
+        ),
+      );
+
+      expect('test_package.foo_key'.tr, 'overridden_data');
+      expect('test_package.bar_key'.tr, 'bar_value');
+    });
   });
 }

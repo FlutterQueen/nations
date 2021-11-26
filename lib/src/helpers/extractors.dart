@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 /// * takes the wanted count
 /// * takes the available boundaries
 /// * returns the right count boundary
@@ -36,20 +38,29 @@ String? resolveCount(int count, Iterable<String> keys) {
 /// if the key is not nested return the value
 /// if the key is not nested return go deep in the value
 /// if the key value is not found return null
-Object? transFromMap(String key, Map<String, Object?> values) {
+Object? transFromMap(String path, Map values) {
+  /// extract if no parent
+  if (!path.contains('.')) return values[path];
+
+  /// split and remove empty
+  final keys = path.split('.')..removeWhere((e) => e.isEmpty);
+
   /// if the key is nested
-  if (key.contains('.')) {
-    final keys = key.split('.');
-    if (keys.isNotEmpty) {
-      final firstKey = keys.first;
-      final newKey = key.replaceFirst(firstKey + '.', '');
-      if (values[firstKey] != null &&
-          values[firstKey] is Map<String, Object?>) {
-        return transFromMap(newKey, values[firstKey] as Map<String, Object?>);
-      }
+  if (keys.isNotEmpty) {
+    if (keys.length == 1) return values[keys.first];
+    final firstKey = keys.first;
+    if (values[firstKey] != null && values[firstKey] is Map) {
+      final newKey = path.replaceFirst(firstKey + '.', '');
+      return transFromMap(newKey, values[firstKey]);
     }
-  } else {
-    /// the key is not nested
-    return values[key];
   }
+}
+
+/// * merges to maps into single one
+/// * if the key found in both maps it will use the one from the second map
+dynamic mergeTwoMaps(dynamic a, dynamic b) {
+  if (a is Map<String, Object?> && b is Map<String, Object?>) {
+    return mergeMaps<String, dynamic>(a, b, value: mergeTwoMaps);
+  }
+  return b;
 }

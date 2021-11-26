@@ -81,13 +81,10 @@ void main() {
 
   group('numberToLocale function', () {
     test('it return the original String if the value is empty', () {
-      final result = numberToLocale('');
+      final result = numberToLocale('', const Locale('ar'));
       expect(result.length, equals(0));
     });
-    test('it uses the fallback locale if non provided', () {
-      final result = numberToLocale('٠١٢٣٤٥٦٧٨٩');
-      expect(result, equals('0123456789'));
-    });
+
     test('it can convert between symbols and spaces', () {
       final result = numberToLocale(
           '0A1B2_3#4@5  6  H7   ______ 8!!!!!!!!!!!!....9...',

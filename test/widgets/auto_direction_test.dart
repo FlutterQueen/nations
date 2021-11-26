@@ -9,8 +9,7 @@ void main() {
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
     await (await SharedPreferences.getInstance()).clear();
-
-    await Nations.boot(NationsTestConfig());
+    await Nations.boot();
   });
 
   testWidgets(

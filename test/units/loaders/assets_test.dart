@@ -5,9 +5,8 @@ import 'package:nations/nations.dart';
 void main() {
   testWidgets('it loads assets correctly', (_) async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    final data = await const NationsAssetsLoader().load(const Locale('ar'));
-    expect(data != null, isTrue);
-    expect(data?.isNotEmpty, isTrue);
-    expect(data?['package_name'], 'أمم');
+    final data = await const AppAssetsLoader().load(const Locale('ar'));
+    expect(data.isNotEmpty, isTrue);
+    expect(data['package_name'], 'أمم');
   });
 }

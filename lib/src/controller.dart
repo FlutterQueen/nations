@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nations/nations.dart';
+import 'package:nations/src/loaders/nation_assets.dart';
 import 'package:nations/src/models/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'helpers/extractors.dart';
 
 // * # Global object to handle the localizations actions
 // ignore: non_constant_identifier_names
@@ -48,13 +52,29 @@ class NationsBase extends ChangeNotifier {
 
   List<Locale> get supportedLocales => config.supportedLocales;
 
-  Map<String, dynamic>? _translations;
+  final _translations = <String, Object?>{};
 
-  Map<String, dynamic> get translations => _translations ?? {};
+  Map<String, Object?> get translations => _translations;
 
   @protected
   @visibleForTesting
   Future<void> load(Locale locale) async {
-    _translations = await config.loader.loadWithNationValues(locale);
+    /// * clear the old translations
+
+    /// for each loader add the values to the translation map
+    final _app = <String, Object?>{};
+
+    for (final loader in Nations.config.loaders) {
+      _app[loader.name] = await loader.load(locale);
+    }
+
+    _app.addAll(await const NationsAssetsLoader().load(locale));
+    final baseData = await Nations.config.baseLoader.load(locale);
+
+    final result = mergeTwoMaps(_app, baseData) as Map<String, Object?>;
+
+    _translations
+      ..clear()
+      ..addAll(result);
   }
 }
