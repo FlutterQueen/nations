@@ -68,6 +68,16 @@
         "sign_up": "sign up",
         "sign_out": "sign out"
     },
+    "city": "city",
+    "all": "all",
+    "am": "am",
+    "pm": "pm",
+    "filter": "filter",
+    "send": "send",
+    "or": "or",
+    "menu": "menu",
+    "sort_by": "sort by",
+    "view_all": "view all",
     "after_this_key_should_be_removed_they_were_add_for_testing_ony": "",
     "package_name": "nations",
     "validation": {
