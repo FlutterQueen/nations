@@ -22,4 +22,11 @@ export 'src/models/config.dart';
 /// * widgets
 export 'src/widgets/builder.dart';
 
-enum Gender { male, female }
+/// gender enum
+enum Gender {
+  /// * male gender
+  male,
+
+  /// * female gender
+  female,
+}

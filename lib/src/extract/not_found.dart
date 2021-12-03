@@ -1,7 +1,11 @@
 part of 'base.dart';
 
+/// to handle none existing keys .
 class NotFoundData extends ExtractedData {
-  NotFoundData(String key) : super(key: key, data: null);
+  /// to handle none existing keys .
+  NotFoundData(
+    String key,
+  ) : super(key: key, data: null);
   @override
   String toString() => notFound;
 

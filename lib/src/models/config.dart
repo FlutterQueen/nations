@@ -1,32 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
+/// builds the message if key does not exist or used in bad way
 typedef NotFoundBuilder = String Function(String key);
 
+/// contains the localization config
 class NationsConfig {
+  /// coning base class
   NationsConfig({
     this.baseLoader = const AppAssetsLoader(),
-    this.fallbackLocale = const Locale('ar'),
-    this.supportedLocales = const [
-      Locale('ar'),
-      Locale('en'),
-    ],
     List<NationsLoader> loaders = const <NationsLoader>[
       AppAssetsLoader(),
     ],
-    this.defaultGender = Gender.male,
-    NotFoundBuilder? notFoundBuilder,
+    String Function(String key)? notFoundBuilder,
   })  : _notFoundBuilder = notFoundBuilder,
         _loaders = loaders;
 
+  /// registered loaders list
   List<NationsLoader> get loaders => _loaders;
 
   /// which locale to use in case of failure
-  final Locale fallbackLocale;
+  Locale get fallbackLocale => const Locale('ar');
+
+  /// loads the app translations
   final NationsLoader baseLoader;
 
   /// list of the supported locales
-  final List<Locale> supportedLocales;
+  List<Locale> get supportedLocales => const [
+        Locale('ar'),
+        Locale('en'),
+      ];
 
   /// the loaders
   final List<NationsLoader> _loaders;
@@ -34,8 +37,10 @@ class NationsConfig {
   /// not found builder
   final String Function(String key)? _notFoundBuilder;
 
-  NotFoundBuilder get notFoundBuilder => _notFoundBuilder ?? (_) => 'null';
+  /// to build the not found string
+  String Function(String key) get notFoundBuilder =>
+      _notFoundBuilder ?? (_) => 'null';
 
   /// the default gender
-  final Gender defaultGender;
+  Gender get defaultGender => Gender.male;
 }

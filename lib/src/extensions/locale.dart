@@ -8,6 +8,7 @@ const _rtlLocales = <String>[
   'ur', // Urdu
 ];
 
+/// extensions on the locale
 extension NLocaleExt on Locale {
   /// return `true` if this language is written from `Right-to-Left`
   bool get isRTL => _rtlLocales.contains(languageCode.toLowerCase());

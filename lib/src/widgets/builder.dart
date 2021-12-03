@@ -7,6 +7,7 @@ class NationsRoot extends StatefulWidget {
   /// * ###  your Root app widget
   final Widget child;
 
+  /// * root translation builder
   const NationsRoot({required this.child, Key? key}) : super(key: key);
 
   @override

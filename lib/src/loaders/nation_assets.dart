@@ -6,6 +6,7 @@ import 'base.dart';
 
 /// * to load lang files from 'assets/lang/'
 class NationsAssetsLoader extends NationsLoader {
+  /// * to load lang files from 'assets/lang/'
   const NationsAssetsLoader() : super('app');
 
   @override

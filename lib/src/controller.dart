@@ -6,19 +6,24 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'helpers/extractors.dart';
 
-// * # Global object to handle the localizations actions
+/// * # Global object to handle the localizations actions
 // ignore: non_constant_identifier_names
 final Nations = NationsBase._();
 
+/// nations base class
 class NationsBase extends ChangeNotifier {
   NationsBase._();
 
   /// * falls back to arabic by default
   NationsConfig _currentConfig = NationsConfig();
+
+  /// return the current config
   NationsConfig get config => _currentConfig;
 
   Locale? _currentLocale;
   late SharedPreferences _prefs;
+
+  /// set up Nations controller
   Future<void> boot([
     NationsConfig? config,
   ]) async {
@@ -40,6 +45,7 @@ class NationsBase extends ChangeNotifier {
     await load(_currentLocale!);
   }
 
+  /// * updates the current locale the restart the app (notify the root builder)
   Future<void> updateLocale(Locale locale) async {
     _currentLocale = locale;
     await load(locale);
@@ -50,12 +56,15 @@ class NationsBase extends ChangeNotifier {
   /// * get the current locale
   Locale get locale => _currentLocale ?? config.fallbackLocale;
 
+  /// * return the supported locales list from the config
   List<Locale> get supportedLocales => config.supportedLocales;
 
   final _translations = <String, Object?>{};
 
+  /// return the loaded translations
   Map<String, Object?> get translations => _translations;
 
+  /// used by this class only to load the translations when locale changes
   @protected
   @visibleForTesting
   Future<void> load(Locale locale) async {

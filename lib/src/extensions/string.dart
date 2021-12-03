@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/extract/base.dart';
 
+/// string translation extension
 extension NationsTrans on String {
   /// * translate a text based on the App locale
   String get tr => ExtractedData.parse(this).toString();
@@ -25,6 +26,8 @@ extension NationsTrans on String {
   ]) =>
       ExtractedData.parse(this).plural(count, args);
 
+  /// covert the number to locale format
+  /// if none locale givin it will use the fallback from the config
   String toLocale([Locale? locale]) =>
       numberToLocale(this, locale ?? Nations.config.fallbackLocale);
 }

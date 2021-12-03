@@ -5,6 +5,7 @@ part 'string.dart';
 part 'map.dart';
 part 'not_found.dart';
 
+/// base class for extracted data result
 abstract class ExtractedData<T> {
   // * extracted data key
   /// in case of `'foo'.tr` the key is `'foo'`
@@ -13,11 +14,13 @@ abstract class ExtractedData<T> {
   /// in case of `{"foo":"bar"` the data is `"bar"`
   final T data;
 
+  /// creates a new instance of ExtractedData
   ExtractedData({
     required this.key,
     required this.data,
   });
 
+  /// return the not found message from the localization
   String get notFound => Nations.config.notFoundBuilder(key);
 
   ///* crates new ExtractedData instance from the loaded translations
@@ -36,9 +39,12 @@ abstract class ExtractedData<T> {
   @override
   String toString();
 
+  /// convert the result with pluralization
   String plural(int count, [Map<String, dynamic>? args]);
 
+  /// convert the result with the gender
   String toGender([Gender? gender]);
 
+  /// replace the arguments of the string
   String args(Map<String, dynamic> args);
 }

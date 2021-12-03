@@ -1,8 +1,13 @@
 part of 'base.dart';
 
+/// handles the extraction of map
 class MapData extends ExtractedData<Map<String, Object?>> {
-  MapData(String key, Map<String, Object?> value)
-      : super(key: key, data: value);
+  /// creates a new map data class
+  MapData(
+    String key,
+    Map<String, Object?> value,
+  ) : super(key: key, data: value);
+
   @override
   String toGender([Gender? gender]) {
     if (isValidGenderMap(data)) {
