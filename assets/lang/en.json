@@ -1,5 +1,4 @@
 {
-    "package_name": "nations",
     "date": "date",
     "time": "time",
     "enter": "enter",
@@ -8,13 +7,33 @@
     "delete": "delete",
     "error": "error",
     "internet": "internet",
+    "gender": {
+        "male": "male",
+        "female": "female"
+    },
     "no": "no",
     "yes": "yes",
     "confirm": "confirm",
-    "gender": {
-        "male": "Male",
-        "female": "Female"
-    },
+    "cancel": "cancel",
+    "color": "color",
+    "age": "age",
+    "key": "key",
+    "value": "value",
+    "to": "to",
+    "back": "back",
+    "save": "save",
+    "add": "add",
+    "update": "update",
+    "notification": "notification",
+    "search": "search",
+    "close": "close",
+    "clear": "clear",
+    "next": "next",
+    "previous": "previous",
+    "select": "select",
+    "select_all": "select_all",
+    "after_this_key_should_be_removed_they_were_add_for_testing_ony": "",
+    "package_name": "nations",
     "validation": {
         "required": "this input is required",
         "email": "wrong email address",
