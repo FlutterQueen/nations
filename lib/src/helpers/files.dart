@@ -6,8 +6,10 @@ import 'package:flutter/services.dart';
 /// *  load translation files from the `nations` package base on the locale
 /// * if the locale doesn't exist in your assets it will try to get the file named with the language code
 /// * if also is empty it will loads the fallback locale
-Future<Map<String, dynamic>?> loadPackageTranslation(
-    {required Locale locale, required String packageName}) async {
+Future<Map<String, dynamic>?> loadPackageTranslation({
+  required Locale locale,
+  required String packageName,
+}) async {
   return loadJsonFileContent(
     'packages/$packageName/assets/lang/$locale.json',
   );
@@ -27,7 +29,7 @@ Future<Map<String, dynamic>?> loadJsonFileContent(String path) async {
     return json.decode(
       /// *  load content
       await rootBundle.loadString(path),
-    );
+    ) as Map<String, dynamic>;
   } catch (_) {
     return null;
   }

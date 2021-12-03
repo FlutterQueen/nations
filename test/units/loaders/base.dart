@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'dart:async';
+import 'dart:ui';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';

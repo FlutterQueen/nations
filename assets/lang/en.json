@@ -24,5 +24,13 @@
             "old_enough": "old enough ✔",
             "very_old": "very old 💪"
         }
+    },
+    "apples": {
+        "1": "one apple",
+        "5": "five apples",
+        "2": "two apples  ",
+        "10": "ten apples",
+        "15,14": ":count apples",
+        "60-70": "from 60 to 70 apples"
     }
 }

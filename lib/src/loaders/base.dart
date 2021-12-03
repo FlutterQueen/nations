@@ -13,3 +13,14 @@ abstract class NationsLoader {
   ///* loads the data from you files
   FutureOr<Map<String, Object?>> load(Locale locale);
 }
+
+class FooLoader extends NationsLoader {
+  const FooLoader() : super('foo');
+
+  @override
+  FutureOr<Map<String, Object?>> load(Locale locale) async {
+    return {
+      'foo': 'bar',
+    };
+  }
+}

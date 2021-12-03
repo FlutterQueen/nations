@@ -86,7 +86,6 @@ you can use the `.tr` extension or `tr()` function directly
 
 ```dart
 // male
-'key'.trFemale
 ```
 
 ### use the default gender

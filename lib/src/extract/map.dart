@@ -9,9 +9,9 @@ class MapData extends ExtractedData<Map<String, Object?>> {
       if (gender == null) {
         return toGender(Nations.config.defaultGender);
       } else if (gender == Gender.male && data['male'] is String) {
-        return data['male'] as String;
+        return data['male']! as String;
       } else if (gender == Gender.female && data['female'] is String) {
-        return data['female'] as String;
+        return data['female']! as String;
       }
     }
     return notFound;

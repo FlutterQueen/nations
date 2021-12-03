@@ -4,7 +4,7 @@ import 'package:nations/nations.dart';
 
 class AppLangConfig extends NationsConfig {
   @override
-  Gender get defaultGender => Gender.male;
+  Gender get defaultGender => Gender.female;
 
   @override
   List<NationsLoader> get loaders => [

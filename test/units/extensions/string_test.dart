@@ -47,12 +47,12 @@ void main() {
   group('pluralization', () {
     test('it support pluralization', () {
       expect('apples'.plural(1), equals("تفاحه واحده"));
-      expect('apples'.plural(2), equals("اثنان تفاحات"));
+      expect('apples'.plural(2), equals("تفاحتين"));
       expect('apples'.plural(5), equals("خمسه تفاحات"));
       expect('apples'.plural(10), equals("عشرة تفاحات"));
-      expect('apples'.plural(14), equals(" تفاحات 14"));
-      expect('apples'.plural(15), equals(" تفاحات 15"));
-      expect('apples'.plural(65), equals("اكثر من ستون الي سبعون تفاحة"));
+      expect('apples'.plural(14), equals("14 تفاحه"));
+      expect('apples'.plural(15), equals("15 تفاحه"));
+      expect('apples'.plural(65), equals("من ستون الي سبعون"));
     });
   });
 }

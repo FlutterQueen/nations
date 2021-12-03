@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:nations/src/helpers/files.dart';
 
 import '../../nations.dart';
@@ -10,6 +11,6 @@ class NationsAssetsLoader extends NationsLoader {
   @override
   String get name => 'nations';
   @override
-  Future<Map<String, dynamic>> load(locale) async =>
+  Future<Map<String, dynamic>> load(Locale locale) async =>
       (await loadPackageTranslation(locale: locale, packageName: name))!;
 }

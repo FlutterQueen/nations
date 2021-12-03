@@ -1,8 +1,9 @@
+import 'dart:ui' show window;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nations/nations.dart';
-import 'dart:ui' show window;
 
 /// additional features to the NationsBase
 extension NationsBaseExt on NationsBase {

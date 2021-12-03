@@ -16,7 +16,7 @@ String? resolveCount(int count, Iterable<String> keys) {
       /// * '0,1,2,3,4'
       // set of numbers
       for (final innerNum in pluralKey.split(',')) {
-        if (innerNum.toString() == count.toString()) return pluralKey;
+        if (innerNum == count.toString()) return pluralKey;
       }
     } else if (pluralKey.contains('-')) {
       /// * 50 - 80
@@ -50,8 +50,8 @@ Object? transFromMap(String path, Map values) {
     if (keys.length == 1) return values[keys.first];
     final firstKey = keys.first;
     if (values[firstKey] != null && values[firstKey] is Map) {
-      final newKey = path.replaceFirst(firstKey + '.', '');
-      return transFromMap(newKey, values[firstKey]);
+      final newKey = path.replaceFirst('$firstKey.', '');
+      return transFromMap(newKey, values[firstKey] as Map);
     }
   }
 }

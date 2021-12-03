@@ -26,5 +26,5 @@ extension NationsTrans on String {
       ExtractedData.parse(this).plural(count, args);
 
   String toLocale([Locale? locale]) =>
-      numberToLocale(this, Nations.config.fallbackLocale);
+      numberToLocale(this, locale ?? Nations.config.fallbackLocale);
 }

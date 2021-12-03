@@ -15,11 +15,12 @@ void main() {
       expect(result, equals("Abcd efgh"));
     });
     test('it capitalize first word with more than one line', () {
-      const str = '''abcd efgh
-    queen nations''';
+      const str = 'abcd efgh\nqueen nations';
       final result = capitalizeFirstChar(str);
-      expect(result, equals('''Abcd efgh
-    queen nations'''));
+      expect(
+        result,
+        equals('Abcd efgh\nqueen nations'),
+      );
     });
   });
   group('capitalizeFirstCharForEachWord function', () {
@@ -30,15 +31,22 @@ void main() {
     });
 
     test('it capitalize each word in more than one line', () {
-      const str = '''abcd efgh
+      const str = '''
+      abcd efgh
     queen nations
     foo bar z-ee
     ''';
       final result = capitalizeFirstCharForEachWord(str);
-      expect(result, equals('''Abcd Efgh
+      expect(
+        result,
+        equals(
+          '''
+      Abcd Efgh
     Queen Nations
     Foo Bar Z-ee
-    '''));
+    ''',
+        ),
+      );
     });
   });
 
@@ -48,12 +56,16 @@ void main() {
       test(
         'it uses `:` only as identifier for args',
         () => expect(
-            replaceArgsOf('foo bar zee', {'foo': 'queen'}), 'foo bar zee'),
+          replaceArgsOf('foo bar zee', {'foo': 'queen'}),
+          'foo bar zee',
+        ),
       );
       test(
         'it replace args started with `:`',
         () => expect(
-            replaceArgsOf('foo :bar zee', {'bar': 'queen'}), 'foo queen zee'),
+          replaceArgsOf('foo :bar zee', {'bar': 'queen'}),
+          'foo queen zee',
+        ),
       );
 
       test(
@@ -87,10 +99,13 @@ void main() {
 
     test('it can convert between symbols and spaces', () {
       final result = numberToLocale(
-          '0A1B2_3#4@5  6  H7   ______ 8!!!!!!!!!!!!....9...',
-          const Locale('hi'));
+        '0A1B2_3#4@5  6  H7   ______ 8!!!!!!!!!!!!....9...',
+        const Locale('hi'),
+      );
       expect(
-          result, equals('٠A١B٢_٣#٤@٥  ٦  H٧   ______ ٨!!!!!!!!!!!!....٩...'));
+        result,
+        equals('٠A١B٢_٣#٤@٥  ٦  H٧   ______ ٨!!!!!!!!!!!!....٩...'),
+      );
     });
     test('it convert numbers to arabic', () {
       final source = numberToLocale('٠١٢٣٤٥٦٧٨٩', const Locale('ar'));

@@ -23,13 +23,17 @@ void main() {
       expect(Nations.translations.containsKey('package_name'), isTrue);
     });
     test('it loads all the loaders and add them by loader name', () async {
-      await Nations.boot(NationsConfig(loaders: [
-        NationsTestLoader('test_1'),
-        NationsTestLoader('test_2'),
-        NationsTestLoader('test_3'),
-        NationsTestLoader('test_4'),
-        NationsTestLoader('test_5'),
-      ]));
+      await Nations.boot(
+        NationsConfig(
+          loaders: [
+            NationsTestLoader('test_1'),
+            NationsTestLoader('test_2'),
+            NationsTestLoader('test_3'),
+            NationsTestLoader('test_4'),
+            NationsTestLoader('test_5'),
+          ],
+        ),
+      );
 
       expect('test_1.test_k'.tr, 'test_v');
       expect('test_2.test_k'.tr, 'test_v');

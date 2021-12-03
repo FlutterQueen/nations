@@ -59,8 +59,6 @@ class NationsBase extends ChangeNotifier {
   @protected
   @visibleForTesting
   Future<void> load(Locale locale) async {
-    /// * clear the old translations
-
     /// for each loader add the values to the translation map
     final _app = <String, Object?>{};
 
@@ -72,6 +70,8 @@ class NationsBase extends ChangeNotifier {
     final baseData = await Nations.config.baseLoader.load(locale);
 
     final result = mergeTwoMaps(_app, baseData) as Map<String, Object?>;
+
+    /// * clear the old translations
 
     _translations
       ..clear()

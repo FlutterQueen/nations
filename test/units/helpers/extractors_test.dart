@@ -18,7 +18,9 @@ void main() {
     });
     test('it support more than one count in one key', () {
       expect(
-          resolveCount(40, ['1', '2', '10', '30,40,50']), equals('30,40,50'));
+        resolveCount(40, ['1', '2', '10', '30,40,50']),
+        equals('30,40,50'),
+      );
     });
     test('it support boundaries by range', () {
       expect(
