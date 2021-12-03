@@ -21,4 +21,15 @@ void main() {
     expect(mapData.toString(), 'null');
     expect(mapData.args({}), 'null');
   });
+  test('it will return the default', () {
+    final mapData = MapData(
+      'gender',
+      {
+        "this": "الجنس",
+        "male": "ذكر",
+        "female": "انثي",
+      },
+    );
+    expect(mapData.toString(), 'الجنس');
+  });
 }

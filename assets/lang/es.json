@@ -8,6 +8,7 @@
    "error": "error",
    "internet": "internet",
    "gender": {
+      "this": "género",
       "male": "masculina",
       "female": "mujer"
    },

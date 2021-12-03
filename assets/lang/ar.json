@@ -8,6 +8,7 @@
     "error": "خطا",
     "internet": "انترنت",
     "gender": {
+        "this": "الجنس",
         "male": "ذكر",
         "female": "انثي"
     },

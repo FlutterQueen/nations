@@ -38,5 +38,10 @@ class MapData extends ExtractedData<Map<String, Object?>> {
   String args(Map<String, dynamic> args) => notFound;
 
   @override
-  String toString() => notFound;
+  String toString() {
+    if (data['this'] is String) {
+      return data['this']! as String;
+    }
+    return notFound;
+  }
 }
