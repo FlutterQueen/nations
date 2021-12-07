@@ -13,7 +13,7 @@ class NationsBuilder extends StatefulWidget {
 class NationsBuilderState extends State<NationsBuilder> {
   @override
   Widget build(BuildContext context) {
-    forceRebuild(context);
+    _forceRebuild(context);
 
     return widget.builder(context);
   }
@@ -21,12 +21,12 @@ class NationsBuilderState extends State<NationsBuilder> {
   @override
   void initState() {
     Nations.addListener(() {
-      forceRebuild(context);
+      _forceRebuild(context);
     });
     super.initState();
   }
 
-  void forceRebuild(BuildContext context) {
+  void _forceRebuild(BuildContext context) {
     void rebuild(Element element) {
       if (element.debugDoingBuild || element.dirty) return;
       element.markNeedsBuild();

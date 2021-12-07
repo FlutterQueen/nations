@@ -21,7 +21,6 @@ export 'src/models/config.dart';
 
 /// * widgets
 export 'src/builder.dart';
-export 'src/builder.dart';
 
 /// gender enum
 enum Gender {
