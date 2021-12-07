@@ -20,7 +20,8 @@ export 'src/loaders/base.dart';
 export 'src/models/config.dart';
 
 /// * widgets
-export 'src/widgets/builder.dart';
+export 'src/builder.dart';
+export 'src/builder.dart';
 
 /// gender enum
 enum Gender {

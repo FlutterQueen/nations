@@ -14,6 +14,8 @@ final Nations = NationsBase._();
 class NationsBase extends ChangeNotifier {
   NationsBase._();
 
+  // final delegate = _NationsDelegate();
+
   /// * falls back to arabic by default
   NationsConfig _currentConfig = NationsConfig();
 
@@ -42,15 +44,18 @@ class NationsBase extends ChangeNotifier {
         ? this.config.fallbackLocale
         : Locale(_savedLocale);
 
-    await load(_currentLocale!);
+    await load(locale);
+    // await load(_currentLocale!);
   }
 
   /// * updates the current locale the restart the app (notify the root builder)
   Future<void> updateLocale(Locale locale) async {
     _currentLocale = locale;
-    await load(locale);
-    notifyListeners();
+    // await delegate.load(locale);
+    load(locale);
     await _prefs.setString('nations_lang', locale.toString());
+
+    notifyListeners();
   }
 
   /// * get the current locale
@@ -85,5 +90,7 @@ class NationsBase extends ChangeNotifier {
     _translations
       ..clear()
       ..addAll(result);
+
+    // notifyListeners();
   }
 }

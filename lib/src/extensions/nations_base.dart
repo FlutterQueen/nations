@@ -12,6 +12,7 @@ extension NationsBaseExt on NationsBase {
 
   /// * use it to make the `App` loads the data when the language changes
   List<LocalizationsDelegate> get delegates => <LocalizationsDelegate>[
+        // delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
