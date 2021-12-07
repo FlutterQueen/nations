@@ -51,10 +51,8 @@ class NationsBase extends ChangeNotifier {
   /// * updates the current locale the restart the app (notify the root builder)
   Future<void> updateLocale(Locale locale) async {
     _currentLocale = locale;
-    // await delegate.load(locale);
-    load(locale);
+    await load(locale);
     await _prefs.setString('nations_lang', locale.toString());
-
     notifyListeners();
   }
 

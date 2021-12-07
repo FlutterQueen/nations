@@ -4,6 +4,7 @@ import 'package:nations/nations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../lib.dart';
+import 'test_config.dart';
 
 void main() {
   setUp(() async {
@@ -11,8 +12,8 @@ void main() {
   });
   test('it loads saved locale form prefs if exist', () async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString('queen.nations.lang', 'ar');
-    await Nations.boot();
+    await prefs.setString('queen.nations.lang', 'ar');
+    await Nations.boot(NationsTestConfig());
     final current = Nations.locale;
     expect(current, const Locale('ar'));
   });
@@ -20,7 +21,7 @@ void main() {
   group('load method', () {
     test('it always load the nations assets', () async {
       await Nations.load(const Locale('en'));
-      expect(Nations.translations.containsKey('package_name'), isTrue);
+      expect(Nations.translations.containsKey('gender'), isTrue);
     });
     test('it loads all the loaders and add them by loader name', () async {
       await Nations.boot(

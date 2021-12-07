@@ -23,7 +23,7 @@ class MapData extends ExtractedData<Map<String, Object?>> {
   }
 
   @override
-  String plural(int count, [Map<String, dynamic>? args]) {
+  String plural(int count, [Map<String, Object?>? args]) {
     if (data.isNotEmpty) {
       final pluralKey = resolveCount(count, data.keys);
       if (pluralKey != null && data[pluralKey] != null) {

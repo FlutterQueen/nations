@@ -10,5 +10,5 @@ class AppAssetsLoader extends NationsLoader {
   const AppAssetsLoader() : super('app');
   @override
   Future<Map<String, dynamic>> load(Locale locale) async =>
-      await loadLocaleTranslation(locale) ?? {};
+      await loadLocaleTranslation(locale) ?? <String, dynamic>{};
 }

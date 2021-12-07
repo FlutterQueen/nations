@@ -5,14 +5,14 @@ import 'package:nations/nations.dart';
 void main() {
   group('capitalizeFirstChar function', () {
     test('it capitalize first word with single word', () {
-      const str = "abcd";
+      const str = 'abcd';
       final result = capitalizeFirstChar(str);
-      expect(result, equals("Abcd"));
+      expect(result, equals('Abcd'));
     });
     test('it capitalize first word with more than one word', () {
-      const str = "abcd efgh";
+      const str = 'abcd efgh';
       final result = capitalizeFirstChar(str);
-      expect(result, equals("Abcd efgh"));
+      expect(result, equals('Abcd efgh'));
     });
     test('it capitalize first word with more than one line', () {
       const str = 'abcd efgh\nqueen nations';
@@ -25,9 +25,9 @@ void main() {
   });
   group('capitalizeFirstCharForEachWord function', () {
     test('it capitalize each word in a single line', () {
-      const str = "abcd efgh jkl";
+      const str = 'abcd efgh jkl';
       final result = capitalizeFirstCharForEachWord(str);
-      expect(result, equals("Abcd Efgh Jkl"));
+      expect(result, equals('Abcd Efgh Jkl'));
     });
 
     test('it capitalize each word in more than one line', () {

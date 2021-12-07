@@ -7,18 +7,17 @@ part 'not_found.dart';
 
 /// base class for extracted data result
 abstract class ExtractedData<T> {
+  /// creates a new instance of ExtractedData
+  ExtractedData({
+    required this.key,
+    required this.data,
+  });
   // * extracted data key
   /// in case of `'foo'.tr` the key is `'foo'`
   final String key;
 
   /// in case of `{"foo":"bar"` the data is `"bar"`
   final T data;
-
-  /// creates a new instance of ExtractedData
-  ExtractedData({
-    required this.key,
-    required this.data,
-  });
 
   /// return the not found message from the localization
   String get notFound => Nations.config.notFoundBuilder(key);

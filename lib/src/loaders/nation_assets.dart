@@ -13,5 +13,5 @@ class NationsAssetsLoader extends NationsLoader {
   String get name => 'nations';
   @override
   Future<Map<String, dynamic>> load(Locale locale) async =>
-      (await loadPackageTranslation(locale: locale, packageName: name))!;
+      (await loadPackageTranslation(locale: locale, packageName: name)) ?? {};
 }

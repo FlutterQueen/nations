@@ -25,9 +25,9 @@ void main() {
     final mapData = MapData(
       'gender',
       {
-        "this": "الجنس",
-        "male": "ذكر",
-        "female": "انثي",
+        'this': 'الجنس',
+        'male': 'ذكر',
+        'female': 'انثي',
       },
     );
     expect(mapData.toString(), 'الجنس');

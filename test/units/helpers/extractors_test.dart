@@ -6,14 +6,14 @@ void main() {
     test('it will return null if out of boundaries', () {
       expect(resolveCount(150, ['1', '2']), isNull);
     });
-    test(
-        'it will return the default if in the boundaries and there is not match',
+    test('it return the default if in the boundaries and there is not match',
         () {
       expect(resolveCount(150, ['1', '2', 'default']), equals('default'));
     });
-    test(
-        'it support single count return the default if in the boundaries and there is not match',
-        () {
+    test('''
+        it support single count return the default if
+         in the boundaries and there is not match
+         ''', () {
       expect(resolveCount(10, ['1', '2', '10']), equals('10'));
     });
     test('it support more than one count in one key', () {
@@ -41,7 +41,7 @@ void main() {
       expect(value, equals('zee'));
     });
     test(
-        'it return the key value event key is ended with . without another key ',
+        'it return the key value event key is ended with . without another key',
         () {
       final value = transFromMap('foo.', {'foo': 'bar'});
       expect(value, equals('bar'));

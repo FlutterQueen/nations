@@ -7,6 +7,6 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     final data = await const AppAssetsLoader().load(const Locale('ar'));
     expect(data.isNotEmpty, isTrue);
-    expect(data['package_name'], 'أمم');
+    expect(data['yes'], 'نعم');
   });
 }

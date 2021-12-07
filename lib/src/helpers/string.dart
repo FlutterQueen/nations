@@ -57,17 +57,21 @@ String capitalizeFirstChar(String str) {
 /// takes `foo bar zee` return `Foo Bar Zee`
 String capitalizeFirstCharForEachWord(String str) {
   return str
-      .split(" ")
+      .split(' ')
       .map((s) => s.isEmpty ? '' : capitalizeFirstChar(s))
-      .join(" ");
+      .join(' ');
 }
 
 /// * replace args of map
-/// * in your assets the arg must starts with `:` to be identified as variable to replace it
-String replaceArgsOf(String data, Map<String, dynamic> args) {
+/// * in your assets the arg must starts with `:` to be identified as variable
+/// * to replace it
+String replaceArgsOf(String data, Map<String, Object?> args) {
   String msg = data;
   for (final arg in args.keys) {
-    msg = msg.replaceFirst(':$arg', args[arg].toString());
+    final val = args[arg];
+    if (val != null) {
+      msg = msg.replaceFirst(':$arg', args[arg].toString());
+    }
   }
   return msg;
 }

@@ -77,31 +77,5 @@
     "or": "او",
     "menu": "القائمه",
     "sort_by": "ترتيب حسب",
-    "view_all": "عرض الكل",
-    "after_this_key_should_be_removed_they_were_add_for_testing_ony": "",
-    "package_name": "أمم",
-    "welcome_meg": "اهلا بيك يا :name",
-    "bar": 55,
-    "args_key": "اهلا بك يا :name",
-    "person": {
-        "male": "سيدي",
-        "female": "سيدتي"
-    },
-    "validation": {
-        "required": "هذا الحقل مطلوب",
-        "email": "البريد الالكتروني غير صحيح",
-        "age": {
-            "to_young": "صغير جدا",
-            "old_enough": "كبير بما فيه الكفاية",
-            "very_old": "كبير جدا"
-        }
-    },
-    "apples": {
-        "1": "تفاحه واحده",
-        "5": "خمسه تفاحات",
-        "2": "تفاحتين",
-        "10": "عشرة تفاحات",
-        "15,14,18": ":count تفاحه",
-        "60-70": "من ستون الي سبعون"
-    }
+    "view_all": "عرض الكل"
 }

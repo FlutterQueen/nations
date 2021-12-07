@@ -43,8 +43,6 @@ class _PageTwoState extends State<PageTwo> {
               // TODO ::(4) translate
               Text('basmala'.tr),
 
-              Text('package_name'.tr),
-
               /// * gender
               Text('gender'.trMale),
               Text('gender'.trFemale),

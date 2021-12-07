@@ -38,7 +38,6 @@ class _MyWidget extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Text(Directionality.of(context) == TextDirection.rtl ? 'RTL' : 'LTR'),
-          Text('package_name'.tr),
           Text('date'.tr),
           Text('time'.tr),
           Text('edit'.tr),

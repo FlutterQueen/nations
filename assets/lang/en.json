@@ -77,25 +77,5 @@
     "or": "or",
     "menu": "menu",
     "sort_by": "sort by",
-    "view_all": "view all",
-    "after_this_key_should_be_removed_they_were_add_for_testing_ony": "",
-    "package_name": "nations",
-    "validation": {
-        "required": "this input is required",
-        "email": "wrong email address",
-        "password": "validation  inner password",
-        "age": {
-            "to_young": "too young 👶",
-            "old_enough": "old enough ✔",
-            "very_old": "very old 💪"
-        }
-    },
-    "apples": {
-        "1": "one apple",
-        "5": "five apples",
-        "2": "two apples  ",
-        "10": "ten apples",
-        "15,14": ":count apples",
-        "60-70": "from 60 to 70 apples"
-    }
+    "view_all": "view all"
 }

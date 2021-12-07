@@ -1,3 +1,7 @@
+## 0.0.4
+
+- # [see the docs](https://flutterqueen.github.io/website/)
+
 ## 0.0.3
 
 - ⚠ Breaking :: rename `NationsJsonLoader` to `NationsAssetsLoader`
