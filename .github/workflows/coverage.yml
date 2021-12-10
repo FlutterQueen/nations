@@ -18,20 +18,5 @@ jobs:
     runs-on: ubuntu-latest
     #sequence of tasks called
     steps:
-      # The branch or tag ref that triggered the workflow will be checked out.
-      # https://github.com/actions/checkout
-      - uses: actions/checkout@v1
-      # Setup a flutter environment.
-      # https://github.com/marketplace/actions/flutter-action
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: "stable"
-      - run: flutter pub get
-      #- run: flutter analyze
-      # run  flutter widgets tests  and unit tests
-      - run: flutter test --coverage
-      # Upload coverage reports to Codecov
-      # https://github.com/marketplace/actions/codecov
       - uses: codecov/codecov-action@v1.0.7
-      - name: Very Good Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+      - name: test converage
