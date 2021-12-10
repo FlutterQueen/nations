@@ -1,3 +1,9 @@
+## 0.0.5
+
+- downgraded shared_preferences to 2.0.7
+- fix typos in core assets
+- add more assets
+
 ## 0.0.4
 
 - # [see the docs](https://flutterqueen.github.io/website/)

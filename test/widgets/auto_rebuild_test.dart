@@ -27,11 +27,11 @@ void main() {
 
       final dateArFinder = find.text('التاريخ');
       final timeArFinder = find.text('الوقت');
+
       expect(dateArFinder, findsOneWidget);
       expect(timeArFinder, findsOneWidget);
 
       await Nations.updateLocale(const Locale('en'));
-
       await tester.pumpAndSettle();
       expect(Nations.locale, equals(const Locale('en')));
 
