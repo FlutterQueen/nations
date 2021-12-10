@@ -7,6 +7,8 @@ void _updateLocale(BuildContext context) {
   Nations.updateLocale(Locale(
     Nations.locale.languageCode == 'ar' ? 'en' : 'ar',
   ));
+
+  Nations.updateLocale(const Locale('ar'));
 }
 
 class PageTwo extends StatefulWidget {
@@ -40,8 +42,10 @@ class _PageTwoState extends State<PageTwo> {
               ),
 
               Text(Nations.locale.toString()),
+
               // TODO ::(4) translate
-              Text('basmala'.tr),
+
+              Text('date'.tr),
 
               /// * gender
               Text('gender'.trMale),

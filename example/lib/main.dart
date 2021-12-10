@@ -1,4 +1,3 @@
-import 'package:example/config/lang.dart';
 import 'package:example/page2.dart';
 import 'package:flutter/material.dart';
 
@@ -6,16 +5,9 @@ import 'package:nations/nations.dart';
 
 Future<void> main() async {
   // TODO :: (2)
-  await Nations.boot(AppLangConfig());
-
-  // wrap your `MaterialApp` with NationsRoot
+  await Nations.boot();
   runApp(
-    // NationsRoot(
-    //   child: const MyApp(),
-    // ),
-    NationsBuilder(
-      builder: (ctx) => const MyApp(),
-    ),
+    NationsBuilder(builder: (ctx) => const MyApp()),
   );
 }
 
