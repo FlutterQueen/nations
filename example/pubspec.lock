@@ -139,7 +139,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.4"
+    version: "0.0.5"
   nations_assets:
     dependency: transitive
     description:
