@@ -3,6 +3,7 @@
 - downgraded shared_preferences to 2.0.7
 - fix typos in core assets
 - add more assets
+- move the assets to `nations_assets`
 
 ## 0.0.4
 

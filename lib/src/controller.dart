@@ -78,7 +78,7 @@ class NationsBase extends ChangeNotifier {
       _app[loader.name] = await loader.load(locale);
     }
 
-    _app.addAll(await const NationsAssetsLoader().load(locale));
+    _app.addAll(const NationsAssetsLoader().load(locale));
     final baseData = await Nations.config.baseLoader.load(locale);
 
     final result = mergeTwoMaps(_app, baseData) as Map<String, Object?>;

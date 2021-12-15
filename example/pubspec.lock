@@ -140,6 +140,13 @@ packages:
       relative: true
     source: path
     version: "0.0.4"
+  nations_assets:
+    dependency: transitive
+    description:
+      name: nations_assets
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   nested:
     dependency: transitive
     description:

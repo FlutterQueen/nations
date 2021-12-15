@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nations/src/helpers/files.dart';
+import 'package:nations_assets/nations_assets.dart';
 
 import '../../nations.dart';
 import 'base.dart';
@@ -10,8 +10,16 @@ class NationsAssetsLoader extends NationsLoader {
   const NationsAssetsLoader() : super('app');
 
   @override
-  String get name => 'nations';
-  @override
-  Future<Map<String, dynamic>> load(Locale locale) async =>
-      (await loadPackageTranslation(locale: locale, packageName: name)) ?? {};
+  Map<String, dynamic> load(Locale locale) {
+    switch (locale.languageCode) {
+      case 'ar':
+        return arAssets;
+      case 'en':
+        return enAssets;
+      case 'es':
+        return esAssets;
+      default:
+        return {};
+    }
+  }
 }
