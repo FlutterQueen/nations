@@ -17,12 +17,12 @@ extension NationsTrans on String {
   String get trFemale => ExtractedData.parse(this).toGender(Gender.female);
 
   /// * translate a text and replace the args with provided data
-  String args(Map<String, String> args) => ExtractedData.parse(this).args(args);
+  String args(Map<String, Object> args) => ExtractedData.parse(this).args(args);
 
   ///  * translate a text and set the right word base on the provided count
   String plural(
     int count, [
-    Map<String, String> args = const {},
+    Map<String, Object> args = const {},
   ]) =>
       ExtractedData.parse(this).plural(count, args);
 

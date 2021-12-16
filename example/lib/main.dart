@@ -1,7 +1,8 @@
-import 'package:example/page2.dart';
 import 'package:flutter/material.dart';
 
 import 'package:nations/nations.dart';
+
+import 'page2.dart';
 
 Future<void> main() async {
   // TODO :: (2)
