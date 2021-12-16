@@ -1,6 +1,6 @@
 name: nations
 description: queen support for localization in flutter, part of queen framework
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/FlutterQueen/nations
 issue_tracker: https://github.com/FlutterQueen/nations/issues
 environment:
