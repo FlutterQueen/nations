@@ -39,11 +39,11 @@ abstract class ExtractedData<T> {
   String toString();
 
   /// convert the result with pluralization
-  String plural(int count, [Map<String, dynamic>? args]);
+  String plural(int count, [Map<String, Object>? args]);
 
   /// convert the result with the gender
   String toGender([Gender? gender]);
 
   /// replace the arguments of the string
-  String args(Map<String, dynamic> args);
+  String args(Map<String, Object> args);
 }
