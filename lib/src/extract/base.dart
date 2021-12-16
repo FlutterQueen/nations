@@ -25,6 +25,7 @@ abstract class ExtractedData<T> {
   ///* crates new ExtractedData instance from the loaded translations
   static ExtractedData parse(String key) {
     /// * the data from
+
     final value = transFromMap(key, Nations.translations);
 
     if (value is String) {

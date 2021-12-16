@@ -1,3 +1,15 @@
+## 0.0.6
+
+- Enhancements ::
+  - fix #7 `.args()` now accepts `Map<String,Object>` not only Strings (@mohamedkx77)
+
+## 0.0.5
+
+- downgraded shared_preferences to 2.0.7
+- fix typos in core assets
+- add more assets
+- move the assets to `nations_assets`
+
 ## 0.0.4
 
 - # [see the docs](https://flutterqueen.github.io/website/)
