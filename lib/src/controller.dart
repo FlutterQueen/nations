@@ -80,13 +80,13 @@ class NationsBase extends ChangeNotifier {
     _app.addAll(const NationsAssetsLoader().load(locale));
     final baseData = await Nations.config.baseLoader.load(locale);
 
-    final result = mergeTwoMaps(_app, baseData)! as Map<String, Object?>;
+    final result = mergeTwoMaps(_app, baseData)?.cast<String, Object?>();
 
     /// * clear the old translations
 
     _translations
       ..clear()
-      ..addAll(result);
+      ..addAll(result ?? {});
 
     // notifyListeners();
   }
