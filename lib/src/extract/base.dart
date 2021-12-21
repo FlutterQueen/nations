@@ -1,6 +1,7 @@
 import 'package:nations/nations.dart';
 import 'package:nations/src/helpers/extractors.dart';
 import 'package:nations/src/helpers/validation.dart';
+import 'package:q_map_helpers/q_map_helpers.dart';
 part 'string.dart';
 part 'map.dart';
 part 'not_found.dart';
@@ -26,7 +27,7 @@ abstract class ExtractedData<T> {
   static ExtractedData parse(String key) {
     /// * the data from
 
-    final value = transFromMap(key, Nations.translations);
+    final value = findInMap(key, Nations.translations);
 
     if (value is String) {
       return StringData(key, value);

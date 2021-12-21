@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
-import 'generated/tr.dart';
-
 void _updateLocale(BuildContext context) {
-  // loc?.foo();
   //  TODO ::(5) update the locale
   Nations.updateLocale(Locale(
     Nations.locale.languageCode == 'ar' ? 'en' : 'ar',
@@ -46,8 +43,6 @@ class _PageTwoState extends State<PageTwo> {
               Text(Nations.locale.toString()),
 
               // TODO ::(4) translate
-
-              Text(Tr.date.tr),
 
               /// * gender
               Text('gender'.trMale),

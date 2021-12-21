@@ -29,22 +29,4 @@ void main() {
       );
     });
   });
-  group('transFromMap Function', () {
-    test('it can extract simple value', () {
-      final value = transFromMap('foo', {'foo': 'bar'});
-      expect(value, equals('bar'));
-    });
-    test('it can extract simple nested value', () {
-      final value = transFromMap('foo.bar', {
-        'foo': {'bar': 'zee'}
-      });
-      expect(value, equals('zee'));
-    });
-    test(
-        'it return the key value event key is ended with . without another key',
-        () {
-      final value = transFromMap('foo.', {'foo': 'bar'});
-      expect(value, equals('bar'));
-    });
-  });
 }
