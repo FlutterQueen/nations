@@ -74,6 +74,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_readable:
+    dependency: "direct main"
+    description:
+      name: flutter_readable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -175,15 +182,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.3"
-  q_map_helpers:
-    dependency: "direct main"
+  readable:
+    dependency: transitive
     description:
-      path: "."
-      ref: master
-      resolved-ref: "3f9d6d7dfdc27f45a61c4942e1eeb6f78a2c4afc"
-      url: "git@github.com:FlutterQueen/q_map_utils.git"
-    source: git
-    version: "0.0.1"
+      name: readable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -302,5 +307,5 @@ packages:
     source: hosted
     version: "0.2.0"
 sdks:
-  dart: ">=2.14.4 <3.0.0"
+  dart: ">=2.14.0 <3.0.0"
   flutter: ">=2.5.0"

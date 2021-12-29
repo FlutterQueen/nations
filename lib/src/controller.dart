@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_readable/flutter_readable.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/loaders/nation_assets.dart';
 import 'package:nations/src/models/config.dart';
-import 'package:q_map_helpers/q_map_helpers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// * # Global object to handle the localizations actions

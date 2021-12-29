@@ -1,7 +1,7 @@
+import 'package:flutter_readable/flutter_readable.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/helpers/extractors.dart';
 import 'package:nations/src/helpers/validation.dart';
-import 'package:q_map_helpers/q_map_helpers.dart';
 part 'string.dart';
 part 'map.dart';
 part 'not_found.dart';
