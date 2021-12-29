@@ -3,16 +3,17 @@ description: queen support for localization in flutter, part of queen framework
 version: 0.0.6
 homepage: https://github.com/FlutterQueen/nations
 issue_tracker: https://github.com/FlutterQueen/nations/issues
+publish_to: "none"
 environment:
   sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
-  collection: ^1.15.0
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_readable: ^0.0.2
   nations_assets: ^0.0.1
   shared_preferences: ^2.0.7
 
@@ -20,3 +21,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   lint: ^1.7.2
+flutter:
+  assets:
+    - assets/

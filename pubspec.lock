@@ -37,7 +37,7 @@ packages:
     source: hosted
     version: "1.1.0"
   collection:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: collection
       url: "https://pub.dartlang.org"
@@ -74,6 +74,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_readable:
+    dependency: "direct main"
+    description:
+      name: flutter_readable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -175,6 +182,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.3"
+  readable:
+    dependency: transitive
+    description:
+      name: readable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   shared_preferences:
     dependency: "direct main"
     description:

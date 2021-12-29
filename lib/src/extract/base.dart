@@ -1,3 +1,4 @@
+import 'package:flutter_readable/flutter_readable.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/helpers/extractors.dart';
 import 'package:nations/src/helpers/validation.dart';
@@ -26,7 +27,7 @@ abstract class ExtractedData<T> {
   static ExtractedData parse(String key) {
     /// * the data from
 
-    final value = transFromMap(key, Nations.translations);
+    final value = findInMap(key, Nations.translations);
 
     if (value is String) {
       return StringData(key, value);

@@ -1,5 +1,7 @@
 include: package:lint/analysis_options_package.yaml
-
+analyzer:
+  errors:
+    todo: ignore
 linter:
   rules:
     - public_member_api_docs
