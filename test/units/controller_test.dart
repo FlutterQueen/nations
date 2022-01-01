@@ -4,7 +4,7 @@ import 'package:nations/nations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../lib.dart';
-import 'test_config.dart';
+import 'config_test.dart';
 
 void main() {
   setUp(() async {

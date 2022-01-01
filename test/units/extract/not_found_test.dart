@@ -7,9 +7,9 @@ void main() {
   // });
   test('it always return not found', () {
     final data = NotFoundData('key');
-    expect(data.toString(), 'null');
-    expect(data.args({}), 'null');
-    expect(data.plural(1), 'null');
-    expect(data.toGender(), 'null');
+    expect(data.text(), null);
+    expect(data.args({}), null);
+    expect(data.plural(1), null);
+    expect(data.toGender(), null);
   });
 }

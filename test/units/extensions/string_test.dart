@@ -2,25 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
 
-import '../test_config.dart';
+import '../config_test.dart';
 
 void main() {
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    await Nations.boot(NationsTestConfig());
+    await Nations.boot(NotFoundTestConfig());
   });
-
   group('not found tests', () {
     test('it return the not found def value if is null', () {
-      expect('fooBarZee'.tr, equals('null'));
+      expect('fooBarZee'.tr, equals('not_found'));
+      expect('fooBarZee'.gender, equals('not_found_gender'));
+      expect('fooBarZee'.trMale, equals('not_found_gender_male'));
+      expect('fooBarZee'.trFemale, equals('not_found_gender_female'));
+      expect('fooBarZee'.args({}), equals('not_found_args'));
+      expect('fooBarZee'.plural(50), equals('not_found_plural'));
     });
-    test('it return the not found def value if the plural value does not exist',
-        () {
-      expect('fooBarZee'.plural(50), equals('null'));
-    });
+
     test('it return not found def value if the parent exist and the child not',
         () {
-      expect('gender.bar'.tr, equals('null'));
+      expect('gender.bar'.tr, equals('not_found'));
     });
   });
   test('it translate simple key', () {

@@ -12,9 +12,7 @@ class NationsConfig {
     List<NationsLoader> loaders = const <NationsLoader>[
       AppAssetsLoader(),
     ],
-    String Function(String key)? notFoundBuilder,
-  })  : _notFoundBuilder = notFoundBuilder,
-        _loaders = loaders;
+  }) : _loaders = loaders;
 
   /// registered loaders list
   List<NationsLoader> get loaders => _loaders;
@@ -35,11 +33,33 @@ class NationsConfig {
   final List<NationsLoader> _loaders;
 
   /// not found builder
-  final String Function(String key)? _notFoundBuilder;
-
   /// to build the not found string
-  String Function(String key) get notFoundBuilder =>
-      _notFoundBuilder ?? (_) => 'null';
+  String notFound(String key) => 'null';
+
+  /// not found builder
+  /// to build the not found string
+  String notFoundPlural(
+    String key,
+    int count,
+    Map<String, Object> args,
+  ) =>
+      notFound(key);
+
+  /// not found builder
+  /// to build the not found string
+  String notFoundArgs(
+    String key,
+    Map<String, Object> args,
+  ) =>
+      notFound(key);
+
+  /// not found builder
+  /// to build the not found string
+  String notFoundGender(
+    String key, [
+    Gender? gender,
+  ]) =>
+      notFound(key);
 
   /// the default gender
   Gender get defaultGender => Gender.male;

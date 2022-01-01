@@ -6,11 +6,11 @@ void main() {
   test('it return not found if gender does not exist', () {
     /// *
     final mapData = MapData('key', {'male': 'Man'});
-    expect(mapData.toGender(Gender.male), 'null');
+    expect(mapData.toGender(Gender.male), null);
   });
   test('it will return not found when plural with empty map', () {
     final mapData = MapData('key', {});
-    expect(mapData.plural(1), 'null');
+    expect(mapData.plural(1), null);
   });
   test('support args within plural', () {
     final mapData = MapData('key', {'0': 'flutter :arg'});
@@ -18,8 +18,8 @@ void main() {
   });
   test('it will return the default', () {
     final mapData = MapData('key', {'male': 'Man'});
-    expect(mapData.toString(), 'null');
-    expect(mapData.args({}), 'null');
+    expect(mapData.text(), null);
+    expect(mapData.args({}), null);
   });
   test('it will return the default', () {
     final mapData = MapData(
@@ -30,6 +30,6 @@ void main() {
         'female': 'انثي',
       },
     );
-    expect(mapData.toString(), 'الجنس');
+    expect(mapData.text(), 'الجنس');
   });
 }

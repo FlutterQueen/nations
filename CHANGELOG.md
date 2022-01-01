@@ -1,3 +1,10 @@
+## 0.0.7
+
+- BREAKING ::
+  - remove notFoundBuilder in favor of notFound family
+- Enhancements ::
+  -
+
 ## 0.0.6
 
 - Enhancements ::

@@ -9,7 +9,7 @@ class MapData extends ExtractedData<Map<String, Object?>> {
   ) : super(key: key, data: value);
 
   @override
-  String toGender([Gender? gender]) {
+  String? toGender([Gender? gender]) {
     if (isValidGenderMap(data)) {
       if (gender == null) {
         return toGender(Nations.config.defaultGender);
@@ -19,11 +19,10 @@ class MapData extends ExtractedData<Map<String, Object?>> {
         return data['female']! as String;
       }
     }
-    return notFound;
   }
 
   @override
-  String plural(int count, [Map<String, Object?>? args]) {
+  String? plural(int count, [Map<String, Object?>? args]) {
     if (data.isNotEmpty) {
       final pluralKey = resolveCount(count, data.keys);
       if (pluralKey != null && data[pluralKey] != null) {
@@ -36,17 +35,12 @@ class MapData extends ExtractedData<Map<String, Object?>> {
         );
       }
     }
-    return notFound;
   }
 
   @override
-  String args(Map<String, dynamic> args) => notFound;
-
-  @override
-  String toString() {
+  String? text() {
     if (data['this'] is String) {
       return data['this']! as String;
     }
-    return notFound;
   }
 }

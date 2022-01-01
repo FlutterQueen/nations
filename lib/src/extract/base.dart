@@ -20,9 +20,6 @@ abstract class ExtractedData<T> {
   /// in case of `{"foo":"bar"` the data is `"bar"`
   final T data;
 
-  /// return the not found message from the localization
-  String get notFound => Nations.config.notFoundBuilder(key);
-
   ///* crates new ExtractedData instance from the loaded translations
   static ExtractedData parse(String key) {
     /// * the data from
@@ -37,15 +34,15 @@ abstract class ExtractedData<T> {
     return NotFoundData(key);
   }
 
-  @override
-  String toString();
+  /// convert the result with pluralization
+  String? text() => null;
 
   /// convert the result with pluralization
-  String plural(int count, [Map<String, Object>? args]);
+  String? plural(int count, [Map<String, Object>? args]) => null;
 
   /// convert the result with the gender
-  String toGender([Gender? gender]);
+  String? toGender([Gender? gender]) => null;
 
   /// replace the arguments of the string
-  String args(Map<String, Object> args);
+  String? args(Map<String, Object> args) => null;
 }

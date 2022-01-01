@@ -12,7 +12,7 @@ class AppLangConfig extends NationsConfig {
       ];
 
   @override
-  NotFoundBuilder get notFoundBuilder => (key) => 'null';
+  String notFound(String key) => 'null';
 
   @override
   List<Locale> get supportedLocales => const <Locale>[
