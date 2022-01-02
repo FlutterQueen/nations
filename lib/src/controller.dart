@@ -5,7 +5,6 @@ import 'package:nations/src/loaders/nation_assets.dart';
 import 'package:nations/src/models/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// TODO(max) :: test it save and loads last save corecctly
 const _kPrefsKey = 'queen.nations.lang';
 
 /// * # Global object to handle the localizations actions
@@ -47,15 +46,13 @@ class NationsBase extends ChangeNotifier {
         : Locale(_savedLocale);
 
     await load(locale);
-    // await load(_currentLocale!);
   }
 
   /// * updates the current locale the restart the app (notify the root builder)
   Future<void> updateLocale(Locale locale) async {
     _currentLocale = locale;
-    await load(locale);
     await _prefs.setString(_kPrefsKey, locale.toString());
-    notifyListeners();
+    await load(locale);
   }
 
   /// * get the current locale
@@ -91,6 +88,6 @@ class NationsBase extends ChangeNotifier {
       ..clear()
       ..addAll(result ?? {});
 
-    // notifyListeners();
+    notifyListeners();
   }
 }

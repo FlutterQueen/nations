@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nations/nations.dart';
 
-/// builds the message if key does not exist or used in bad way
-typedef NotFoundBuilder = String Function(String key);
-
 /// contains the localization config
 class NationsConfig {
   /// coning base class
   NationsConfig({
     this.baseLoader = const AppAssetsLoader(),
-    List<NationsLoader> loaders = const <NationsLoader>[
-      AppAssetsLoader(),
-    ],
-  }) : _loaders = loaders;
-
-  /// registered loaders list
-  List<NationsLoader> get loaders => _loaders;
+    this.loaders = const <NationsLoader>[AppAssetsLoader()],
+  });
 
   /// which locale to use in case of failure
   Locale get fallbackLocale => const Locale('ar');
@@ -27,10 +19,14 @@ class NationsConfig {
   List<Locale> get supportedLocales => const [
         Locale('ar'),
         Locale('en'),
+        Locale('es'),
       ];
 
+  /// the default gender
+  Gender get defaultGender => Gender.male;
+
   /// the loaders
-  final List<NationsLoader> _loaders;
+  final List<NationsLoader> loaders;
 
   /// not found builder
   /// to build the not found string
@@ -60,7 +56,4 @@ class NationsConfig {
     Gender? gender,
   ]) =>
       notFound(key);
-
-  /// the default gender
-  Gender get defaultGender => Gender.male;
 }

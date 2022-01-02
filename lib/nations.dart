@@ -8,7 +8,6 @@ export 'src/builder.dart';
 export 'src/controller.dart';
 
 /// * extensions
-export 'src/extensions/locale.dart';
 export 'src/extensions/nations_base.dart';
 export 'src/extensions/string.dart';
 

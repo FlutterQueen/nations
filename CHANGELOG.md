@@ -3,7 +3,7 @@
 - BREAKING ::
   - remove notFoundBuilder in favor of notFound family
 - Enhancements ::
-  -
+  - add `Spanish` as supported language by default
 
 ## 0.0.6
 

@@ -1,13 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/nations.dart';
 import 'package:nations/src/extract/base.dart';
 
 void main() {
-  test('it return not found if gender does not exist', () {
-    /// *
-    final mapData = MapData('key', {'male': 'Man'});
-    expect(mapData.toGender(Gender.male), null);
-  });
   test('it will return not found when plural with empty map', () {
     final mapData = MapData('key', {});
     expect(mapData.plural(1), null);

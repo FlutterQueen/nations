@@ -23,17 +23,12 @@ void main() {
 
       /// *  Create the Finders.
       final rtlTextFinder = find.text('RTL');
-      expect(Nations.locale.isRTL, isTrue);
-      expect(Nations.locale.isLTR, isFalse);
-      expect(Nations.locale.direction, equals(TextDirection.rtl));
       expect(rtlTextFinder, equals(findsOneWidget));
 
       await Nations.updateLocale(const Locale('en'));
       await tester.pumpAndSettle();
       final ltrTextFinder = find.text('LTR');
-      expect(Nations.locale.isRTL, isFalse);
-      expect(Nations.locale.isLTR, isTrue);
-      expect(Nations.locale.direction, equals(TextDirection.ltr));
+
       expect(ltrTextFinder, equals(findsOneWidget));
     },
   );

@@ -65,12 +65,11 @@ String capitalizeFirstCharForEachWord(String str) {
 /// * replace args of map
 /// * in your assets the arg must starts with `:` to be identified as variable
 /// * to replace it
-String? replaceArgsOf(String data, Map<String, Object?> args) {
-  String msg = data;
-  for (final arg in args.keys) {
-    final val = args[arg];
-    if (val != null) {
-      msg = msg.replaceFirst(':$arg', args[arg].toString());
+String replaceArgsOf(String data, Map<String, Object?> args) {
+  var msg = data;
+  for (final entry in args.entries) {
+    if (entry.value != null) {
+      msg = msg.replaceFirst(':${entry.key}', entry.value.toString());
     }
   }
   return msg;
