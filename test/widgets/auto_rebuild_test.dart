@@ -17,7 +17,7 @@ void main() {
     (WidgetTester tester) async {
       /// * pump the app
       await tester.pumpWidget(const NationsTestApp());
-      await tester.pumpAndSettle();
+      // await tester.pumpAndSettle();
 
       expect(Nations.locale, equals(const Locale('ar')));
 
@@ -26,18 +26,21 @@ void main() {
       expect(nullTextFinder, equals(findsNothing));
 
       final dateArFinder = find.text('التاريخ');
-      final timeArFinder = find.text('الوقت');
-
       expect(dateArFinder, findsOneWidget);
+
+      final timeArFinder = find.text('الوقت');
       expect(timeArFinder, findsOneWidget);
 
       await Nations.updateLocale(const Locale('en'));
+
       await tester.pumpAndSettle();
+
       expect(Nations.locale, equals(const Locale('en')));
 
       final dateEnFinder = find.text('date');
-      final timeEnFinder = find.text('time');
       expect(dateEnFinder, findsOneWidget);
+
+      final timeEnFinder = find.text('time');
       expect(timeEnFinder, findsOneWidget);
     },
   );
