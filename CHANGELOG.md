@@ -1,3 +1,8 @@
+## 0.0.8
+
+- bug-fixes
+  - numberToLocale uses current locale if none given instead of the fallback
+
 ## 0.0.7
 
 - BREAKING ::
