@@ -43,7 +43,7 @@ extension NationsTrans on String {
       Nations.config.notFoundPlural(this, count, args);
 
   /// covert the number to locale format
-  /// if none locale givin it will use the fallback from the config
+  /// if none locale givin it will use the current locale
   String toLocale([Locale? locale]) =>
-      numberToLocale(this, locale ?? Nations.config.fallbackLocale);
+      numberToLocale(this, locale ?? Nations.locale);
 }
