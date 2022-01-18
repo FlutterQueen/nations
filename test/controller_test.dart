@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../lib.dart';
 import 'config_test.dart';
+import 'lib.dart';
 
 void main() {
   setUp(() async {

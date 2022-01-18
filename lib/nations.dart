@@ -1,11 +1,9 @@
 /// Let the people use there languages 💪
 library nations;
 
-/// * widgets
-export 'src/builder.dart';
-
 /// * controller
 export 'src/controller.dart';
+export 'src/extensions/locale.dart';
 
 /// * extensions
 export 'src/extensions/nations_base.dart';

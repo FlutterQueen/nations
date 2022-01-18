@@ -11,8 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
+  # flutter_localizations:
+  # sdk: flutter
   flutter_readable: ^0.0.2
   nations_assets: ^0.0.1
   shared_preferences: ^2.0.7

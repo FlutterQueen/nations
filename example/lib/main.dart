@@ -7,9 +7,9 @@ import 'page2.dart';
 Future<void> main() async {
   // TODO :: (2)
   await Nations.boot();
-  runApp(
-    NationsBuilder(builder: (ctx) => const MyApp()),
-  );
+  // runApp(
+  // QueenBuilder(builder: (ctx) => const MyApp()),
+  // );
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // TODO :: (3) pass these parameters
       locale: Nations.locale,
-      localizationsDelegates: Nations.delegates,
+      // localizationsDelegates: Nations.delegates,
       supportedLocales: Nations.supportedLocales,
       builder: (context, child) => child!,
 

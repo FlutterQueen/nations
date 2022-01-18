@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_readable/flutter_readable.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/loaders/nation_assets.dart';
-import 'package:nations/src/models/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const _kPrefsKey = 'queen.nations.lang';
@@ -30,6 +29,16 @@ class NationsBase extends ChangeNotifier {
   Future<void> boot([
     NationsConfig? config,
   ]) async {
+    assert(
+      () {
+        if (config != null) {
+          return config.fallbackLocale.isSupported;
+        }
+        return true;
+      }(),
+      'fallback locale must be supported',
+    );
+
     ///* for shared prefs
     WidgetsFlutterBinding.ensureInitialized();
 
@@ -41,9 +50,27 @@ class NationsBase extends ChangeNotifier {
 
     final _savedLocale = _prefs.getString(_kPrefsKey);
 
-    _currentLocale = _savedLocale == null
-        ? this.config.fallbackLocale
-        : Locale(_savedLocale);
+    /// if there is a save locale and still supported use it
+    if (_savedLocale != null && Locale(_savedLocale).isSupported) {
+      _currentLocale = Locale(_savedLocale);
+
+      /// if no check if the device locale is supported or not
+    } else if (Nations.deviceLocale.isSupported) {
+      _currentLocale = Nations.deviceLocale;
+    } else {
+      _currentLocale = _currentConfig.fallbackLocale;
+    }
+
+    //*/
+    if (_savedLocale == null) {
+      if (Nations.deviceLocale.isSupported) {
+        _currentLocale = Nations.deviceLocale;
+      } else {
+        _currentLocale = _currentConfig.fallbackLocale;
+      }
+    } else {
+      _currentLocale = Locale(_savedLocale);
+    }
 
     await load(locale);
   }

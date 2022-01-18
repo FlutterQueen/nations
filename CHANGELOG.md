@@ -1,3 +1,8 @@
+## 0.0.9
+
+- Enhancements
+  - initial locale is the device locale if supported else will fallback
+
 ## 0.0.8
 
 - bug-fixes

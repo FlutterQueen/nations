@@ -19,4 +19,6 @@ class AppLangConfig extends NationsConfig {
         Locale('ar'),
         Locale('en'),
       ];
+  @override
+  Locale get fallbackLocale => const Locale('ru');
 }
